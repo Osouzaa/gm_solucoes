@@ -20,21 +20,21 @@
       }
 
       :root {
-        --bg: #04060f;
-        --bg2: #080d1c;
-        --bg3: #0d1528;
-        --bg4: #111e35;
-        --accent: #00d9ff;
-        --accent2: #0057ff;
+        --bg: #f7f8fc;
+        --bg2: #ffffff;
+        --bg3: #f0f2f8;
+        --bg4: #e4e8f2;
+        --accent: #0057ff;
+        --accent2: #00b4d8;
         --accent3: #7b3fe4;
-        --green: #00e5a0;
-        --amber: #f5a623;
-        --red: #ff4d6a;
-        --text: #eef2ff;
-        --text2: #7a8bad;
-        --text3: #3d4f6b;
-        --border: rgba(255, 255, 255, 0.06);
-        --border2: rgba(255, 255, 255, 0.1);
+        --green: #059669;
+        --amber: #d97706;
+        --red: #dc2626;
+        --text: #0f172a;
+        --text2: #4b5a72;
+        --text3: #94a3b8;
+        --border: rgba(15, 23, 42, 0.08);
+        --border2: rgba(15, 23, 42, 0.14);
         --max: 1440px;
         --pad: clamp(24px, 5vw, 96px);
       }
@@ -42,7 +42,6 @@
       html {
         scroll-behavior: smooth;
       }
-
       body {
         font-family: "Plus Jakarta Sans", sans-serif;
         background: var(--bg);
@@ -50,38 +49,105 @@
         overflow-x: hidden;
         line-height: 1.65;
       }
-
-      /* DOT GRID */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: radial-gradient(
-          rgba(0, 217, 255, 0.06) 1px,
-          transparent 1px
-        );
-        background-size: 32px 32px;
-        pointer-events: none;
-        z-index: 0;
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
       }
 
-      /* ─── NAV ─── */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 14px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 18px;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+      h2 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 800;
+        font-size: clamp(30px, 3.2vw, 50px);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+      .lead {
+        font-size: clamp(14px, 1.1vw, 17px);
+        color: var(--text2);
+        line-height: 1.75;
+        max-width: 520px;
+      }
+      .pill {
+        font-size: 11px;
+        color: var(--text2);
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        padding: 4px 11px;
+        border-radius: 100px;
+      }
+
+      .fi {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fi.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes fu {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes bl {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      /* NAV */
       nav {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 200;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 var(--pad);
-        height: 68px;
-        background: rgba(4, 6, 15, 0.8);
+        background: rgba(247, 248, 252, 0.9);
         backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--border);
       }
-
+      .ni {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 var(--pad);
+        height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
       .logo {
         font-family: "Outfit", sans-serif;
         font-weight: 800;
@@ -91,262 +157,200 @@
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 9px;
       }
-      .logo-badge {
-        width: 28px;
-        height: 28px;
-        border-radius: 7px;
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
+      .logo-sq {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: var(--accent);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 13px;
         font-weight: 900;
-        color: #04060f;
+        color: #fff;
       }
-      .nav-links {
+      .nl {
         display: flex;
-        gap: 32px;
+        gap: 36px;
         list-style: none;
       }
-      .nav-links a {
+      .nl a {
         font-size: 13px;
-        font-weight: 400;
         color: var(--text2);
         text-decoration: none;
         transition: color 0.2s;
       }
-      .nav-links a:hover {
-        color: var(--text);
+      .nl a:hover {
+        color: var(--accent);
       }
-      .nav-cta {
-        font-family: "Outfit", sans-serif;
+      .nc {
         font-size: 13px;
         font-weight: 600;
-        padding: 8px 20px;
-        border-radius: 7px;
+        padding: 9px 22px;
+        border-radius: 8px;
         background: var(--accent);
-        color: #04060f;
+        color: #fff;
         text-decoration: none;
         transition:
           opacity 0.2s,
           transform 0.2s;
+        box-shadow: 0 2px 12px rgba(0, 87, 255, 0.25);
       }
-      .nav-cta:hover {
-        opacity: 0.85;
+      .nc:hover {
+        opacity: 0.88;
         transform: translateY(-1px);
       }
 
-      /* ─── LAYOUT HELPERS ─── */
-      .container {
-        width: 100%;
-        position: relative;
-        z-index: 1;
-        margin: 0 auto;
-        padding: 0 var(--pad);
-      }
-      section {
-        padding: clamp(72px, 10vw, 140px) 0;
-        position: relative;
-        z-index: 1;
-      }
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 18px;
-      }
-      .eyebrow::before {
-        content: "";
-        width: 20px;
-        height: 1px;
-        background: var(--accent);
-      }
-      h2 {
-        font-family: "Outfit", sans-serif;
-        font-weight: 800;
-        font-size: clamp(32px, 3.5vw, 54px);
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin-bottom: 16px;
-      }
-      .lead {
-        font-size: clamp(15px, 1.2vw, 18px);
-        font-weight: 300;
-        color: var(--text2);
-        line-height: 1.75;
-        max-width: 560px;
-        margin-bottom: 56px;
-      }
-
-      /* ─── HERO ─── */
+      /* HERO */
       .hero {
+        position: relative;
         min-height: 100vh;
         display: flex;
         align-items: center;
-        padding-top: 68px;
+        padding: 100px var(--pad) 80px;
         overflow: hidden;
-        position: relative;
       }
-      .hero-orb {
+      .hblob {
         position: absolute;
         border-radius: 50%;
-        filter: blur(120px);
+        filter: blur(80px);
         pointer-events: none;
       }
-      .hero-orb-1 {
-        width: 800px;
-        height: 800px;
-        background: rgba(0, 87, 255, 0.13);
-        top: -200px;
-        right: -200px;
+      .hb1 {
+        width: 600px;
+        height: 600px;
+        background: rgba(0, 87, 255, 0.07);
+        top: -100px;
+        right: -80px;
       }
-      .hero-orb-2 {
-        width: 500px;
-        height: 500px;
-        background: rgba(123, 63, 228, 0.1);
+      .hb2 {
+        width: 400px;
+        height: 400px;
+        background: rgba(0, 180, 216, 0.06);
         bottom: -100px;
-        left: 15%;
+        left: 10%;
       }
-      .hero-orb-3 {
-        width: 300px;
-        height: 300px;
-        background: rgba(0, 217, 255, 0.07);
+      .hb3 {
+        width: 280px;
+        height: 280px;
+        background: rgba(123, 63, 228, 0.05);
         top: 30%;
-        left: -100px;
+        right: 28%;
       }
-
-      .hero-inner {
+      .hi {
+        max-width: var(--max);
+        margin: 0 auto;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
         align-items: center;
+        position: relative;
+        z-index: 1;
       }
-      .hero-left {
-      }
-      .hero-tag {
+      .htag {
         display: inline-flex;
         align-items: center;
         gap: 8px;
         font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.06em;
         color: var(--accent);
-        background: rgba(0, 217, 255, 0.07);
-        border: 1px solid rgba(0, 217, 255, 0.18);
-        padding: 6px 14px;
+        background: rgba(0, 87, 255, 0.06);
+        border: 1px solid rgba(0, 87, 255, 0.15);
+        padding: 7px 16px;
         border-radius: 100px;
-        margin-bottom: 28px;
-        animation: fadeUp 0.5s ease both;
+        margin-bottom: 24px;
+        animation: fu 0.5s ease both;
       }
-      .hero-tag-dot {
+      .hdot {
         width: 6px;
         height: 6px;
         border-radius: 50%;
         background: var(--accent);
-        animation: blink 2s infinite;
-      }
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.3;
-        }
+        animation: bl 1.8s ease-in-out infinite;
       }
       h1 {
         font-family: "Outfit", sans-serif;
         font-weight: 900;
-        font-size: clamp(44px, 4.5vw, 80px);
+        font-size: clamp(44px, 5vw, 80px);
         line-height: 1;
         letter-spacing: -0.04em;
-        margin-bottom: 24px;
-        animation: fadeUp 0.5s 0.1s ease both;
+        color: var(--text);
+        margin-bottom: 22px;
+        animation: fu 0.5s 0.08s ease both;
       }
-      .h1-grad {
-        background: linear-gradient(
-          90deg,
-          var(--accent) 0%,
-          var(--accent2) 100%
-        );
+      .h1g {
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-      .hero-desc {
-        font-size: clamp(15px, 1.1vw, 18px);
-        font-weight: 300;
+      .hp {
+        font-size: clamp(15px, 1.1vw, 17px);
         color: var(--text2);
-        line-height: 1.75;
+        line-height: 1.8;
         max-width: 480px;
-        margin-bottom: 40px;
-        animation: fadeUp 0.5s 0.2s ease both;
+        margin-bottom: 36px;
+        animation: fu 0.5s 0.16s ease both;
       }
-      .hero-btns {
+      .hbtns {
         display: flex;
         gap: 12px;
         flex-wrap: wrap;
-        animation: fadeUp 0.5s 0.3s ease both;
+        animation: fu 0.5s 0.22s ease both;
       }
-      .btn-p {
+      .btn-m {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 13px 26px;
+        padding: 14px 28px;
+        border-radius: 9px;
         background: var(--accent);
-        color: #04060f;
-        font-family: "Outfit", sans-serif;
+        color: #fff;
         font-size: 14px;
         font-weight: 600;
-        border-radius: 8px;
         text-decoration: none;
-        box-shadow: 0 0 32px rgba(0, 217, 255, 0.25);
+        box-shadow: 0 4px 20px rgba(0, 87, 255, 0.3);
         transition:
           transform 0.2s,
           box-shadow 0.2s;
       }
-      .btn-p:hover {
+      .btn-m:hover {
         transform: translateY(-2px);
-        box-shadow: 0 0 48px rgba(0, 217, 255, 0.4);
+        box-shadow: 0 6px 28px rgba(0, 87, 255, 0.4);
       }
       .btn-s {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 13px 26px;
+        padding: 14px 24px;
+        border-radius: 9px;
         background: transparent;
         color: var(--text);
         font-size: 14px;
-        font-weight: 400;
-        border: 1px solid var(--border2);
-        border-radius: 8px;
+        border: 1.5px solid var(--border2);
         text-decoration: none;
         transition:
           border-color 0.2s,
-          background 0.2s;
+          color 0.2s;
       }
       .btn-s:hover {
-        border-color: rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.03);
+        border-color: var(--accent);
+        color: var(--accent);
       }
-
-      .hero-stats {
+      .hstats {
         display: flex;
         gap: 40px;
-        margin-top: 56px;
+        margin-top: 48px;
         padding-top: 40px;
         border-top: 1px solid var(--border);
-        animation: fadeUp 0.5s 0.4s ease both;
+        animation: fu 0.5s 0.3s ease both;
+        flex-wrap: wrap;
       }
-      .hero-stat-n {
+      .sn {
         font-family: "Outfit", sans-serif;
         font-size: 36px;
         font-weight: 800;
@@ -354,245 +358,198 @@
         line-height: 1;
         letter-spacing: -0.02em;
       }
-      .hero-stat-l {
+      .sl {
         font-size: 12px;
         color: var(--text2);
         margin-top: 4px;
       }
 
-      /* HERO RIGHT — dashboard mockup */
-      .hero-right {
+      /* DASH MOCKUP */
+      .hright {
         position: relative;
-        animation: fadeUp 0.5s 0.2s ease both;
+        animation: fu 0.6s 0.2s ease both;
       }
-      .dash-frame {
-        background: var(--bg2);
+      .dash {
+        background: #fff;
         border: 1px solid var(--border2);
-        border-radius: 20px;
+        border-radius: 18px;
         overflow: hidden;
-        box-shadow:
-          0 40px 100px rgba(0, 0, 0, 0.6),
-          0 0 0 1px var(--border);
+        box-shadow: 0 16px 60px rgba(15, 23, 42, 0.1);
       }
-      .dash-topbar {
+      .dbar {
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 14px 20px;
-        border-bottom: 1px solid var(--border);
+        gap: 7px;
+        padding: 12px 18px;
         background: var(--bg3);
+        border-bottom: 1px solid var(--border);
       }
-      .dash-dot {
+      .dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
       }
-      .dash-title {
+      .dtxt {
         flex: 1;
         text-align: center;
-        font-family: "Outfit", sans-serif;
         font-size: 12px;
-        font-weight: 500;
         color: var(--text2);
-        letter-spacing: 0.02em;
+        font-weight: 500;
       }
-      .dash-body {
-        padding: 20px;
+      .dbody {
+        padding: 18px;
       }
-      .dash-kpis {
+      .kpis {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        margin-bottom: 14px;
+        gap: 8px;
+        margin-bottom: 12px;
       }
       .kpi {
         background: var(--bg3);
-        border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 14px;
+        padding: 12px;
       }
-      .kpi-label {
+      .kpi-l {
         font-size: 10px;
         color: var(--text2);
-        margin-bottom: 6px;
-        font-weight: 500;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.06em;
+        margin-bottom: 5px;
       }
-      .kpi-val {
+      .kpi-v {
         font-family: "Outfit", sans-serif;
         font-size: 22px;
         font-weight: 700;
         line-height: 1;
         letter-spacing: -0.02em;
       }
-      .kpi-delta {
+      .kpi-d {
         font-size: 10px;
-        margin-top: 4px;
+        margin-top: 3px;
       }
       .up {
         color: var(--green);
       }
-      .dn {
-        color: var(--red);
-      }
       .neu {
-        color: var(--text2);
+        color: var(--text3);
       }
-
-      .dash-charts {
+      .dcharts {
         display: grid;
         grid-template-columns: 1.6fr 1fr;
-        gap: 10px;
-        margin-bottom: 14px;
+        gap: 8px;
+        margin-bottom: 10px;
       }
-      .chart-box {
+      .cbox {
         background: var(--bg3);
-        border: 1px solid var(--border);
         border-radius: 10px;
-        padding: 14px;
+        padding: 12px;
       }
-      .chart-label {
+      .clbl {
         font-size: 10px;
         color: var(--text2);
-        margin-bottom: 10px;
-        font-weight: 500;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.06em;
+        margin-bottom: 8px;
       }
-
-      /* bar chart */
       .bars {
         display: flex;
         align-items: flex-end;
-        gap: 5px;
-        height: 60px;
+        gap: 4px;
+        height: 52px;
       }
-      .bar {
+      .b {
         flex: 1;
         border-radius: 3px 3px 0 0;
-        background: rgba(0, 217, 255, 0.15);
-        transition: background 0.2s;
-        position: relative;
+        background: rgba(0, 87, 255, 0.12);
       }
-      .bar.hi {
-        background: rgba(0, 217, 255, 0.5);
+      .b.hi {
+        background: var(--accent);
       }
-      .bar:hover {
-        background: rgba(0, 217, 255, 0.35);
-      }
-
-      /* donut */
-      .donut-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        height: 70px;
-      }
-      .donut-labels {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        margin-left: 12px;
-      }
-      .dl {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 10px;
-        color: var(--text2);
-      }
-      .dl-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-
-      .dash-table {
+      .dtab {
         background: var(--bg3);
-        border: 1px solid var(--border);
         border-radius: 10px;
         overflow: hidden;
       }
-      .dt-header {
+      .dth {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
-        padding: 8px 14px;
-        border-bottom: 1px solid var(--border);
-        font-size: 10px;
-        font-weight: 600;
+        padding: 7px 12px;
+        font-size: 9.5px;
+        font-weight: 700;
         color: var(--text2);
         text-transform: uppercase;
         letter-spacing: 0.06em;
+        border-bottom: 1px solid var(--border);
       }
-      .dt-row {
+      .dtr {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr 1fr;
-        padding: 9px 14px;
+        padding: 8px 12px;
         border-bottom: 1px solid var(--border);
         font-size: 11px;
         color: var(--text2);
         align-items: center;
       }
-      .dt-row:last-child {
+      .dtr:last-child {
         border-bottom: none;
       }
-      .dt-name {
+      .dn {
         color: var(--text);
         font-weight: 500;
       }
-      .status-pill {
+      .sp {
         display: inline-flex;
-        align-items: center;
         font-size: 9px;
-        font-weight: 600;
+        font-weight: 700;
         padding: 2px 8px;
         border-radius: 100px;
       }
-      .s-ok {
-        background: rgba(0, 229, 160, 0.1);
+      .sok {
+        background: rgba(5, 150, 105, 0.1);
         color: var(--green);
       }
-      .s-warn {
-        background: rgba(245, 166, 35, 0.1);
+      .swarn {
+        background: rgba(217, 119, 6, 0.1);
         color: var(--amber);
       }
-      .s-err {
-        background: rgba(255, 77, 106, 0.1);
+      .serr {
+        background: rgba(220, 38, 38, 0.1);
         color: var(--red);
       }
 
-      /* ─── SERVICES ─── */
+      /* SERVIÇOS */
       #servicos {
-        background: var(--bg2);
+        background: #fff;
+        border-top: 1px solid var(--border);
       }
-      .services-intro {
+      .si {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 80px;
         align-items: end;
-        margin-bottom: 64px;
+        margin-bottom: 56px;
       }
-      .services-intro .lead {
+      .si .lead {
         margin-bottom: 0;
       }
-      .services-grid {
+      .sgrid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1px;
         background: var(--border);
         border: 1px solid var(--border);
-        border-radius: 20px;
+        border-radius: 18px;
         overflow: hidden;
       }
       .svc {
-        background: var(--bg2);
-        padding: clamp(28px, 3vw, 40px);
+        background: #fff;
+        padding: clamp(24px, 2.5vw, 36px);
+        transition: background 0.2s;
         position: relative;
         overflow: hidden;
-        transition: background 0.2s;
       }
       .svc::after {
         content: "";
@@ -607,128 +564,158 @@
         transition: transform 0.3s;
       }
       .svc:hover {
-        background: var(--bg3);
+        background: var(--bg);
       }
       .svc:hover::after {
         transform: scaleX(1);
       }
-      .svc-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 11px;
-        background: rgba(0, 217, 255, 0.07);
-        border: 1px solid rgba(0, 217, 255, 0.12);
+      .sic {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(0, 87, 255, 0.06);
+        border: 1px solid rgba(0, 87, 255, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 18px;
+        margin-bottom: 16px;
       }
-      .svc-title {
+      .st {
         font-family: "Outfit", sans-serif;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 700;
         letter-spacing: -0.01em;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        color: var(--text);
       }
-      .svc-desc {
+      .sd {
         font-size: 13px;
         color: var(--text2);
         line-height: 1.65;
       }
 
-      /* ─── PORTFOLIO ─── */
-      .portfolio-header {
+      /* SEGMENTOS */
+      #segmentos {
+        background: var(--bg);
+      }
+      .segg {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .seg {
+        background: #fff;
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        padding: 28px;
+        transition:
+          border-color 0.25s,
+          box-shadow 0.25s,
+          transform 0.2s;
+        cursor: default;
+      }
+      .seg:hover {
+        border-color: var(--accent);
+        box-shadow: 0 8px 32px rgba(0, 87, 255, 0.08);
+        transform: translateY(-2px);
+      }
+      .seg-em {
+        font-size: 26px;
+        margin-bottom: 14px;
+      }
+      .seg-t {
+        font-family: "Outfit", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+      .seg-d {
+        font-size: 12.5px;
+        color: var(--text2);
+        line-height: 1.65;
+        margin-bottom: 14px;
+      }
+
+      /* PORTFOLIO */
+      #portfolio {
+        background: #fff;
+        border-top: 1px solid var(--border);
+      }
+      .ph {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        margin-bottom: 56px;
+        margin-bottom: 48px;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 20px;
       }
-      .portfolio-header .lead {
+      .ph .lead {
         margin-bottom: 0;
       }
-
-      /* HERO CASE */
-      .case-hero {
+      .cmain {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: var(--bg2);
+        background: var(--bg);
         border: 1px solid var(--border);
-        border-radius: 24px;
+        border-radius: 20px;
         overflow: hidden;
         margin-bottom: 20px;
         transition: border-color 0.3s;
       }
-      .case-hero:hover {
-        border-color: rgba(0, 217, 255, 0.15);
+      .cmain:hover {
+        border-color: rgba(0, 87, 255, 0.2);
       }
-      .case-visual-hero {
-        background: linear-gradient(135deg, #071530, #050e22);
-        padding: clamp(36px, 4vw, 60px);
+      .cvis {
+        background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+        padding: clamp(32px, 4vw, 56px);
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 420px;
-        position: relative;
-        overflow: hidden;
+        min-height: 380px;
       }
-      .case-visual-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-          circle at 40% 50%,
-          rgba(0, 87, 255, 0.2),
-          transparent 65%
-        );
-      }
-      .case-visual-hero .dash-frame {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        max-width: 400px;
-      }
-      .case-body {
-        padding: clamp(36px, 4vw, 56px);
+      .cbody {
+        padding: clamp(32px, 4vw, 52px);
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-      .case-eyebrow {
-        display: inline-block;
+      .cey {
         font-size: 11px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--accent);
-        background: rgba(0, 217, 255, 0.07);
-        border: 1px solid rgba(0, 217, 255, 0.15);
+        background: rgba(0, 87, 255, 0.06);
+        border: 1px solid rgba(0, 87, 255, 0.14);
         padding: 4px 12px;
         border-radius: 100px;
-        margin-bottom: 20px;
+        display: inline-block;
+        margin-bottom: 18px;
       }
-      .case-title {
+      .ct2 {
         font-family: "Outfit", sans-serif;
-        font-size: clamp(22px, 2vw, 30px);
+        font-size: clamp(20px, 2vw, 28px);
         font-weight: 800;
         letter-spacing: -0.02em;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
+        color: var(--text);
       }
-      .case-desc {
+      .cdesc {
         font-size: 14px;
         color: var(--text2);
         line-height: 1.7;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
       }
-      .case-metrics {
+      .cmets {
         display: flex;
         gap: 28px;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
         flex-wrap: wrap;
       }
-      .cm-val {
+      .cmv {
         font-family: "Outfit", sans-serif;
         font-size: 28px;
         font-weight: 800;
@@ -736,199 +723,183 @@
         line-height: 1;
         letter-spacing: -0.02em;
       }
-      .cm-label {
+      .cml {
         font-size: 11px;
         color: var(--text2);
         margin-top: 3px;
       }
-      .case-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-      .pill {
-        font-size: 11px;
-        color: var(--text2);
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--border);
-        padding: 4px 11px;
-        border-radius: 100px;
-      }
-
-      /* CASE GRID */
-      .cases-grid {
+      .cgrid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        gap: 14px;
       }
-      .case-card-sm {
-        background: var(--bg2);
-        border: 1px solid var(--border);
+      .cc {
+        background: #fff;
+        border: 1.5px solid var(--border);
         border-radius: 16px;
         overflow: hidden;
         transition:
-          border-color 0.3s,
-          transform 0.2s;
+          border-color 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
       }
-      .case-card-sm:hover {
-        border-color: rgba(0, 217, 255, 0.15);
+      .cc:hover {
+        border-color: rgba(0, 87, 255, 0.2);
         transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
       }
-      .case-thumb {
-        height: 160px;
+      .cth {
+        height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 24px;
-        position: relative;
-        overflow: hidden;
+        padding: 20px;
       }
-      .case-thumb-inner {
-        background: var(--bg3);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+      .cthinn {
+        background: #fff;
+        border: 1px solid var(--border);
         border-radius: 10px;
         padding: 14px;
         width: 100%;
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
       }
-      .mini-bar {
-        height: 6px;
+      .mini {
+        height: 5px;
         border-radius: 3px;
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--bg4);
         margin-bottom: 5px;
       }
-      .mini-bar.a {
-        background: rgba(0, 217, 255, 0.2);
+      .mini.a {
+        background: rgba(0, 87, 255, 0.2);
         width: 70%;
       }
-      .mini-bar.b {
-        width: 85%;
+      .mini.b {
+        width: 88%;
       }
-      .mini-bar.c {
+      .mini.c {
         width: 55%;
       }
-      .case-body-sm {
-        padding: 20px;
+      .ccb {
+        padding: 18px;
       }
-      .case-tag-sm {
+      .cct {
+        font-family: "Outfit", sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 7px;
+        color: var(--text);
+        letter-spacing: -0.01em;
+      }
+      .ccd {
+        font-size: 12.5px;
+        color: var(--text2);
+        line-height: 1.6;
+        margin-bottom: 12px;
+      }
+      .ctag {
         font-size: 10px;
-        font-weight: 600;
+        font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         padding: 3px 10px;
         border-radius: 100px;
-        margin-bottom: 12px;
         display: inline-block;
-      }
-      .case-title-sm {
-        font-family: "Outfit", sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 8px;
-        letter-spacing: -0.01em;
-      }
-      .case-desc-sm {
-        font-size: 12px;
-        color: var(--text2);
-        line-height: 1.6;
-        margin-bottom: 14px;
+        margin-bottom: 10px;
       }
 
-      /* ─── DADOS & DASHBOARDS ─── */
+      /* DADOS */
       #dados {
-        background: var(--bg2);
+        background: var(--bg);
       }
-      .dados-grid {
+      .dg {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 64px;
+        gap: 72px;
         align-items: center;
       }
-      .dados-visual {
+      .dcards {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
       }
-      .dados-card {
-        background: var(--bg3);
+      .dc {
+        background: #fff;
         border: 1px solid var(--border);
         border-radius: 14px;
-        padding: 20px;
+        padding: 18px;
       }
-      .dados-card.wide {
+      .dc.wide {
         grid-column: span 2;
       }
-      .dados-card-title {
+      .dct {
         font-size: 10px;
-        font-weight: 600;
+        font-weight: 700;
         color: var(--text2);
         text-transform: uppercase;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.07em;
         margin-bottom: 12px;
       }
-      .sparkline {
+      .spark {
         display: flex;
         align-items: flex-end;
         gap: 3px;
         height: 44px;
       }
-      .sp {
+      .sk {
         flex: 1;
         border-radius: 2px 2px 0 0;
-        background: rgba(0, 217, 255, 0.12);
+        background: rgba(0, 87, 255, 0.1);
       }
-      .sp.hi {
-        background: rgba(0, 217, 255, 0.5);
+      .sk.hi {
+        background: var(--accent);
       }
-      .sp.md {
-        background: rgba(0, 217, 255, 0.28);
+      .sk.md {
+        background: rgba(0, 87, 255, 0.28);
       }
-
-      .gauge-row {
+      .gr {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         margin-bottom: 8px;
       }
-      .gauge-label {
+      .gl {
         font-size: 11px;
         color: var(--text2);
-        width: 100px;
+        width: 90px;
         flex-shrink: 0;
       }
-      .gauge-track {
+      .gt {
         flex: 1;
-        height: 6px;
+        height: 5px;
         border-radius: 3px;
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--bg4);
       }
-      .gauge-fill {
+      .gf {
         height: 100%;
         border-radius: 3px;
       }
-      .gauge-val {
+      .gv {
         font-family: "Outfit", sans-serif;
         font-size: 11px;
         font-weight: 600;
         color: var(--text);
-        width: 36px;
+        width: 34px;
         text-align: right;
         flex-shrink: 0;
       }
-
-      .dados-features {
+      .dfeats {
         display: flex;
         flex-direction: column;
-        gap: 28px;
+        gap: 26px;
       }
       .df {
         display: flex;
-        gap: 16px;
+        gap: 14px;
         align-items: flex-start;
       }
-      .df-icon {
-        width: 42px;
-        height: 42px;
+      .dfic {
+        width: 40px;
+        height: 40px;
         border-radius: 10px;
         flex-shrink: 0;
         display: flex;
@@ -936,86 +907,89 @@
         justify-content: center;
         font-size: 18px;
       }
-      .df-title {
+      .dft {
         font-family: "Outfit", sans-serif;
         font-size: 15px;
         font-weight: 700;
         margin-bottom: 4px;
+        color: var(--text);
         letter-spacing: -0.01em;
       }
-      .df-desc {
+      .dfd {
         font-size: 13px;
         color: var(--text2);
         line-height: 1.65;
       }
 
-      /* ─── IA ─── */
-      .ia-grid {
+      /* IA */
+      #ia {
+        background: #fff;
+        border-top: 1px solid var(--border);
+      }
+      .iag {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 64px;
+        gap: 72px;
         align-items: center;
       }
-      .ia-flow {
+      .iaflow {
         display: flex;
         flex-direction: column;
-        gap: 0;
       }
-      .ia-step {
-        background: var(--bg2);
-        border: 1px solid var(--border);
+      .ias {
+        background: var(--bg);
+        border: 1.5px solid var(--border);
         border-radius: 12px;
-        padding: 20px 24px;
-        position: relative;
-        transition: border-color 0.3s;
+        padding: 18px 22px;
+        transition: border-color 0.25s;
       }
-      .ia-step:hover {
-        border-color: rgba(0, 217, 255, 0.15);
+      .ias:hover {
+        border-color: rgba(0, 87, 255, 0.25);
       }
-      .ia-step-tag {
-        position: absolute;
-        top: 16px;
-        right: 16px;
+      .iastag {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 7px;
+      }
+      .iag2 {
         font-size: 10px;
-        font-weight: 600;
-        padding: 2px 9px;
+        font-weight: 700;
+        padding: 2px 10px;
         border-radius: 100px;
       }
-      .ia-step-label {
+      .ialbl {
         font-size: 10px;
-        font-weight: 600;
+        font-weight: 700;
         color: var(--text2);
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        margin-bottom: 6px;
+        letter-spacing: 0.07em;
       }
-      .ia-step-content {
+      .iact {
         font-size: 13px;
         color: var(--text2);
         line-height: 1.6;
       }
-      .ia-step-content strong {
+      .iact strong {
         color: var(--text);
       }
-      .ia-arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .iaarr {
+        text-align: center;
         padding: 6px 0;
         color: var(--text3);
         font-size: 18px;
       }
-      .ia-features {
+      .iafeats {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 22px;
       }
-      .ia-f {
+      .iaf {
         display: flex;
         gap: 14px;
         align-items: flex-start;
       }
-      .ia-f-icon {
+      .iafic {
         width: 38px;
         height: 38px;
         border-radius: 9px;
@@ -1024,132 +998,139 @@
         align-items: center;
         justify-content: center;
         font-size: 17px;
-        background: rgba(123, 63, 228, 0.1);
-        border: 1px solid rgba(123, 63, 228, 0.18);
+        background: rgba(123, 63, 228, 0.07);
+        border: 1px solid rgba(123, 63, 228, 0.14);
       }
-      .ia-f-title {
+      .iaft {
         font-family: "Outfit", sans-serif;
         font-size: 14px;
         font-weight: 700;
         margin-bottom: 3px;
-        letter-spacing: -0.01em;
+        color: var(--text);
       }
-      .ia-f-desc {
-        font-size: 12px;
+      .iafd {
+        font-size: 12.5px;
         color: var(--text2);
         line-height: 1.65;
       }
 
-      /* ─── CONTATO ─── */
-      .contact-grid {
+      /* CONTATO */
+      #contato {
+        background: var(--bg);
+      }
+      .ctg {
         display: grid;
         grid-template-columns: 1fr 1.2fr;
         gap: 80px;
         align-items: start;
       }
-      .contact-info .lead {
+      .ctinfo .lead {
         margin-bottom: 28px;
       }
-      .contact-item {
+      .ctitem {
         display: flex;
         align-items: center;
         gap: 12px;
-        margin-bottom: 14px;
         font-size: 13px;
         color: var(--text2);
+        margin-bottom: 14px;
       }
-      .contact-icon {
+      .ctic {
         width: 34px;
         height: 34px;
         border-radius: 8px;
-        flex-shrink: 0;
-        background: rgba(0, 217, 255, 0.06);
-        border: 1px solid rgba(0, 217, 255, 0.12);
+        background: #fff;
+        border: 1px solid var(--border);
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 15px;
+        flex-shrink: 0;
       }
-      .form-card {
-        background: var(--bg2);
+      .fcard {
+        background: #fff;
         border: 1px solid var(--border);
         border-radius: 20px;
         padding: clamp(28px, 3vw, 44px);
+        box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
       }
-      .form-row {
+      .frow {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 14px;
+        gap: 12px;
       }
       .fg {
-        margin-bottom: 16px;
+        margin-bottom: 14px;
       }
       .fl {
         display: block;
         font-size: 12px;
-        font-weight: 500;
-        color: var(--text2);
+        font-weight: 600;
+        color: var(--text);
         margin-bottom: 6px;
       }
-      .fi,
-      .fs,
-      .ft {
+      input[type="text"],
+      input[type="email"],
+      select,
+      textarea {
         width: 100%;
-        background: var(--bg3);
-        border: 1px solid var(--border);
+        background: var(--bg);
+        border: 1.5px solid var(--border);
         border-radius: 8px;
         padding: 11px 14px;
         font-family: "Plus Jakarta Sans", sans-serif;
         font-size: 13px;
         color: var(--text);
         outline: none;
-        transition: border-color 0.2s;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
       }
-      .fi:focus,
-      .fs:focus,
-      .ft:focus {
-        border-color: rgba(0, 217, 255, 0.35);
-        box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.05);
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(0, 87, 255, 0.08);
       }
-      .ft {
+      textarea {
         resize: vertical;
         min-height: 90px;
       }
-      .fs {
+      select {
         appearance: none;
       }
       .fsub {
         width: 100%;
-        padding: 13px;
+        padding: 14px;
         background: var(--accent);
-        color: #04060f;
+        color: #fff;
         font-family: "Outfit", sans-serif;
         font-size: 14px;
         font-weight: 700;
         border: none;
-        border-radius: 8px;
+        border-radius: 9px;
         cursor: pointer;
         transition:
           opacity 0.2s,
           transform 0.2s;
-        letter-spacing: 0.01em;
+        box-shadow: 0 4px 16px rgba(0, 87, 255, 0.3);
       }
       .fsub:hover {
-        opacity: 0.88;
+        opacity: 0.9;
         transform: translateY(-1px);
       }
 
-      /* ─── FOOTER ─── */
+      /* FOOTER */
       footer {
-        position: relative;
-        z-index: 1;
         border-top: 1px solid var(--border);
-        padding: 32px var(--pad);
+        padding: 28px var(--pad);
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 12px;
+        background: #fff;
       }
       .fc {
         font-size: 12px;
@@ -1159,288 +1140,297 @@
         color: var(--text2);
       }
 
-      /* ─── ANIMATIONS ─── */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .fi-up {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.6s ease,
-          transform 0.6s ease;
-      }
-      .fi-up.vis {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* ─── RESPONSIVE ─── */
+      /* RESPONSIVE */
       @media (max-width: 1100px) {
-        .hero-inner,
-        .services-intro,
-        .dados-grid,
-        .ia-grid,
-        .contact-grid {
+        .hi,
+        .dg,
+        .iag,
+        .ctg,
+        .si {
           grid-template-columns: 1fr;
         }
-        .hero-right {
+        .hright {
           display: none;
         }
-        .cases-grid {
+        .cgrid,
+        .segg {
           grid-template-columns: 1fr 1fr;
         }
-        .case-hero {
+        .cmain {
           grid-template-columns: 1fr;
         }
-        .case-visual-hero {
-          min-height: 240px;
+        .cvis {
+          min-height: 220px;
         }
-        .dados-visual {
+        .dcards {
           grid-template-columns: 1fr;
         }
-        .dados-card.wide {
+        .dc.wide {
           grid-column: span 1;
         }
       }
       @media (max-width: 768px) {
-        .nav-links {
+        .nl {
           display: none;
         }
-        .services-grid {
+        .sgrid {
           grid-template-columns: 1fr;
         }
-        .cases-grid {
+        .cgrid,
+        .segg {
           grid-template-columns: 1fr;
         }
-        .form-row {
+        .frow {
           grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
   <body>
-    <!-- NAV -->
     <nav>
-      <a href="#" class="logo">
-        <span class="logo-badge">GM</span>
-        Soluções Digitais
-      </a>
-      <ul class="nav-links">
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#segmentos">Segmentos</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#dados">Dados & BI</a></li>
-        <li><a href="#ia">IA</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-      <a href="#contato" class="nav-cta">Solicitar proposta</a>
+      <div class="ni">
+        <a href="#" class="logo">
+          <span class="logo-sq">GM</span>
+          Soluções Digitais
+        </a>
+        <ul class="nl">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#segmentos">Segmentos</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#dados">Dados & BI</a></li>
+          <li><a href="#ia">IA</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="#contato" class="nc">Solicitar proposta</a>
+      </div>
     </nav>
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="hero-orb hero-orb-3"></div>
-      <div class="container">
-        <div class="hero-inner">
-          <div class="hero-left">
-            <div class="hero-tag">
-              <span class="hero-tag-dot"></span>Tecnologia para empresas e
-              governo
+      <div class="hblob hb1"></div>
+      <div class="hblob hb2"></div>
+      <div class="hblob hb3"></div>
+      <div class="hi wrap">
+        <div>
+          <div class="htag">
+            <span class="hdot"></span>Tecnologia para empresas e governo
+          </div>
+          <h1>
+            Sistemas que<br />transformam<br /><span class="h1g"
+              >negócios.</span
+            >
+          </h1>
+          <p class="hp">
+            Desenvolvemos sistemas sob medida para empresas privadas e órgãos
+            públicos — do atendimento ao cliente à inteligência de dados, com
+            integração de IA.
+          </p>
+          <div class="hbtns">
+            <a href="#contato" class="btn-m"
+              >Solicitar proposta
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M2 7h10M8 3l4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="#portfolio" class="btn-s">Ver portfólio</a>
+          </div>
+          <div class="hstats">
+            <div>
+              <div class="sn">5+</div>
+              <div class="sl">Módulos entregues</div>
             </div>
-            <h1>
-              Sistemas que<br />transformam<br /><span class="h1-grad"
-                >negócios.</span
-              >
-            </h1>
-            <p class="hero-desc">
-              Desenvolvemos sistemas sob medida para empresas privadas e órgãos
-              públicos — do atendimento ao cliente à inteligência de dados, com
-              integração de IA.
-            </p>
-            <div class="hero-btns">
-              <a href="#contato" class="btn-p"
-                >Solicitar proposta
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M2 7h10M8 3l4 4-4 4"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  /></svg
-              ></a>
-              <a href="#portfolio" class="btn-s">Ver portfólio</a>
+            <div>
+              <div class="sn">100%</div>
+              <div class="sl">Sob medida</div>
             </div>
-            <div class="hero-stats">
-              <div>
-                <div class="hero-stat-n">5+</div>
-                <div class="hero-stat-l">Módulos entregues</div>
-              </div>
-              <div>
-                <div class="hero-stat-n">100%</div>
-                <div class="hero-stat-l">Sob demanda</div>
-              </div>
-              <div>
-                <div class="hero-stat-n">MG</div>
-                <div class="hero-stat-l">Baseado em BH</div>
-              </div>
+            <div>
+              <div class="sn">BH</div>
+              <div class="sl">Baseado em MG</div>
             </div>
           </div>
-
-          <!-- DASHBOARD MOCKUP -->
-          <div class="hero-right">
-            <div class="dash-frame">
-              <div class="dash-topbar">
-                <div class="dash-dot" style="background: #ff5f57"></div>
-                <div class="dash-dot" style="background: #febc2e"></div>
-                <div class="dash-dot" style="background: #28c840"></div>
-                <div class="dash-title">Painel Municipal — Ibirité</div>
+        </div>
+        <div class="hright">
+          <div class="dash">
+            <div class="dbar">
+              <div class="dot" style="background: #ff5f57"></div>
+              <div class="dot" style="background: #febc2e"></div>
+              <div class="dot" style="background: #28c840"></div>
+              <div class="dtxt">Painel Gerencial — Ibirité</div>
+            </div>
+            <div class="dbody">
+              <div class="kpis">
+                <div class="kpi">
+                  <div class="kpi-l">Protocolos</div>
+                  <div class="kpi-v" style="color: var(--accent)">1.248</div>
+                  <div class="kpi-d up">↑ 12% mês</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi-l">Resolvidos</div>
+                  <div class="kpi-v" style="color: var(--green)">94%</div>
+                  <div class="kpi-d up">↑ 3% vs ant.</div>
+                </div>
+                <div class="kpi">
+                  <div class="kpi-l">Contratos</div>
+                  <div class="kpi-v" style="color: var(--amber)">47</div>
+                  <div class="kpi-d neu">8 a vencer</div>
+                </div>
               </div>
-              <div class="dash-body">
-                <div class="dash-kpis">
-                  <div class="kpi">
-                    <div class="kpi-label">Protocolos</div>
-                    <div class="kpi-val" style="color: var(--accent)">
-                      1.248
-                    </div>
-                    <div class="kpi-delta up">↑ 12% este mês</div>
-                  </div>
-                  <div class="kpi">
-                    <div class="kpi-label">Resolvidos</div>
-                    <div class="kpi-val" style="color: var(--green)">94%</div>
-                    <div class="kpi-delta up">↑ 3% vs anterior</div>
-                  </div>
-                  <div class="kpi">
-                    <div class="kpi-label">Contratos</div>
-                    <div class="kpi-val" style="color: var(--amber)">47</div>
-                    <div class="kpi-delta neu">8 vencem em 30d</div>
+              <div class="dcharts">
+                <div class="cbox">
+                  <div class="clbl">Demandas por mês</div>
+                  <div class="bars">
+                    <div class="b" style="height: 40%"></div>
+                    <div class="b" style="height: 55%"></div>
+                    <div class="b" style="height: 48%"></div>
+                    <div class="b" style="height: 70%"></div>
+                    <div class="b" style="height: 62%"></div>
+                    <div class="b" style="height: 82%"></div>
+                    <div class="b hi" style="height: 95%"></div>
                   </div>
                 </div>
-                <div class="dash-charts">
-                  <div class="chart-box">
-                    <div class="chart-label">Demandas por mês</div>
-                    <div class="bars">
-                      <div class="bar" style="height: 40%"></div>
-                      <div class="bar" style="height: 55%"></div>
-                      <div class="bar" style="height: 48%"></div>
-                      <div class="bar" style="height: 70%"></div>
-                      <div class="bar" style="height: 62%"></div>
-                      <div class="bar" style="height: 85%"></div>
-                      <div class="bar hi" style="height: 95%"></div>
-                    </div>
-                  </div>
-                  <div class="chart-box">
-                    <div class="chart-label">Por secretaria</div>
-                    <svg
-                      width="70"
-                      height="70"
-                      viewBox="0 0 70 70"
-                      style="display: block; margin: 0 auto 6px"
+                <div class="cbox">
+                  <div class="clbl">Por setor</div>
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 64 64"
+                    style="display: block; margin: 0 auto 5px"
+                  >
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="26"
+                      fill="none"
+                      stroke="var(--bg4)"
+                      stroke-width="9"
+                    />
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="26"
+                      fill="none"
+                      stroke="var(--accent)"
+                      stroke-width="9"
+                      stroke-dasharray="65 98"
+                      stroke-dashoffset="0"
+                      stroke-linecap="round"
+                      transform="rotate(-90 32 32)"
+                    />
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="26"
+                      fill="none"
+                      stroke="var(--accent2)"
+                      stroke-width="9"
+                      stroke-dasharray="39 124"
+                      stroke-dashoffset="-65"
+                      stroke-linecap="round"
+                      transform="rotate(-90 32 32)"
+                    />
+                    <circle
+                      cx="32"
+                      cy="32"
+                      r="26"
+                      fill="none"
+                      stroke="var(--accent3)"
+                      stroke-width="9"
+                      stroke-dasharray="26 137"
+                      stroke-dashoffset="-104"
+                      stroke-linecap="round"
+                      transform="rotate(-90 32 32)"
+                    />
+                  </svg>
+                  <div style="display: flex; flex-direction: column; gap: 3px">
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        font-size: 10px;
+                        color: var(--text2);
+                      "
                     >
-                      <circle
-                        cx="35"
-                        cy="35"
-                        r="28"
-                        fill="none"
-                        stroke="rgba(255,255,255,.05)"
-                        stroke-width="10"
-                      />
-                      <circle
-                        cx="35"
-                        cy="35"
-                        r="28"
-                        fill="none"
-                        stroke="var(--accent)"
-                        stroke-width="10"
-                        stroke-dasharray="70 106"
-                        stroke-dashoffset="0"
-                        stroke-linecap="round"
-                        transform="rotate(-90 35 35)"
-                      />
-                      <circle
-                        cx="35"
-                        cy="35"
-                        r="28"
-                        fill="none"
-                        stroke="var(--accent2)"
-                        stroke-width="10"
-                        stroke-dasharray="42 134"
-                        stroke-dashoffset="-70"
-                        stroke-linecap="round"
-                        transform="rotate(-90 35 35)"
-                      />
-                      <circle
-                        cx="35"
-                        cy="35"
-                        r="28"
-                        fill="none"
-                        stroke="var(--accent3)"
-                        stroke-width="10"
-                        stroke-dasharray="28 148"
-                        stroke-dashoffset="-112"
-                        stroke-linecap="round"
-                        transform="rotate(-90 35 35)"
-                      />
-                    </svg>
-                    <div class="donut-labels" style="margin: 0">
-                      <div class="dl">
-                        <div
-                          class="dl-dot"
-                          style="background: var(--accent)"
-                        ></div>
-                        Obras 40%
-                      </div>
-                      <div class="dl">
-                        <div
-                          class="dl-dot"
-                          style="background: var(--accent2)"
-                        ></div>
-                        Saúde 24%
-                      </div>
-                      <div class="dl">
-                        <div
-                          class="dl-dot"
-                          style="background: var(--accent3)"
-                        ></div>
-                        Outros 36%
-                      </div>
+                      <div
+                        style="
+                          width: 6px;
+                          height: 6px;
+                          border-radius: 50%;
+                          background: var(--accent);
+                        "
+                      ></div>
+                      Obras 40%
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        font-size: 10px;
+                        color: var(--text2);
+                      "
+                    >
+                      <div
+                        style="
+                          width: 6px;
+                          height: 6px;
+                          border-radius: 50%;
+                          background: var(--accent2);
+                        "
+                      ></div>
+                      Saúde 24%
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        font-size: 10px;
+                        color: var(--text2);
+                      "
+                    >
+                      <div
+                        style="
+                          width: 6px;
+                          height: 6px;
+                          border-radius: 50%;
+                          background: var(--accent3);
+                        "
+                      ></div>
+                      Outros 36%
                     </div>
                   </div>
                 </div>
-                <div class="dash-table">
-                  <div class="dt-header">
-                    <div>Protocolo</div>
-                    <div>Secretaria</div>
-                    <div>Prazo</div>
-                    <div>Status</div>
-                  </div>
-                  <div class="dt-row">
-                    <div class="dt-name">#2841 — Tapa-buraco</div>
-                    <div>Obras</div>
-                    <div>2d</div>
-                    <div><span class="status-pill s-ok">Ativo</span></div>
-                  </div>
-                  <div class="dt-row">
-                    <div class="dt-name">#2840 — Poda de árvore</div>
-                    <div>Meio Amb.</div>
-                    <div>5d</div>
-                    <div><span class="status-pill s-warn">Pendente</span></div>
-                  </div>
-                  <div class="dt-row">
-                    <div class="dt-name">#2838 — Iluminação</div>
-                    <div>Infra</div>
-                    <div>1d</div>
-                    <div><span class="status-pill s-err">Atrasado</span></div>
-                  </div>
+              </div>
+              <div class="dtab">
+                <div class="dth">
+                  <div>Protocolo</div>
+                  <div>Setor</div>
+                  <div>Prazo</div>
+                  <div>Status</div>
+                </div>
+                <div class="dtr">
+                  <div class="dn">#2841 — Tapa-buraco</div>
+                  <div>Obras</div>
+                  <div>2d</div>
+                  <div><span class="sp sok">Ativo</span></div>
+                </div>
+                <div class="dtr">
+                  <div class="dn">#2840 — Poda árvore</div>
+                  <div>Meio Amb.</div>
+                  <div>5d</div>
+                  <div><span class="sp swarn">Pendente</span></div>
+                </div>
+                <div class="dtr">
+                  <div class="dn">#2838 — Iluminação</div>
+                  <div>Infra</div>
+                  <div>1d</div>
+                  <div><span class="sp serr">Atrasado</span></div>
                 </div>
               </div>
             </div>
@@ -1451,87 +1441,86 @@
 
     <!-- SERVIÇOS -->
     <section id="servicos">
-      <div class="container">
-        <div class="services-intro">
+      <div class="wrap">
+        <div class="si fi">
           <div>
-            <div class="eyebrow fi-up">Serviços</div>
-            <h2 class="fi-up">Soluções para qualquer segmento</h2>
+            <div class="eyebrow">Serviços</div>
+            <h2>Soluções para qualquer segmento</h2>
           </div>
-          <p class="lead fi-up">
-            Do setor público ao privado — desenvolvemos sistemas completos sob
-            medida, do levantamento de requisitos ao suporte contínuo
-            pós-implantação.
+          <p class="lead">
+            Do setor público ao privado — sistemas completos sob medida, do
+            levantamento de requisitos ao suporte pós-implantação.
           </p>
         </div>
-        <div class="services-grid fi-up">
+        <div class="sgrid fi">
           <div class="svc">
-            <div class="svc-icon">🏛️</div>
-            <div class="svc-title">Atendimento ao Cidadão</div>
-            <p class="svc-desc">
+            <div class="sic">🏛️</div>
+            <div class="st">Atendimento ao Cidadão</div>
+            <p class="sd">
               Portais de protocolo, ouvidoria digital e acompanhamento de
               demandas. Conformidade com LAI e prazos legais.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">💼</div>
-            <div class="svc-title">CRM e Atendimento Privado</div>
-            <p class="svc-desc">
-              Sistemas de gestão de clientes, chamados, contratos e histórico de
-              relacionamento para empresas de qualquer porte.
+            <div class="sic">💼</div>
+            <div class="st">CRM e Gestão de Clientes</div>
+            <p class="sd">
+              Sistemas de relacionamento, chamados, histórico e contratos para
+              empresas de qualquer porte.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">📋</div>
-            <div class="svc-title">Gestão de Contratos</div>
-            <p class="svc-desc">
+            <div class="sic">📋</div>
+            <div class="st">Gestão de Contratos</div>
+            <p class="sd">
               Ciclo de vida completo — vigência, aditivos, alertas de vencimento
               e painel por equipe ou secretaria.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">📦</div>
-            <div class="svc-title">Sistema de Estoque</div>
-            <p class="svc-desc">
+            <div class="sic">📦</div>
+            <div class="st">Sistema de Estoque</div>
+            <p class="sd">
               Controle de entrada e saída, estoque mínimo, requisições por setor
-              e relatórios de consumo. Público ou privado.
+              e relatórios de consumo.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">👥</div>
-            <div class="svc-title">RH e Processos Seletivos</div>
-            <p class="svc-desc">
-              Inscrições online, classificação automática de candidatos,
-              publicação de resultados e controle de convocações.
+            <div class="sic">👥</div>
+            <div class="st">RH e Processos Seletivos</div>
+            <p class="sd">
+              Inscrições online, classificação de candidatos, publicação de
+              resultados e controle de convocações.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">📊</div>
-            <div class="svc-title">Dados & Dashboards</div>
-            <p class="svc-desc">
-              Painéis gerenciais com KPIs em tempo real, cruzamento de dados
-              entre módulos e relatórios executivos.
+            <div class="sic">📊</div>
+            <div class="st">Dados & Dashboards</div>
+            <p class="sd">
+              Painéis com KPIs em tempo real, cruzamento de dados entre módulos
+              e relatórios executivos.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">🔍</div>
-            <div class="svc-title">Fiscalização e Vistoria</div>
-            <p class="svc-desc">
+            <div class="sic">🔍</div>
+            <div class="st">Fiscalização e Vistoria</div>
+            <p class="sd">
               Módulos para equipes de campo com fotos georreferenciadas,
-              registro de ocorrências e relatórios automáticos.
+              ocorrências e relatórios automáticos.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">🤖</div>
-            <div class="svc-title">Integração com IA</div>
-            <p class="svc-desc">
+            <div class="sic">🤖</div>
+            <div class="st">Integração com IA</div>
+            <p class="sd">
               Automação de triagem, chatbots, extração de dados e análise
-              preditiva integrados aos seus sistemas existentes.
+              preditiva integrados aos seus sistemas.
             </p>
           </div>
           <div class="svc">
-            <div class="svc-icon">🔗</div>
-            <div class="svc-title">APIs e Integrações</div>
-            <p class="svc-desc">
+            <div class="sic">🔗</div>
+            <div class="st">APIs e Integrações</div>
+            <p class="sd">
               Conexão entre sistemas legados, ERPs, plataformas externas e
               serviços de terceiros via APIs REST.
             </p>
@@ -1541,163 +1530,68 @@
     </section>
 
     <!-- SEGMENTOS -->
-    <section id="segmentos" style="padding: clamp(48px, 6vw, 80px) 0">
-      <div class="container">
+    <section id="segmentos">
+      <div class="wrap">
         <div style="text-align: center; margin-bottom: 48px">
-          <div class="eyebrow fi-up" style="justify-content: center">
+          <div class="eyebrow fi" style="justify-content: center">
             Quem atendemos
           </div>
-          <h2 class="fi-up">Setor público e privado</h2>
-          <p class="lead fi-up" style="margin: 0 auto; text-align: center">
-            Experiência comprovada no setor público, com a agilidade e
-            flexibilidade que o mercado privado exige.
+          <h2 class="fi">Setor público e privado</h2>
+          <p
+            class="lead fi"
+            style="margin: 0 auto; text-align: center; max-width: 480px"
+          >
+            Experiência comprovada no setor público, com a agilidade que o
+            mercado privado exige.
           </p>
         </div>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-          "
-          class="fi-up"
-        >
-          <div
-            style="
-              background: var(--bg2);
-              border: 1px solid var(--border);
-              border-radius: 16px;
-              padding: 28px;
-              transition: border-color 0.3s;
-            "
-            onmouseover="this.style.borderColor = 'rgba(0,217,255,.2)'"
-            onmouseout="this.style.borderColor = 'rgba(255,255,255,.06)'"
-          >
-            <div style="font-size: 28px; margin-bottom: 14px">🏛️</div>
-            <div
-              style="
-                font-family: &quot;Outfit&quot;, sans-serif;
-                font-size: 16px;
-                font-weight: 700;
-                margin-bottom: 8px;
-                letter-spacing: -0.01em;
-              "
-            >
-              Prefeituras e órgãos públicos
-            </div>
-            <p style="font-size: 13px; color: var(--text2); line-height: 1.65">
-              Sistemas de gestão municipal, atendimento ao cidadão, vistoria
-              urbana e transparência pública.
+        <div class="segg fi">
+          <div class="seg">
+            <div class="seg-em">🏛️</div>
+            <div class="seg-t">Prefeituras e órgãos públicos</div>
+            <p class="seg-d">
+              Gestão municipal, atendimento ao cidadão, vistoria urbana e
+              transparência pública.
             </p>
-            <div
-              style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px"
-            >
+            <div style="display: flex; flex-wrap: wrap; gap: 5px">
               <span class="pill">Municípios</span
               ><span class="pill">Autarquias</span
               ><span class="pill">Câmaras</span>
             </div>
           </div>
-
-          <div
-            style="
-              background: var(--bg2);
-              border: 1px solid var(--border);
-              border-radius: 16px;
-              padding: 28px;
-              transition: border-color 0.3s;
-            "
-            onmouseover="this.style.borderColor = 'rgba(0,87,255,.2)'"
-            onmouseout="this.style.borderColor = 'rgba(255,255,255,.06)'"
-          >
-            <div style="font-size: 28px; margin-bottom: 14px">🏢</div>
-            <div
-              style="
-                font-family: &quot;Outfit&quot;, sans-serif;
-                font-size: 16px;
-                font-weight: 700;
-                margin-bottom: 8px;
-                letter-spacing: -0.01em;
-              "
-            >
-              Empresas de médio porte
-            </div>
-            <p style="font-size: 13px; color: var(--text2); line-height: 1.65">
+          <div class="seg">
+            <div class="seg-em">🏢</div>
+            <div class="seg-t">Empresas de médio porte</div>
+            <p class="seg-d">
               Sistemas internos, CRM, controle de estoque, gestão de contratos e
               dashboards gerenciais.
             </p>
-            <div
-              style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px"
-            >
+            <div style="display: flex; flex-wrap: wrap; gap: 5px">
               <span class="pill">Indústria</span
               ><span class="pill">Serviços</span
               ><span class="pill">Comércio</span>
             </div>
           </div>
-
-          <div
-            style="
-              background: var(--bg2);
-              border: 1px solid var(--border);
-              border-radius: 16px;
-              padding: 28px;
-              transition: border-color 0.3s;
-            "
-            onmouseover="this.style.borderColor = 'rgba(123,63,228,.2)'"
-            onmouseout="this.style.borderColor = 'rgba(255,255,255,.06)'"
-          >
-            <div style="font-size: 28px; margin-bottom: 14px">🚀</div>
-            <div
-              style="
-                font-family: &quot;Outfit&quot;, sans-serif;
-                font-size: 16px;
-                font-weight: 700;
-                margin-bottom: 8px;
-                letter-spacing: -0.01em;
-              "
-            >
-              Startups e scale-ups
-            </div>
-            <p style="font-size: 13px; color: var(--text2); line-height: 1.65">
+          <div class="seg">
+            <div class="seg-em">🚀</div>
+            <div class="seg-t">Startups e scale-ups</div>
+            <p class="seg-d">
               Desenvolvimento ágil de MVPs, integrações com IA e APIs, e
-              evolução contínua do produto.
+              evolução contínua do produto digital.
             </p>
-            <div
-              style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px"
-            >
+            <div style="display: flex; flex-wrap: wrap; gap: 5px">
               <span class="pill">MVPs</span><span class="pill">SaaS</span
               ><span class="pill">APIs</span>
             </div>
           </div>
-
-          <div
-            style="
-              background: var(--bg2);
-              border: 1px solid var(--border);
-              border-radius: 16px;
-              padding: 28px;
-              transition: border-color 0.3s;
-            "
-            onmouseover="this.style.borderColor = 'rgba(0,229,160,.2)'"
-            onmouseout="this.style.borderColor = 'rgba(255,255,255,.06)'"
-          >
-            <div style="font-size: 28px; margin-bottom: 14px">🏗️</div>
-            <div
-              style="
-                font-family: &quot;Outfit&quot;, sans-serif;
-                font-size: 16px;
-                font-weight: 700;
-                margin-bottom: 8px;
-                letter-spacing: -0.01em;
-              "
-            >
-              Engenharia e construção
-            </div>
-            <p style="font-size: 13px; color: var(--text2); line-height: 1.65">
+          <div class="seg">
+            <div class="seg-em">🏗️</div>
+            <div class="seg-t">Engenharia e construção</div>
+            <p class="seg-d">
               Gestão de contratos, cronogramas, vistorias técnicas e relatórios
-              de obra com georreferenciamento.
+              de obra georreferenciados.
             </p>
-            <div
-              style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px"
-            >
+            <div style="display: flex; flex-wrap: wrap; gap: 5px">
               <span class="pill">Construtoras</span
               ><span class="pill">Consultorias</span>
             </div>
@@ -1708,88 +1602,85 @@
 
     <!-- PORTFOLIO -->
     <section id="portfolio">
-      <div class="container">
-        <div class="portfolio-header">
+      <div class="wrap">
+        <div class="ph">
           <div>
-            <div class="eyebrow fi-up">Portfólio</div>
-            <h2 class="fi-up">Sistemas em produção</h2>
+            <div class="eyebrow fi">Portfólio</div>
+            <h2 class="fi">Sistemas em produção</h2>
           </div>
-          <p class="lead fi-up">
-            Sistemas funcionando em municípios reais, construídos com tecnologia
-            moderna e foco em usabilidade.
+          <p class="lead fi">
+            Sistemas funcionando em clientes reais, com tecnologia moderna e
+            foco em usabilidade.
           </p>
         </div>
-
-        <!-- CASE PRINCIPAL -->
-        <div class="case-hero fi-up">
-          <div class="case-visual-hero">
-            <div class="dash-frame" style="max-width: 360px">
-              <div class="dash-topbar">
-                <div class="dash-dot" style="background: #ff5f57"></div>
-                <div class="dash-dot" style="background: #febc2e"></div>
-                <div class="dash-dot" style="background: #28c840"></div>
-                <div class="dash-title">Sistemas PMI — Ibirité</div>
+        <div class="cmain fi">
+          <div class="cvis">
+            <div class="dash" style="max-width: 340px; width: 100%">
+              <div class="dbar">
+                <div class="dot" style="background: #ff5f57"></div>
+                <div class="dot" style="background: #febc2e"></div>
+                <div class="dot" style="background: #28c840"></div>
+                <div class="dtxt">Sistemas PMI — Ibirité</div>
               </div>
-              <div class="dash-body">
-                <div class="dash-kpis" style="grid-template-columns: 1fr 1fr">
+              <div class="dbody">
+                <div class="kpis" style="grid-template-columns: 1fr 1fr">
                   <div class="kpi">
-                    <div class="kpi-label">Usuários</div>
-                    <div class="kpi-val" style="color: var(--accent)">86</div>
+                    <div class="kpi-l">Usuários</div>
+                    <div class="kpi-v" style="color: var(--accent)">86</div>
                   </div>
                   <div class="kpi">
-                    <div class="kpi-label">Módulos</div>
-                    <div class="kpi-val" style="color: var(--green)">5+</div>
+                    <div class="kpi-l">Módulos</div>
+                    <div class="kpi-v" style="color: var(--green)">5+</div>
                   </div>
                 </div>
-                <div class="dash-table">
-                  <div class="dt-header">
+                <div class="dtab">
+                  <div class="dth">
                     <div>Módulo</div>
                     <div>Status</div>
                   </div>
-                  <div class="dt-row">
-                    <div class="dt-name">Vistoria Urbana</div>
-                    <div><span class="status-pill s-ok">Ativo</span></div>
+                  <div class="dtr">
+                    <div class="dn">Vistoria Urbana</div>
+                    <div><span class="sp sok">Ativo</span></div>
                   </div>
-                  <div class="dt-row">
-                    <div class="dt-name">Atend. Cidadão</div>
-                    <div><span class="status-pill s-ok">Ativo</span></div>
+                  <div class="dtr">
+                    <div class="dn">Atend. Cidadão</div>
+                    <div><span class="sp sok">Ativo</span></div>
                   </div>
-                  <div class="dt-row">
-                    <div class="dt-name">Gestão Contratos</div>
-                    <div><span class="status-pill s-ok">Ativo</span></div>
+                  <div class="dtr">
+                    <div class="dn">Gestão Contratos</div>
+                    <div><span class="sp sok">Ativo</span></div>
                   </div>
-                  <div class="dt-row">
-                    <div class="dt-name">Proc. Seletivos</div>
-                    <div><span class="status-pill s-ok">Ativo</span></div>
+                  <div class="dtr">
+                    <div class="dn">Proc. Seletivos</div>
+                    <div><span class="sp sok">Ativo</span></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="case-body">
-            <span class="case-eyebrow">Case principal</span>
-            <div class="case-title">Prefeitura Municipal de Ibirité</div>
-            <p class="case-desc">
-              Plataforma integrada de gestão municipal com múltiplos módulos em
-              produção: vistoria urbana com georreferenciamento e captura de
-              fotos com GPS e timestamp, controle de ocorrências, gestão de
+          <div class="cbody">
+            <span class="cey">Case principal</span>
+            <div class="ct2">Prefeitura Municipal de Ibirité</div>
+            <p class="cdesc">
+              Plataforma integrada com múltiplos módulos em produção: vistoria
+              urbana com georreferenciamento, registro de ocorrências, gestão de
               contratos, processos seletivos e portal de atendimento ao cidadão.
             </p>
-            <div class="case-metrics">
+            <div class="cmets">
               <div>
-                <div class="cm-val">5+</div>
-                <div class="cm-label">Módulos ativos</div>
+                <div class="cmv">5+</div>
+                <div class="cml">Módulos ativos</div>
               </div>
               <div>
-                <div class="cm-val">Multi</div>
-                <div class="cm-label">Secretarias</div>
+                <div class="cmv">Multi</div>
+                <div class="cml">Secretarias</div>
               </div>
               <div>
-                <div class="cm-val">Real</div>
-                <div class="cm-label">Em produção</div>
+                <div class="cmv">Real</div>
+                <div class="cml">Em produção</div>
               </div>
             </div>
-            <div class="case-pills">
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
               <span class="pill">NestJS</span><span class="pill">React</span
               ><span class="pill">TypeScript</span>
               <span class="pill">SQL Server</span
@@ -1797,44 +1688,28 @@
             </div>
           </div>
         </div>
-
-        <!-- CASES GRID -->
-        <div class="cases-grid fi-up">
-          <!-- Gestão de Contratos -->
-          <div class="case-card-sm">
+        <div class="cgrid fi">
+          <div class="cc">
             <div
-              class="case-thumb"
-              style="background: linear-gradient(135deg, #071828, #040f1e)"
+              class="cth"
+              style="background: linear-gradient(135deg, #eef2ff, #e0e7ff)"
             >
-              <div class="case-thumb-inner">
-                <div style="display: flex; gap: 6px; margin-bottom: 8px">
+              <div class="cthinn">
+                <div style="display: flex; gap: 5px; margin-bottom: 8px">
                   <div
                     style="
                       flex: 1;
-                      height: 20px;
+                      height: 18px;
                       border-radius: 5px;
-                      background: rgba(0, 217, 255, 0.08);
-                      border: 1px solid rgba(0, 217, 255, 0.15);
-                      display: flex;
-                      align-items: center;
-                      padding: 0 8px;
+                      background: var(--bg4);
                     "
-                  >
-                    <div
-                      style="
-                        height: 4px;
-                        width: 60%;
-                        border-radius: 2px;
-                        background: rgba(0, 217, 255, 0.3);
-                      "
-                    ></div>
-                  </div>
+                  ></div>
                   <div
                     style="
-                      width: 40px;
-                      height: 20px;
+                      width: 36px;
+                      height: 18px;
                       border-radius: 5px;
-                      background: rgba(0, 87, 255, 0.2);
+                      background: rgba(0, 87, 255, 0.12);
                     "
                   ></div>
                 </div>
@@ -1843,127 +1718,105 @@
                     display: flex;
                     align-items: center;
                     gap: 5px;
-                    margin-bottom: 5px;
+                    margin-bottom: 4px;
                   "
                 >
                   <div
                     style="
-                      width: 6px;
-                      height: 6px;
+                      width: 5px;
+                      height: 5px;
                       border-radius: 50%;
                       background: var(--green);
+                      flex-shrink: 0;
                     "
                   ></div>
-                  <div class="mini-bar b"></div>
-                  <div
-                    style="
-                      font-size: 9px;
-                      color: rgba(0, 229, 160, 0.7);
-                      white-space: nowrap;
-                    "
-                  >
-                    Vigente
-                  </div>
+                  <div class="mini b"></div>
+                  <div style="font-size: 9px; color: var(--green)">Vigente</div>
                 </div>
                 <div
                   style="
                     display: flex;
                     align-items: center;
                     gap: 5px;
-                    margin-bottom: 5px;
+                    margin-bottom: 4px;
                   "
                 >
                   <div
                     style="
-                      width: 6px;
-                      height: 6px;
+                      width: 5px;
+                      height: 5px;
                       border-radius: 50%;
                       background: var(--amber);
+                      flex-shrink: 0;
                     "
                   ></div>
-                  <div class="mini-bar c"></div>
-                  <div
-                    style="
-                      font-size: 9px;
-                      color: rgba(245, 166, 35, 0.7);
-                      white-space: nowrap;
-                    "
-                  >
+                  <div class="mini c"></div>
+                  <div style="font-size: 9px; color: var(--amber)">
                     A vencer
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 5px">
                   <div
                     style="
-                      width: 6px;
-                      height: 6px;
+                      width: 5px;
+                      height: 5px;
                       border-radius: 50%;
                       background: var(--red);
+                      flex-shrink: 0;
                     "
                   ></div>
-                  <div class="mini-bar" style="width: 30%"></div>
-                  <div
-                    style="
-                      font-size: 9px;
-                      color: rgba(255, 77, 106, 0.7);
-                      white-space: nowrap;
-                    "
-                  >
-                    Vencido
-                  </div>
+                  <div class="mini" style="width: 28%"></div>
+                  <div style="font-size: 9px; color: var(--red)">Vencido</div>
                 </div>
               </div>
             </div>
-            <div class="case-body-sm">
+            <div class="ccb">
               <span
-                class="case-tag-sm"
+                class="ctag"
                 style="
                   color: var(--accent);
-                  background: rgba(0, 217, 255, 0.07);
-                  border: 1px solid rgba(0, 217, 255, 0.15);
+                  background: rgba(0, 87, 255, 0.07);
+                  border: 1px solid rgba(0, 87, 255, 0.14);
                 "
                 >Gestão</span
               >
-              <div class="case-title-sm">Controle de Contratos</div>
-              <p class="case-desc-sm">
-                Ciclo completo de contratos municipais com alertas de
-                vencimento, aditivos e painel por secretaria.
+              <div class="cct">Controle de Contratos</div>
+              <p class="ccd">
+                Ciclo completo com alertas de vencimento, aditivos e painel por
+                secretaria ou departamento.
               </p>
-              <div class="case-pills">
+              <div style="display: flex; flex-wrap: wrap; gap: 5px">
                 <span class="pill">Alertas</span
                 ><span class="pill">Aditivos</span
                 ><span class="pill">Dashboard</span>
               </div>
             </div>
           </div>
-
-          <!-- Estoque -->
-          <div class="case-card-sm">
+          <div class="cc">
             <div
-              class="case-thumb"
-              style="background: linear-gradient(135deg, #061a12, #040f0b)"
+              class="cth"
+              style="background: linear-gradient(135deg, #ecfdf5, #d1fae5)"
             >
-              <div class="case-thumb-inner">
+              <div class="cthinn">
                 <div
                   style="
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 6px;
+                    gap: 5px;
                     margin-bottom: 8px;
                   "
                 >
                   <div
                     style="
-                      height: 28px;
-                      border-radius: 6px;
-                      background: rgba(0, 229, 160, 0.08);
-                      border: 1px solid rgba(0, 229, 160, 0.18);
+                      height: 24px;
+                      border-radius: 5px;
+                      background: rgba(5, 150, 105, 0.08);
+                      border: 1px solid rgba(5, 150, 105, 0.18);
                       display: flex;
                       align-items: center;
                       justify-content: center;
                       font-size: 10px;
-                      color: rgba(0, 229, 160, 0.8);
-                      font-family: &quot;Outfit&quot;, sans-serif;
+                      color: var(--green);
                       font-weight: 600;
                     "
                   >
@@ -1971,77 +1824,74 @@
                   </div>
                   <div
                     style="
-                      height: 28px;
-                      border-radius: 6px;
-                      background: rgba(245, 166, 35, 0.08);
-                      border: 1px solid rgba(245, 166, 35, 0.18);
+                      height: 24px;
+                      border-radius: 5px;
+                      background: rgba(217, 119, 6, 0.08);
+                      border: 1px solid rgba(217, 119, 6, 0.18);
                       display: flex;
                       align-items: center;
                       justify-content: center;
                       font-size: 10px;
-                      color: rgba(245, 166, 35, 0.8);
-                      font-family: &quot;Outfit&quot;, sans-serif;
+                      color: var(--amber);
                       font-weight: 600;
                     "
                   >
                     12 críticos
                   </div>
                 </div>
-                <div class="mini-bar b"></div>
-                <div class="mini-bar c"></div>
-                <div class="mini-bar a"></div>
+                <div class="mini b"></div>
+                <div class="mini c"></div>
+                <div class="mini a"></div>
               </div>
             </div>
-            <div class="case-body-sm">
+            <div class="ccb">
               <span
-                class="case-tag-sm"
+                class="ctag"
                 style="
                   color: var(--green);
-                  background: rgba(0, 229, 160, 0.07);
-                  border: 1px solid rgba(0, 229, 160, 0.15);
+                  background: rgba(5, 150, 105, 0.07);
+                  border: 1px solid rgba(5, 150, 105, 0.14);
                 "
                 >Almoxarifado</span
               >
-              <div class="case-title-sm">Sistema de Estoque</div>
-              <p class="case-desc-sm">
+              <div class="cct">Sistema de Estoque</div>
+              <p class="ccd">
                 Entrada e saída de materiais, alertas de estoque mínimo e
-                requisições por secretaria.
+                requisições por setor.
               </p>
-              <div class="case-pills">
+              <div style="display: flex; flex-wrap: wrap; gap: 5px">
                 <span class="pill">Requisições</span
-                ><span class="pill">Mín. crítico</span
+                ><span class="pill">Estoque mín.</span
                 ><span class="pill">Relatórios</span>
               </div>
             </div>
           </div>
-
-          <!-- Processos Seletivos -->
-          <div class="case-card-sm">
+          <div class="cc">
             <div
-              class="case-thumb"
-              style="background: linear-gradient(135deg, #130a24, #0c0619)"
+              class="cth"
+              style="background: linear-gradient(135deg, #f5f3ff, #ede9fe)"
             >
-              <div class="case-thumb-inner">
+              <div class="cthinn">
                 <div
                   style="
-                    height: 6px;
+                    height: 5px;
                     border-radius: 3px;
-                    background: rgba(123, 63, 228, 0.3);
+                    background: rgba(123, 63, 228, 0.25);
                     width: 100%;
-                    margin-bottom: 4px;
+                    margin-bottom: 3px;
                   "
                 ></div>
                 <div
                   style="
                     height: 3px;
                     border-radius: 2px;
-                    background: rgba(123, 63, 228, 0.12);
+                    background: rgba(123, 63, 228, 0.1);
                     width: 100%;
-                    margin-bottom: 10px;
+                    margin-bottom: 9px;
                   "
                 ></div>
-                <div style="display: flex; flex-direction: column; gap: 5px">
-                  <div style="display: flex; align-items: center; gap: 6px">
+                <div style="display: flex; flex-direction: column; gap: 4px">
+                  <div style="display: flex; align-items: center; gap: 5px">
                     <div
                       style="
                         width: 5px;
@@ -2053,17 +1903,17 @@
                     ></div>
                     <div
                       style="
-                        height: 5px;
+                        height: 4px;
                         border-radius: 2px;
-                        background: rgba(255, 255, 255, 0.07);
+                        background: var(--bg4);
                         flex: 1;
                       "
                     ></div>
-                    <div style="font-size: 9px; color: rgba(0, 229, 160, 0.7)">
+                    <div style="font-size: 9px; color: var(--green)">
                       Aprovado
                     </div>
                   </div>
-                  <div style="display: flex; align-items: center; gap: 6px">
+                  <div style="display: flex; align-items: center; gap: 5px">
                     <div
                       style="
                         width: 5px;
@@ -2075,17 +1925,17 @@
                     ></div>
                     <div
                       style="
-                        height: 5px;
+                        height: 4px;
                         border-radius: 2px;
-                        background: rgba(255, 255, 255, 0.07);
+                        background: var(--bg4);
                         flex: 1;
                       "
                     ></div>
-                    <div style="font-size: 9px; color: rgba(245, 166, 35, 0.7)">
+                    <div style="font-size: 9px; color: var(--amber)">
                       Em análise
                     </div>
                   </div>
-                  <div style="display: flex; align-items: center; gap: 6px">
+                  <div style="display: flex; align-items: center; gap: 5px">
                     <div
                       style="
                         width: 5px;
@@ -2097,35 +1947,35 @@
                     ></div>
                     <div
                       style="
-                        height: 5px;
+                        height: 4px;
                         border-radius: 2px;
-                        background: rgba(255, 255, 255, 0.07);
+                        background: var(--bg4);
                         flex: 1;
                       "
                     ></div>
-                    <div style="font-size: 9px; color: rgba(255, 77, 106, 0.7)">
+                    <div style="font-size: 9px; color: var(--red)">
                       Reprovado
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="case-body-sm">
+            <div class="ccb">
               <span
-                class="case-tag-sm"
+                class="ctag"
                 style="
-                  color: #a78bfa;
+                  color: var(--accent3);
                   background: rgba(123, 63, 228, 0.07);
-                  border: 1px solid rgba(123, 63, 228, 0.15);
+                  border: 1px solid rgba(123, 63, 228, 0.14);
                 "
-                >RH Público</span
+                >RH</span
               >
-              <div class="case-title-sm">Processos Seletivos</div>
-              <p class="case-desc-sm">
-                Inscrições online, classificação automática, publicação de
-                resultados e convocações.
+              <div class="cct">Processos Seletivos</div>
+              <p class="ccd">
+                Inscrições online, classificação automática e convocações.
+                Público ou privado.
               </p>
-              <div class="case-pills">
+              <div style="display: flex; flex-wrap: wrap; gap: 5px">
                 <span class="pill">Inscrições</span
                 ><span class="pill">Classificação</span
                 ><span class="pill">Convocações</span>
@@ -2136,168 +1986,165 @@
       </div>
     </section>
 
-    <!-- DADOS & DASHBOARDS -->
+    <!-- DADOS -->
     <section id="dados">
-      <div class="container">
-        <div class="dados-grid">
+      <div class="wrap">
+        <div class="dg">
           <div>
-            <div class="eyebrow fi-up">Dados & BI</div>
-            <h2 class="fi-up">Decisões baseadas em dados reais</h2>
-            <p class="lead fi-up">
-              Transformamos os dados gerados pelos sistemas municipais em
-              painéis visuais e relatórios que apoiam gestores na tomada de
-              decisão.
+            <div class="eyebrow fi">Dados & BI</div>
+            <h2 class="fi">Decisões baseadas em dados reais</h2>
+            <p class="lead fi" style="margin-bottom: 40px">
+              Transformamos os dados dos sistemas em painéis visuais e
+              relatórios que apoiam gestores na tomada de decisão.
             </p>
-            <div class="dados-features fi-up">
+            <div class="dfeats fi">
               <div class="df">
                 <div
-                  class="df-icon"
+                  class="dfic"
                   style="
-                    background: rgba(0, 217, 255, 0.07);
-                    border: 1px solid rgba(0, 217, 255, 0.12);
+                    background: rgba(0, 87, 255, 0.06);
+                    border: 1px solid rgba(0, 87, 255, 0.12);
                   "
                 >
                   📊
                 </div>
                 <div>
-                  <div class="df-title">Dashboards executivos</div>
-                  <p class="df-desc">
-                    Painéis em tempo real com KPIs de atendimento, contratos,
-                    estoque e fiscalização. Filtros por secretaria, período e
-                    status.
+                  <div class="dft">Dashboards executivos</div>
+                  <p class="dfd">
+                    KPIs em tempo real com filtros por setor, período e status.
+                    Clareza para qualquer nível hierárquico.
                   </p>
                 </div>
               </div>
               <div class="df">
                 <div
-                  class="df-icon"
+                  class="dfic"
                   style="
-                    background: rgba(0, 229, 160, 0.07);
-                    border: 1px solid rgba(0, 229, 160, 0.12);
+                    background: rgba(5, 150, 105, 0.06);
+                    border: 1px solid rgba(5, 150, 105, 0.12);
                   "
                 >
                   🔗
                 </div>
                 <div>
-                  <div class="df-title">Cruzamento de dados</div>
-                  <p class="df-desc">
-                    Integração entre módulos para análises cruzadas — ex:
-                    demandas por região vs. orçamento de obras executado.
+                  <div class="dft">Cruzamento de dados</div>
+                  <p class="dfd">
+                    Integração entre módulos para análises combinadas — estoque
+                    vs. consumo, demandas vs. orçamento.
                   </p>
                 </div>
               </div>
               <div class="df">
                 <div
-                  class="df-icon"
+                  class="dfic"
                   style="
-                    background: rgba(123, 63, 228, 0.07);
+                    background: rgba(123, 63, 228, 0.06);
                     border: 1px solid rgba(123, 63, 228, 0.12);
                   "
                 >
                   📄
                 </div>
                 <div>
-                  <div class="df-title">Relatórios automáticos</div>
-                  <p class="df-desc">
-                    Geração de relatórios periódicos em PDF para câmara,
-                    tribunal de contas e publicação de transparência.
+                  <div class="dft">Relatórios automáticos</div>
+                  <p class="dfd">
+                    Relatórios periódicos em PDF para diretoria, clientes,
+                    câmara ou tribunal de contas.
                   </p>
                 </div>
               </div>
               <div class="df">
                 <div
-                  class="df-icon"
+                  class="dfic"
                   style="
-                    background: rgba(245, 166, 35, 0.07);
-                    border: 1px solid rgba(245, 166, 35, 0.12);
+                    background: rgba(217, 119, 6, 0.06);
+                    border: 1px solid rgba(217, 119, 6, 0.12);
                   "
                 >
                   🗺️
                 </div>
                 <div>
-                  <div class="df-title">Mapas e geolocalização</div>
-                  <p class="df-desc">
-                    Visualização geográfica de ocorrências, vistorias e demandas
-                    por bairro para otimizar a atuação das equipes.
+                  <div class="dft">Mapas e geolocalização</div>
+                  <p class="dfd">
+                    Visualização geográfica de ocorrências e vistorias para
+                    otimizar a atuação das equipes em campo.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="dados-visual fi-up">
-            <div class="dados-card wide">
-              <div class="dados-card-title">Demandas — últimas 12 semanas</div>
-              <div class="sparkline">
-                <div class="sp" style="height: 35%"></div>
-                <div class="sp md" style="height: 50%"></div>
-                <div class="sp" style="height: 42%"></div>
-                <div class="sp md" style="height: 65%"></div>
-                <div class="sp" style="height: 55%"></div>
-                <div class="sp md" style="height: 72%"></div>
-                <div class="sp" style="height: 60%"></div>
-                <div class="sp md" style="height: 80%"></div>
-                <div class="sp" style="height: 70%"></div>
-                <div class="sp hi" style="height: 88%"></div>
-                <div class="sp md" style="height: 78%"></div>
-                <div class="sp hi" style="height: 95%"></div>
+          <div class="dcards fi">
+            <div class="dc wide">
+              <div class="dct">Demandas — últimas 12 semanas</div>
+              <div class="spark">
+                <div class="sk" style="height: 35%"></div>
+                <div class="sk md" style="height: 50%"></div>
+                <div class="sk" style="height: 42%"></div>
+                <div class="sk md" style="height: 64%"></div>
+                <div class="sk" style="height: 55%"></div>
+                <div class="sk md" style="height: 72%"></div>
+                <div class="sk" style="height: 60%"></div>
+                <div class="sk md" style="height: 80%"></div>
+                <div class="sk" style="height: 70%"></div>
+                <div class="sk hi" style="height: 88%"></div>
+                <div class="sk md" style="height: 78%"></div>
+                <div class="sk hi" style="height: 95%"></div>
               </div>
             </div>
-            <div class="dados-card">
-              <div class="dados-card-title">Taxa de resolução</div>
-              <div class="gauge-row">
-                <div class="gauge-label">Obras</div>
-                <div class="gauge-track">
+            <div class="dc">
+              <div class="dct">Taxa de resolução</div>
+              <div class="gr">
+                <div class="gl">Obras</div>
+                <div class="gt">
                   <div
-                    class="gauge-fill"
+                    class="gf"
                     style="width: 92%; background: var(--green)"
                   ></div>
                 </div>
-                <div class="gauge-val">92%</div>
+                <div class="gv">92%</div>
               </div>
-              <div class="gauge-row">
-                <div class="gauge-label">Saúde</div>
-                <div class="gauge-track">
+              <div class="gr">
+                <div class="gl">Saúde</div>
+                <div class="gt">
                   <div
-                    class="gauge-fill"
+                    class="gf"
                     style="width: 87%; background: var(--accent)"
                   ></div>
                 </div>
-                <div class="gauge-val">87%</div>
+                <div class="gv">87%</div>
               </div>
-              <div class="gauge-row">
-                <div class="gauge-label">Educação</div>
-                <div class="gauge-track">
+              <div class="gr">
+                <div class="gl">Educação</div>
+                <div class="gt">
                   <div
-                    class="gauge-fill"
+                    class="gf"
                     style="width: 79%; background: var(--accent2)"
                   ></div>
                 </div>
-                <div class="gauge-val">79%</div>
+                <div class="gv">79%</div>
               </div>
-              <div class="gauge-row">
-                <div class="gauge-label">Transporte</div>
-                <div class="gauge-track">
+              <div class="gr">
+                <div class="gl">Transporte</div>
+                <div class="gt">
                   <div
-                    class="gauge-fill"
+                    class="gf"
                     style="width: 61%; background: var(--amber)"
                   ></div>
                 </div>
-                <div class="gauge-val">61%</div>
+                <div class="gv">61%</div>
               </div>
             </div>
-            <div class="dados-card">
-              <div class="dados-card-title">Estoque crítico</div>
+            <div class="dc">
+              <div class="dct">Itens críticos</div>
               <div style="display: flex; flex-direction: column; gap: 8px">
                 <div
                   style="
                     display: flex;
                     justify-content: space-between;
-                    font-size: 11px;
+                    font-size: 12px;
                   "
                 >
-                  <span style="color: var(--text2)">Papel A4</span>
-                  <span style="color: var(--red); font-weight: 600"
+                  <span style="color: var(--text2)">Papel A4</span
+                  ><span style="color: var(--red); font-weight: 600"
                     >3 resmas</span
                   >
                 </div>
@@ -2305,11 +2152,11 @@
                   style="
                     display: flex;
                     justify-content: space-between;
-                    font-size: 11px;
+                    font-size: 12px;
                   "
                 >
-                  <span style="color: var(--text2)">Toner HP</span>
-                  <span style="color: var(--amber); font-weight: 600"
+                  <span style="color: var(--text2)">Toner HP</span
+                  ><span style="color: var(--amber); font-weight: 600"
                     >1 un.</span
                   >
                 </div>
@@ -2317,21 +2164,23 @@
                   style="
                     display: flex;
                     justify-content: space-between;
-                    font-size: 11px;
+                    font-size: 12px;
                   "
                 >
-                  <span style="color: var(--text2)">EPI Agente</span>
-                  <span style="color: var(--red); font-weight: 600">0 un.</span>
+                  <span style="color: var(--text2)">EPI Agente</span
+                  ><span style="color: var(--red); font-weight: 600"
+                    >0 un.</span
+                  >
                 </div>
                 <div
                   style="
                     display: flex;
                     justify-content: space-between;
-                    font-size: 11px;
+                    font-size: 12px;
                   "
                 >
-                  <span style="color: var(--text2)">Caneta esf.</span>
-                  <span style="color: var(--amber); font-weight: 600"
+                  <span style="color: var(--text2)">Caneta esf.</span
+                  ><span style="color: var(--amber); font-weight: 600"
                     >12 un.</span
                   >
                 </div>
@@ -2344,107 +2193,107 @@
 
     <!-- IA -->
     <section id="ia">
-      <div class="container">
-        <div class="ia-grid">
+      <div class="wrap">
+        <div class="iag">
           <div>
-            <div class="eyebrow fi-up">Inteligência Artificial</div>
-            <h2 class="fi-up">IA aplicada ao setor público</h2>
-            <p class="lead fi-up">
-              Integramos modelos de IA nos sistemas municipais para automatizar
-              processos repetitivos e elevar a qualidade do atendimento.
+            <div class="eyebrow fi">Inteligência Artificial</div>
+            <h2 class="fi">IA integrada ao seu sistema</h2>
+            <p class="lead fi" style="margin-bottom: 36px">
+              Integramos modelos de IA para automatizar processos repetitivos e
+              elevar a qualidade do atendimento — público ou privado.
             </p>
-            <div class="ia-features fi-up">
-              <div class="ia-f">
-                <div class="ia-f-icon">🎯</div>
+            <div class="iafeats fi">
+              <div class="iaf">
+                <div class="iafic">🎯</div>
                 <div>
-                  <div class="ia-f-title">Triagem automática de protocolos</div>
-                  <p class="ia-f-desc">
-                    Classifica e encaminha demandas para a secretaria certa sem
-                    intervenção humana.
+                  <div class="iaft">Triagem automática</div>
+                  <p class="iafd">
+                    Classifica e encaminha demandas ou chamados para a área
+                    responsável sem intervenção manual.
                   </p>
                 </div>
               </div>
-              <div class="ia-f">
-                <div class="ia-f-icon">💬</div>
+              <div class="iaf">
+                <div class="iafic">💬</div>
                 <div>
-                  <div class="ia-f-title">Assistente virtual para cidadãos</div>
-                  <p class="ia-f-desc">
+                  <div class="iaft">Assistente virtual</div>
+                  <p class="iafd">
                     Chatbot integrado ao portal responde dúvidas e guia o
-                    registro de demandas 24h.
+                    usuário 24 horas por dia.
                   </p>
                 </div>
               </div>
-              <div class="ia-f">
-                <div class="ia-f-icon">📄</div>
+              <div class="iaf">
+                <div class="iafic">📄</div>
                 <div>
-                  <div class="ia-f-title">Extração de dados de documentos</div>
-                  <p class="ia-f-desc">
-                    Digitalização e extração automática de informações de
-                    documentos físicos.
+                  <div class="iaft">Extração de documentos</div>
+                  <p class="iafd">
+                    Digitalização e leitura automática de informações de
+                    documentos físicos ou PDFs.
                   </p>
                 </div>
               </div>
-              <div class="ia-f">
-                <div class="ia-f-icon">📈</div>
+              <div class="iaf">
+                <div class="iafic">📈</div>
                 <div>
-                  <div class="ia-f-title">Análise preditiva de demandas</div>
-                  <p class="ia-f-desc">
-                    Identifica padrões sazonais e prevê picos de demanda para
-                    planejamento antecipado.
+                  <div class="iaft">Análise preditiva</div>
+                  <p class="iafd">
+                    Identifica padrões e prevê tendências para apoiar decisões
+                    antes que problemas aconteçam.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="ia-flow fi-up">
-            <div class="ia-step">
-              <span
-                class="ia-step-tag"
-                style="
-                  color: var(--text2);
-                  background: var(--bg3);
-                  border: 1px solid var(--border);
-                "
-                >Entrada</span
-              >
-              <div class="ia-step-label">Cidadão abre protocolo</div>
-              <div class="ia-step-content">
+          <div class="iaflow fi">
+            <div class="ias">
+              <div class="iastag">
+                <div class="ialbl">Entrada</div>
+                <span
+                  class="iag2"
+                  style="background: var(--bg4); color: var(--text2)"
+                  >Usuário</span
+                >
+              </div>
+              <div class="iact">
                 "Buraco na calçada da Rua das Flores, 120, bairro Centro."
               </div>
             </div>
-            <div class="ia-arrow">↓</div>
-            <div class="ia-step" style="border-color: rgba(0, 217, 255, 0.2)">
-              <span
-                class="ia-step-tag"
-                style="
-                  color: var(--accent);
-                  background: rgba(0, 217, 255, 0.08);
-                  border: 1px solid rgba(0, 217, 255, 0.18);
-                "
-                >IA</span
-              >
-              <div class="ia-step-label">Classificação automática</div>
-              <div class="ia-step-content">
-                Categoria: <strong>Infraestrutura urbana</strong> · Secretaria:
+            <div class="iaarr">↓</div>
+            <div class="ias" style="border-color: rgba(0, 87, 255, 0.25)">
+              <div class="iastag">
+                <div class="ialbl">Processamento</div>
+                <span
+                  class="iag2"
+                  style="
+                    background: rgba(0, 87, 255, 0.08);
+                    color: var(--accent);
+                  "
+                  >IA</span
+                >
+              </div>
+              <div class="iact">
+                Categoria: <strong>Infraestrutura urbana</strong> · Setor:
                 <strong>Obras</strong> · Prioridade:
                 <strong style="color: var(--amber)">Média</strong>
               </div>
             </div>
-            <div class="ia-arrow">↓</div>
-            <div class="ia-step" style="border-color: rgba(0, 229, 160, 0.15)">
-              <span
-                class="ia-step-tag"
-                style="
-                  color: var(--green);
-                  background: rgba(0, 229, 160, 0.08);
-                  border: 1px solid rgba(0, 229, 160, 0.18);
-                "
-                >Saída</span
-              >
-              <div class="ia-step-label">Protocolo gerado e encaminhado</div>
-              <div class="ia-step-content">
-                Prazo definido automaticamente. Cidadão notificado por e-mail
-                com número de acompanhamento.
+            <div class="iaarr">↓</div>
+            <div class="ias" style="border-color: rgba(5, 150, 105, 0.2)">
+              <div class="iastag">
+                <div class="ialbl">Saída</div>
+                <span
+                  class="iag2"
+                  style="
+                    background: rgba(5, 150, 105, 0.08);
+                    color: var(--green);
+                  "
+                  >Automático</span
+                >
+              </div>
+              <div class="iact">
+                Protocolo gerado e encaminhado com prazo definido. Usuário
+                notificado por e-mail.
               </div>
             </div>
           </div>
@@ -2453,78 +2302,80 @@
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" style="background: var(--bg2)">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info fi-up">
+    <section id="contato">
+      <div class="wrap">
+        <div class="ctg">
+          <div class="ctinfo fi">
             <div class="eyebrow">Contato</div>
             <h2>Vamos falar sobre o seu projeto?</h2>
             <p class="lead">
-              Empresa privada ou órgão público — conte-nos o desafio e montamos
-              uma proposta sob medida, sem compromisso.
+              Empresa privada ou órgão público — conte o desafio e montamos uma
+              proposta sob medida, sem compromisso.
             </p>
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
+            <div class="ctitem">
+              <div class="ctic">📍</div>
               <span>Belo Horizonte, Minas Gerais</span>
             </div>
-            <div class="contact-item">
-              <div class="contact-icon">📧</div>
+            <div class="ctitem">
+              <div class="ctic">📧</div>
               <span>contato@gmsolucoes.com.br</span>
             </div>
-            <div class="contact-item">
-              <div class="contact-icon">📱</div>
+            <div class="ctitem">
+              <div class="ctic">📱</div>
               <span>(31) 9 0000-0000</span>
             </div>
-            <div class="contact-item">
-              <div class="contact-icon">⏱️</div>
+            <div class="ctitem">
+              <div class="ctic">⏱️</div>
               <span>Resposta em até 24 horas úteis</span>
             </div>
           </div>
-          <div class="form-card fi-up">
-            <div class="form-row">
+          <div class="fcard fi">
+            <div class="frow">
               <div class="fg">
                 <label class="fl">Nome</label
-                ><input type="text" class="fi" placeholder="Seu nome" />
+                ><input type="text" placeholder="Seu nome" />
               </div>
               <div class="fg">
                 <label class="fl">Cargo</label
-                ><input
-                  type="text"
-                  class="fi"
-                  placeholder="Ex: Secretário de TI"
-                />
+                ><input type="text" placeholder="Ex: Gerente de TI" />
               </div>
             </div>
             <div class="fg">
               <label class="fl">Empresa / Município</label
-              ><input
-                type="text"
-                class="fi"
-                placeholder="Nome da empresa ou município"
-              />
+              ><input type="text" placeholder="Nome da empresa ou município" />
             </div>
             <div class="fg">
               <label class="fl">E-mail</label
-              ><input type="email" class="fi" placeholder="seu@email.com.br" />
+              ><input type="email" placeholder="seu@email.com.br" />
             </div>
             <div class="fg">
-              <label class="fl">Qual sistema precisa?</label>
-              <select class="fs">
+              <label class="fl">O que você precisa?</label>
+              <select>
                 <option value="">Selecione uma opção</option>
-                <option>Atendimento ao cidadão / Ouvidoria</option>
-                <option>Fiscalização e vistoria</option>
-                <option>Gestão de contratos</option>
-                <option>Sistema de estoque</option>
-                <option>Processos seletivos</option>
-                <option>Dados & Dashboards</option>
-                <option>Integração com IA</option>
-                <option>Outro / Múltiplos módulos</option>
+                <optgroup label="Setor Público">
+                  <option>Atendimento ao cidadão / Ouvidoria</option>
+                  <option>Fiscalização e vistoria urbana</option>
+                  <option>Gestão de contratos públicos</option>
+                  <option>Processos seletivos municipais</option>
+                </optgroup>
+                <optgroup label="Setor Privado">
+                  <option>CRM / Atendimento ao cliente</option>
+                  <option>Sistema de estoque</option>
+                  <option>Gestão de contratos empresariais</option>
+                  <option>RH e recrutamento</option>
+                  <option>MVP / Produto digital</option>
+                </optgroup>
+                <optgroup label="Transversal">
+                  <option>Dados & Dashboards</option>
+                  <option>Integração com IA</option>
+                  <option>APIs e integrações</option>
+                  <option>Outro / Múltiplos módulos</option>
+                </optgroup>
               </select>
             </div>
             <div class="fg">
               <label class="fl">Mensagem</label
               ><textarea
-                class="ft"
                 placeholder="Descreva brevemente o que precisa..."
               ></textarea>
             </div>
@@ -2539,7 +2390,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <div class="fc">
         © 2025 <span>GM Soluções Digitais</span>. Todos os direitos reservados.
@@ -2554,14 +2404,14 @@
         (entries) => {
           entries.forEach((e, i) => {
             if (e.isIntersecting) {
-              setTimeout(() => e.target.classList.add("vis"), i * 90);
+              setTimeout(() => e.target.classList.add("vis"), i * 80);
               io.unobserve(e.target);
             }
           });
         },
         { threshold: 0.08 },
       );
-      document.querySelectorAll(".fi-up").forEach((el) => io.observe(el));
+      document.querySelectorAll(".fi").forEach((el) => io.observe(el));
     </script>
   </body>
 </html>
