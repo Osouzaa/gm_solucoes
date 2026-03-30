@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════
-   GM Soluções Digitais — styles.css
+   GSA Soluções Web — styles.css
    Fonte display : Fraunces (serif expressivo)
    Fonte UI      : Syne (geométrica)
    ═══════════════════════════════════════════════════════════════════ */
@@ -1673,3 +1673,60 @@ footer {
 .mob-menu a:last-child:hover {
   color: #fff;
 }
+
+/* ─── Botão WhatsApp Flutuante ───────────────────────────────────── */
+.wpp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.wpp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+}
+
+/* ─── Aviso LGPD ─────────────────────────────────────────────────── */
+.lgpd-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--ui);
+  font-size: 13px;
+  padding: 14px 24px;
+}
+.lgpd-bar p { margin: 0; line-height: 1.5; }
+.lgpd-bar a { color: var(--blue-mid); text-decoration: underline; }
+.lgpd-bar button {
+  flex-shrink: 0;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-family: var(--ui);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lgpd-bar button:hover { background: var(--blue-dk); }
