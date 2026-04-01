@@ -1,0 +1,17 @@
+{
+  "name": "GSA Soluções Web",
+  "short_name": "GSA Web",
+  "description": "Sites profissionais para pequenas empresas em Betim, Ibirité e região metropolitana de BH.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f6f4f0",
+  "theme_color": "#1246f0",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -795,6 +795,136 @@ nav.scrolled {
   color: var(--ink3);
 }
 
+/* ─── Exemplos por Nicho ─────────────────────────────────────────── */
+.niche-header {
+  text-align: left;
+}
+.niche-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.niche-card {
+  background: var(--white);
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.niche-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue-mid);
+}
+.niche-card-top {
+  padding: 28px 24px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.niche-ico {
+  font-size: 36px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.niche-mockup {
+  flex: 1;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  border: 1px solid rgba(0,0,0,.06);
+  min-width: 0;
+}
+.nm-bar {
+  height: 10px;
+  background: #f0eeea;
+  border-bottom: 1px solid #e4e2dc;
+}
+.nm-hero {
+  height: 36px;
+  opacity: .85;
+}
+.nm-rows {
+  padding: 8px 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.nm-row {
+  height: 6px;
+  background: #e4e2dc;
+  border-radius: 3px;
+}
+.nm-short {
+  width: 65%;
+}
+.nm-btn {
+  height: 8px;
+  width: 55%;
+  border-radius: 4px;
+  margin-top: 2px;
+  opacity: .75;
+}
+.niche-card-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.niche-title {
+  font-family: var(--disp);
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -.02em;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.niche-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.ntag {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink3);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 3px 9px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.niche-btn {
+  display: inline-block;
+  margin-top: auto;
+  background: var(--blue);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+  text-align: center;
+}
+.niche-btn:hover {
+  background: var(--blue-dk);
+  transform: translateY(-1px);
+}
+.niche-cta {
+  text-align: center;
+  padding: 40px 0 0;
+}
+
 /* ─── Serviços ───────────────────────────────────────────────────── */
 .services {
   padding: 100px 0;
@@ -1596,6 +1726,7 @@ footer {
 }
 @media (max-width: 760px) {
   .result-cards,
+  .niche-grid,
   .svc-grid,
   .test-grid,
   .pricing-grid {
@@ -1616,6 +1747,7 @@ footer {
 }
 @media (max-width: 520px) {
   .result-cards,
+  .niche-grid,
   .svc-grid,
   .test-grid,
   .pricing-grid,
