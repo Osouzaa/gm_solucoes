@@ -1900,7 +1900,6 @@ nav {
 }
 
 .hero-grid {
-  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
   gap: 92px;
 }
 
@@ -3872,5 +3871,46 @@ svg {
   .client-logo-track .logo-image {
     width: 210px;
     padding: 22px 24px;
+  }
+}
+
+/* Hero tag mobile fit */
+.hero-tag {
+  max-width: 100%;
+}
+
+.hero-tag .pill {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.25;
+}
+
+@media (max-width: 520px) {
+  .hero-tag {
+    display: flex;
+    margin-bottom: 22px;
+  }
+
+  .hero-tag .pill {
+    width: fit-content;
+    max-width: min(100%, 310px);
+    padding: 7px 11px;
+    gap: 6px;
+    font-size: 9.5px;
+    letter-spacing: 0.045em;
+  }
+
+  .hero-tag .pill-dot {
+    width: 5px;
+    height: 5px;
+    flex: 0 0 5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-tag .pill {
+    max-width: 260px;
+    font-size: 9px;
   }
 }
