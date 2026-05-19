@@ -3377,9 +3377,139 @@ nav {
     padding: 22px 0;
   }
 
-  .flow-item em {
-    grid-column: 2;
-    justify-self: start;
+.flow-item em {
+  grid-column: 2;
+  justify-self: start;
+  }
+}
+
+/* Enterprise operations board */
+.system-canvas {
+  background:
+    linear-gradient(90deg, rgba(184,203,255,0.045) 1px, transparent 1px) 0 0 / 36px 36px,
+    linear-gradient(0deg, rgba(184,203,255,0.04) 1px, transparent 1px) 0 0 / 36px 36px,
+    #0f172a;
+}
+
+.canvas-top strong {
+  max-width: 210px;
+  text-align: right;
+  line-height: 1.35;
+}
+
+.ops-board {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.ops-module {
+  min-height: 150px;
+  padding: 22px;
+  border: 1px solid rgba(184,203,255,0.18);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.065);
+  backdrop-filter: blur(14px);
+}
+
+.ops-module-main {
+  grid-row: span 2;
+  min-height: 314px;
+  background:
+    linear-gradient(180deg, rgba(18,70,240,0.18), rgba(255,255,255,0.055));
+}
+
+.ops-module span {
+  display: inline-flex;
+  margin-bottom: 44px;
+  color: var(--blue-mid);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.ops-module-main span {
+  margin-bottom: 150px;
+}
+
+.ops-module strong {
+  display: block;
+  color: #fff;
+  font-family: var(--disp);
+  font-size: 22px;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.ops-module p {
+  max-width: 260px;
+  margin-top: 10px;
+  color: rgba(255,255,255,0.58);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.ops-pipeline {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(184,203,255,0.14);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.045);
+}
+
+.ops-pipeline div {
+  min-height: 74px;
+  display: flex;
+  align-items: end;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.065);
+  position: relative;
+}
+
+.ops-pipeline div::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 14px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--blue);
+  opacity: 0.75;
+}
+
+.ops-pipeline div:nth-child(2)::before { opacity: 0.58; }
+.ops-pipeline div:nth-child(3)::before { opacity: 0.42; }
+.ops-pipeline div:nth-child(4)::before { opacity: 0.9; background: var(--green); }
+
+.ops-pipeline span {
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .ops-board {
+    grid-template-columns: 1fr;
+  }
+
+  .ops-module-main,
+  .ops-module {
+    min-height: auto;
+  }
+
+  .ops-module span,
+  .ops-module-main span {
+    margin-bottom: 46px;
+  }
+
+  .ops-pipeline {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -3417,4 +3547,66 @@ nav {
 .services .svc-card:nth-child(1) .svc-feat::before {
   background: var(--blue-lt);
   color: var(--blue);
+}
+
+/* Services grid alignment */
+.services .svc-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.services .svc-card,
+.services .svc-card:nth-child(1),
+.services .svc-card:nth-child(2),
+.services .svc-card:nth-child(3),
+.services .svc-card:nth-child(4),
+.services .svc-card:nth-child(5),
+.services .svc-card:nth-child(6) {
+  grid-column: span 4;
+  min-height: 336px;
+}
+
+.services .svc-card:nth-child(1),
+.services .svc-card:nth-child(4) {
+  grid-column: span 7;
+}
+
+.services .svc-card:nth-child(2),
+.services .svc-card:nth-child(3) {
+  grid-column: span 5;
+}
+
+.services .svc-card:nth-child(5),
+.services .svc-card:nth-child(6) {
+  grid-column: span 6;
+  min-height: 300px;
+}
+
+.services .svc-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.services .svc-features {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+@media (max-width: 760px) {
+  .services .svc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services .svc-card,
+  .services .svc-card:nth-child(1),
+  .services .svc-card:nth-child(2),
+  .services .svc-card:nth-child(3),
+  .services .svc-card:nth-child(4),
+  .services .svc-card:nth-child(5),
+  .services .svc-card:nth-child(6) {
+    grid-column: auto;
+    min-height: auto;
+  }
 }
