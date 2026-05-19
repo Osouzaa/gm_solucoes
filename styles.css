@@ -3610,3 +3610,267 @@ nav {
     min-height: auto;
   }
 }
+
+/* Full responsive pass */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .results,
+  .services,
+  .process,
+  .pricing,
+  .testimonials,
+  .faq,
+  .cta-sec {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
+  .result-cards,
+  .test-grid,
+  .pricing-grid,
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .results-head {
+    gap: 22px;
+    margin-bottom: 38px;
+  }
+
+  .sec-title {
+    font-size: clamp(30px, 7vw, 44px);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .nav-wrap {
+    height: 64px;
+  }
+
+  .logo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-name {
+    font-size: 12px;
+  }
+
+  .mob-menu {
+    z-index: 1000;
+    padding: 82px 20px 32px;
+  }
+
+  .mob-menu a {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 104px 0 56px;
+  }
+
+  .hero::before {
+    inset: 78px 18px auto 18px;
+  }
+
+  .hero-h1 {
+    font-size: clamp(40px, 12vw, 52px);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    margin-bottom: 18px;
+  }
+
+  .hero-lead {
+    font-size: 15.5px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+  }
+
+  .hero-btns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .btn-primary,
+  .btn-text,
+  .btn-cta-main,
+  .btn-cta-sec {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-proof {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .logos-inner {
+    display: grid;
+    gap: 18px;
+  }
+
+  .logos-label {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: 0;
+  }
+
+  .logos-row {
+    gap: 12px;
+  }
+
+  .logo-pill {
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  .clients {
+    padding: 60px 0;
+  }
+
+  .client-logo-marquee {
+    border-radius: 16px;
+  }
+
+  .result-cards,
+  .test-grid,
+  .pricing-grid,
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .result-card,
+  .svc-card,
+  .plan,
+  .test-card {
+    padding: 26px 22px;
+  }
+
+  .services-head {
+    margin-bottom: 32px;
+  }
+
+  .services .svc-card {
+    min-height: auto;
+  }
+
+  .system-canvas {
+    border-radius: 16px;
+  }
+
+  .canvas-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .canvas-top strong {
+    max-width: none;
+    text-align: left;
+  }
+
+  .ops-board {
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .ops-module {
+    padding: 18px;
+  }
+
+  .ops-pipeline {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-item {
+    min-height: auto;
+  }
+
+  .flow-item:hover {
+    padding-left: 0;
+  }
+
+  .niche-cta {
+    padding-top: 24px;
+  }
+
+  .cta-box {
+    padding: 32px 22px;
+    border-radius: 18px;
+  }
+
+  .cta-title {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+
+  .faq-q {
+    gap: 14px;
+    font-size: 15px;
+  }
+
+  .ft-grid {
+    gap: 30px;
+  }
+
+  .wpp-float {
+    width: 52px;
+    height: 52px;
+    right: 18px;
+    bottom: 82px;
+  }
+
+  .lgpd-bar {
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .lgpd-bar button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-h1 {
+    font-size: 38px;
+  }
+
+  .sec-title {
+    font-size: 28px;
+  }
+
+  .client-logo-track .logo-image {
+    width: 210px;
+    padding: 22px 24px;
+  }
+}
