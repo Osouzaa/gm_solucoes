@@ -2716,6 +2716,12 @@ nav {
 }
 .lgpd-bar p { margin: 0; line-height: 1.5; }
 .lgpd-bar a { color: var(--blue-mid); text-decoration: underline; }
+.lgpd-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
 .lgpd-bar button {
   flex-shrink: 0;
   background: var(--blue);
@@ -2730,6 +2736,14 @@ nav {
   transition: background 0.2s;
 }
 .lgpd-bar button:hover { background: var(--blue-dk); }
+.lgpd-bar .lgpd-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+}
+.lgpd-bar .lgpd-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
 
 /* Visual balance: clean tech with restrained blue */
 :root {
@@ -3870,6 +3884,11 @@ svg {
 
   .lgpd-bar button {
     width: 100%;
+  }
+
+  .lgpd-actions {
+    width: 100%;
+    flex-direction: column-reverse;
   }
 }
 

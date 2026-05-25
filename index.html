@@ -119,20 +119,32 @@
       }
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-JHJGFZNWF4"
-    ></script>
+    <!-- Google tag (gtag.js) with Consent Mode -->
     <script>
+      const gsaStoredConsent = localStorage.getItem("gsaAnalyticsConsent");
+      const gsaAnalyticsGranted = gsaStoredConsent === "granted";
+
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
 
+      gtag("consent", "default", {
+        analytics_storage: gsaAnalyticsGranted ? "granted" : "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        functionality_storage: "granted",
+        security_storage: "granted",
+      });
+
+      gtag("js", new Date());
       gtag("config", "G-JHJGFZNWF4");
     </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JHJGFZNWF4"
+    ></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1618,25 +1630,56 @@
     </a>
 
     <!-- ── Aviso LGPD ──────────────────────────────────────────────────── -->
-    <div class="lgpd-bar" id="lgpd-bar">
+    <div
+      class="lgpd-bar"
+      id="lgpd-bar"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Preferencias de cookies"
+    >
       <p>
-        Utilizamos cookies essenciais para o funcionamento do site. Ao continuar
-        navegando, você concorda com nossa
+        Utilizamos cookies essenciais para o funcionamento do site e cookies de
+        analise para medir visitas no Google Analytics. Voce pode aceitar ou
+        recusar a medicao.
         <a href="#">Política de Privacidade</a>.
       </p>
-      <button
-        onclick="
-          document.getElementById('lgpd-bar').style.display = 'none';
-          localStorage.setItem('lgpd', '1');
-        "
-      >
-        Entendi
-      </button>
+      <div class="lgpd-actions">
+        <button type="button" class="lgpd-secondary" id="lgpd-reject">
+          Recusar
+        </button>
+        <button type="button" id="lgpd-accept">Aceitar</button>
+      </div>
     </div>
 
     <script>
-      if (localStorage.getItem("lgpd"))
-        document.getElementById("lgpd-bar").style.display = "none";
+      const lgpdBar = document.getElementById("lgpd-bar");
+      const savedAnalyticsConsent = localStorage.getItem("gsaAnalyticsConsent");
+
+      function updateAnalyticsConsent(value) {
+        const isGranted = value === "granted";
+
+        gtag("consent", "update", {
+          analytics_storage: isGranted ? "granted" : "denied",
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+        });
+
+        localStorage.setItem("gsaAnalyticsConsent", value);
+        lgpdBar.hidden = true;
+      }
+
+      if (savedAnalyticsConsent) {
+        lgpdBar.hidden = true;
+      }
+
+      document
+        .getElementById("lgpd-accept")
+        .addEventListener("click", () => updateAnalyticsConsent("granted"));
+
+      document
+        .getElementById("lgpd-reject")
+        .addEventListener("click", () => updateAnalyticsConsent("denied"));
 
       window.addEventListener("scroll", () => {
         document
