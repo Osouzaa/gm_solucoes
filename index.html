@@ -1,908 +1,1687 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- SEO Principal -->
-<title>GSA Soluções Web — Consultoria, Sistemas e IA para Empresas</title>
-<meta name="description" content="Consultoria completa para empresas: melhoria de processos, softwares personalizados, automações com agentes de IA, dashboards e integrações. Atendemos Betim, BH e todo o Brasil.">
-<meta name="keywords" content="consultoria empresarial Betim, automação com IA, agentes IA para empresas, software personalizado, melhoria de processos, sistemas web sob medida, consultoria em tecnologia BH, transformação digital">
-<meta name="author" content="GSA Soluções Web">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <!-- SEO Principal -->
+    <title>GSA Soluções Web — Consultoria, Sistemas e IA para Empresas</title>
+    <meta
+      name="description"
+      content="Consultoria completa para empresas: melhoria de processos, softwares personalizados, automações com agentes de IA, dashboards e integrações. Atendemos Betim, BH e todo o Brasil."
+    />
+    <meta
+      name="keywords"
+      content="consultoria empresarial Betim, automação com IA, agentes IA para empresas, software personalizado, melhoria de processos, sistemas web sob medida, consultoria em tecnologia BH, transformação digital"
+    />
+    <meta name="author" content="GSA Soluções Web" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
 
-<!-- Canonical -->
-<link rel="canonical" href="https://gsasolucoesweb.com.br/">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gsasolucoesweb.com.br/" />
 
-<!-- Geo / SEO Local -->
-<meta name="geo.region" content="BR-MG">
-<meta name="geo.placename" content="Betim, Minas Gerais">
-<meta name="geo.position" content="-19.9672;-44.1986">
-<meta name="ICBM" content="-19.9672, -44.1986">
+    <!-- Geo / SEO Local -->
+    <meta name="geo.region" content="BR-MG" />
+    <meta name="geo.placename" content="Betim, Minas Gerais" />
+    <meta name="geo.position" content="-19.9672;-44.1986" />
+    <meta name="ICBM" content="-19.9672, -44.1986" />
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="favicon.svg">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#1246f0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#1246f0" />
 
-<!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="GSA Soluções Web">
-<meta property="og:url" content="https://gsasolucoesweb.com.br/">
-<meta property="og:title" content="GSA Soluções Web — Consultoria, Sistemas e IA para Empresas">
-<meta property="og:description" content="Melhoramos processos, criamos softwares personalizados e implantamos automações com agentes de IA para empresas que querem operar melhor.">
-<meta property="og:image" content="https://gsasolucoesweb.com.br/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="pt_BR">
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GSA Soluções Web" />
+    <meta property="og:url" content="https://gsasolucoesweb.com.br/" />
+    <meta
+      property="og:title"
+      content="GSA Soluções Web — Consultoria, Sistemas e IA para Empresas"
+    />
+    <meta
+      property="og:description"
+      content="Melhoramos processos, criamos softwares personalizados e implantamos automações com agentes de IA para empresas que querem operar melhor."
+    />
+    <meta
+      property="og:image"
+      content="https://gsasolucoesweb.com.br/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GSA Soluções Web — Consultoria e IA para Empresas">
-<meta name="twitter:description" content="Consultoria, software sob medida, agentes de IA, automações e melhoria de processos para empresas.">
-<meta name="twitter:image" content="https://gsasolucoesweb.com.br/og-image.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="GSA Soluções Web — Consultoria e IA para Empresas"
+    />
+    <meta
+      name="twitter:description"
+      content="Consultoria, software sob medida, agentes de IA, automações e melhoria de processos para empresas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://gsasolucoesweb.com.br/og-image.jpg"
+    />
 
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "GSA Soluções Web",
-  "description": "Consultoria empresarial, softwares personalizados, automações com agentes de IA e melhoria de processos para empresas.",
-  "url": "https://gsasolucoesweb.com.br",
-  "logo": "https://gsasolucoesweb.com.br/favicon.svg",
-  "image": "https://gsasolucoesweb.com.br/og-image.jpg",
-  "telephone": "+55-31-99508-9977",
-  "email": "gabrielsouza.desenvolvedor@gmail.com.br",
-  "priceRange": "Sob consulta",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Betim",
-    "addressRegion": "MG",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -19.9672,
-    "longitude": -44.1986
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Betim"},
-    {"@type": "City", "name": "Ibirité"},
-    {"@type": "City", "name": "Contagem"},
-    {"@type": "City", "name": "Belo Horizonte"}
-  ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "08:00",
-    "closes": "18:00"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "telephone": "+55-31-99508-9977",
-    "availableLanguage": "Portuguese"
-  },
-  "sameAs": [
-    "https://wa.me/5531995089977",
-    "https://www.instagram.com/gsasolucoesweb"
-  ]
-}
-</script>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "GSA Soluções Web",
+        "description": "Consultoria empresarial, softwares personalizados, automações com agentes de IA e melhoria de processos para empresas.",
+        "url": "https://gsasolucoesweb.com.br",
+        "logo": "https://gsasolucoesweb.com.br/favicon.svg",
+        "image": "https://gsasolucoesweb.com.br/og-image.jpg",
+        "telephone": "+55-31-99508-9977",
+        "email": "gabrielsouza.desenvolvedor@gmail.com.br",
+        "priceRange": "Sob consulta",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Betim",
+          "addressRegion": "MG",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -19.9672,
+          "longitude": -44.1986
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Betim" },
+          { "@type": "City", "name": "Ibirité" },
+          { "@type": "City", "name": "Contagem" },
+          { "@type": "City", "name": "Belo Horizonte" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "telephone": "+55-31-99508-9977",
+          "availableLanguage": "Portuguese"
+        },
+        "sameAs": [
+          "https://wa.me/5531995089977",
+          "https://www.instagram.com/gsasolucoesweb"
+        ]
+      }
+    </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JHJGFZNWF4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<!-- GSA Logo SVG inline definition for reuse -->
-<style>
-  .gsa-logo-svg { display:inline-flex; align-items:center; gap:10px; }
-</style>
-</head>
-<body>
+      gtag("config", "G-JHJGFZNWF4");
+    </script>
 
-<!-- ── Navbar ──────────────────────────────────────────────────────── -->
-<nav id="nav">
-  <div class="container nav-wrap">
-    <a href="#" class="logo">
-      <!-- GSA Logo SVG -->
-      <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="GSA Soluções Web logo">
-        <rect width="38" height="38" rx="10" fill="#1246F0"/>
-        <!-- Letter G shape -->
-        <path d="M10 19C10 13.477 14.477 9 20 9C22.76 9 25.26 10.12 27.07 11.93L24.24 14.76C23.18 13.7 21.67 13 20 13C16.686 13 14 15.686 14 19C14 22.314 16.686 25 20 25C21.67 25 23.18 24.3 24.24 23.24V21H20V17H28V24.07C26.19 26.38 23.26 28 20 28C14.477 28 10 23.523 10 19Z" fill="white"/>
-        <!-- Accent dot -->
-        <circle cx="30" cy="10" r="3" fill="#4CF0A0"/>
-      </svg>
-      <div>
-        <div class="logo-name">GSA Soluções Web</div>
-      </div>
-    </a>
-    <div class="nav-links">
-      <a href="#servicos">Soluções</a>
-      <a href="#resultados">Sistemas</a>
-      <a href="#clientes">Clientes</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="https://wa.me/5531995089977" target="_blank" class="btn-wpp">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-    </div>
-    <div class="burger" id="burger" onclick="toggleMob()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-</nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-<div class="mob-menu" id="mob-menu">
-  <a href="#servicos"   onclick="closeMob()">Soluções</a>
-  <a href="#resultados" onclick="closeMob()">Sistemas</a>
-  <a href="#clientes" onclick="closeMob()">Clientes</a>
-  <a href="#diferenciais" onclick="closeMob()">Diferenciais</a>
-  <a href="#faq"        onclick="closeMob()">FAQ</a>
-  <a href="https://wa.me/5531995089977" target="_blank" onclick="closeMob()">💬 Falar no WhatsApp</a>
-</div>
-
-<!-- ── Hero ────────────────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-blob"></div>
-  <div class="container">
-    <div class="hero-grid">
-
-      <div>
-        <div class="hero-tag">
-          <span class="pill"><span class="pill-dot"></span>Sistemas, BI e automação para empresas</span>
-        </div>
-        <h1 class="hero-h1">
-          Sistemas sob medida<br>
-          para operações que<br>
-          precisam <i>escalar</i>
-        </h1>
-        <p class="hero-lead">
-          Criamos plataformas web, dashboards, integrações e automações para centralizar dados, reduzir retrabalho e dar mais controle à gestão.
-        </p>
-        <div class="hero-btns">
-          <a href="https://wa.me/5531995089977?text=Olá! Quero uma consultoria para melhorar processos e automatizar minha empresa." target="_blank" class="btn-primary">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Solicitar diagnóstico
-          </a>
-          <a href="#resultados" class="btn-text">Ver sistemas entregues <span class="arr">→</span></a>
-        </div>
-        <div class="hero-proof">
-          <div class="proof-avatars">
-            <div class="proof-av" style="background:#1246F0;">R</div>
-            <div class="proof-av" style="background:#12A06A;">A</div>
-            <div class="proof-av" style="background:#E08000;">M</div>
-            <div class="proof-av" style="background:#8B5CF6;">C</div>
-          </div>
-          <div class="proof-text">
-            <strong>+4 anos</strong> entregando sistemas reais<br>
-            <div class="proof-stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="browser-card">
-          <div class="br-top">
-            <div class="br-dots">
-              <div class="br-dot"></div><div class="br-dot"></div><div class="br-dot"></div>
-            </div>
-            <div class="br-addr">
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-              operacao.gsasolucoes.com.br
-            </div>
-          </div>
-          <div class="br-body">
-            <div class="sim-nav">
-              <div class="sim-logo">Painel de Operação</div>
-              <div class="sim-links">
-                <div class="sim-link"></div><div class="sim-link"></div><div class="sim-link"></div>
-              </div>
-              <div class="sim-cta"></div>
-            </div>
-            <div class="sim-hero">
-              <div class="sim-htag"></div>
-              <div class="sim-htitle"></div>
-              <div class="sim-hsub"></div>
-              <div class="sim-hbtn"></div>
-            </div>
-            <div class="sim-cards">
-              <div class="sim-card hl"><div class="sim-card-icon"></div><div class="sim-card-t"></div><div class="sim-card-s"></div></div>
-              <div class="sim-card"><div class="sim-card-icon"></div><div class="sim-card-t"></div><div class="sim-card-s"></div></div>
-              <div class="sim-card"><div class="sim-card-icon"></div><div class="sim-card-t"></div><div class="sim-card-s"></div></div>
-            </div>
-            <div class="sim-stats">
-              <div class="sim-stat"><div class="sim-stat-n"></div><div class="sim-stat-l"></div></div>
-              <div class="sim-stat"><div class="sim-stat-n"></div><div class="sim-stat-l"></div></div>
-              <div class="sim-stat"><div class="sim-stat-n"></div><div class="sim-stat-l"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="float-badge fb-1">
-          <span class="fb-icon">📈</span>
-          <div><div class="fb-val">-42%</div><div class="fb-lbl">retrabalho</div></div>
-        </div>
-        <div class="float-badge fb-2">
-          <div class="fb-2-inner"><div class="fb-2-val">IA ativa</div><div class="fb-2-lbl">na operação</div></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── Logos ────────────────────────────────────────────────────────── -->
-<div class="logos-strip">
-  <div class="container">
-    <div class="logos-inner">
-      <div class="logos-label">Stack de transformação</div>
-      <div class="logos-row">
-        <span class="logo-pill"><strong>+4 anos</strong> em sistemas reais</span>
-        <span class="logo-pill"><strong>6 frentes</strong> de solução</span>
-        <span class="logo-pill"><strong>BI</strong> e dashboards</span>
-        <span class="logo-pill"><strong>IA</strong> aplicada a processos</span>
-        <span class="logo-pill"><strong>APIs</strong> e integrações</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── Clientes ──────────────────────────────────────────────────────── -->
-<section class="clients" id="clientes">
-  <div class="container">
-    <div class="clients-marquee-wrap reveal">
-      <div class="clients-title">
-        <span class="pill"><span class="pill-dot"></span>Clientes</span>
-      </div>
-      <div class="client-logo-marquee" aria-label="Logos de clientes da GSA">
-        <div class="client-logo-track">
-          <div class="client-logo-item logo-image"><img src="assets/frsolucoes.png" alt="FR Soluções"></div>
-          <div class="client-logo-item logo-image"><img src="assets/techfibra.png" alt="Tech Fibra"></div>
-          <div class="client-logo-item logo-image"><img src="assets/tecnocarlogo.png" alt="Tecnocar"></div>
-          <div class="client-logo-item logo-image logo-fadson"><img src="assets/fadson_transportes.png" alt="Fadson Transportes"></div>
-          <div class="client-logo-item logo-image" aria-hidden="true"><img src="assets/frsolucoes.png" alt=""></div>
-          <div class="client-logo-item logo-image" aria-hidden="true"><img src="assets/techfibra.png" alt=""></div>
-          <div class="client-logo-item logo-image" aria-hidden="true"><img src="assets/tecnocarlogo.png" alt=""></div>
-          <div class="client-logo-item logo-image logo-fadson" aria-hidden="true"><img src="assets/fadson_transportes.png" alt=""></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Portfólio ────────────────────────────────────────────────────── -->
-<section class="results" id="resultados">
-  <div class="container">
-    <div class="results-head reveal">
-      <div>
-        <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>Cases e capacidade técnica</span></div>
-        <h2 class="sec-title">Tecnologia aplicada a operações reais</h2>
-      </div>
-      <p class="sec-body">Unimos visão de processo, desenvolvimento de sistemas e automação inteligente para resolver gargalos concretos: controle, rastreabilidade, atendimento, relatórios e tomada de decisão.</p>
-    </div>
-    <div class="result-cards reveal">
-
-      <div class="result-card">
-        <div class="rc-niche">Operação Corporativa</div>
-        <div style="margin-bottom:16px;">
-          <div style="font-family:var(--disp);font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;">Sistema de Atendimento e Controle Operacional</div>
-        </div>
-        <p class="rc-desc">Plataforma para registrar demandas internas, controlar responsáveis, acompanhar status, padronizar fluxos de aprovação e gerar indicadores de produtividade por área.</p>
-        <div class="rc-bottom" style="margin-top:16px;">
-          <div>
-            <div class="rc-city">Sistema web · em produção</div>
-          </div>
-          <div style="font-size:11px;color:var(--blue);font-weight:700;background:var(--blue-lt);padding:3px 8px;border-radius:6px;">ativo</div>
-        </div>
-      </div>
-
-      <div class="result-card">
-        <div class="rc-niche">Controle de Estoque</div>
-        <div style="margin-bottom:16px;">
-          <div style="font-family:var(--disp);font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;">Módulo de Estoque com Movimentações</div>
-        </div>
-        <p class="rc-desc">Sistema de entradas e saídas de materiais com histórico de movimentações, filtros por setor, validação de formulários e controle de permissões por perfil de usuário.</p>
-        <div class="rc-bottom" style="margin-top:16px;">
-          <div>
-            <div class="rc-city">Módulo web · em produção</div>
-          </div>
-          <div style="font-size:11px;color:var(--blue);font-weight:700;background:var(--blue-lt);padding:3px 8px;border-radius:6px;">ativo</div>
-        </div>
-      </div>
-
-      <div class="result-card">
-        <div class="rc-niche">Gestão de Contratos</div>
-        <div style="margin-bottom:16px;">
-          <div style="font-family:var(--disp);font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;">Sistema de Gestão de Contratos</div>
-        </div>
-        <p class="rc-desc">Sistema para cadastrar contratos, acompanhar vigências, controlar aditivos, responsáveis, documentos, alertas de prazo e status de execução em um painel centralizado.</p>
-        <div class="rc-bottom" style="margin-top:16px;">
-          <div>
-            <div class="rc-city">Sistema web · em produção</div>
-          </div>
-          <div style="font-size:11px;color:var(--blue);font-weight:700;background:var(--blue-lt);padding:3px 8px;border-radius:6px;">ativo</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- ── Frentes de Transformação ── -->
-    <div class="niche-header reveal" style="margin-top:72px;">
-      <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>Frentes de transformação</span></div>
-      <h3 class="sec-title" style="margin-top:12px;margin-bottom:8px;">Consultoria que sai do diagnóstico e vira operação</h3>
-      <p class="sec-body" style="max-width:620px;">Mapeamos como sua empresa trabalha hoje, priorizamos os gargalos que mais custam tempo e implantamos tecnologia na medida certa: processo, software, automação e indicadores.</p>
-    </div>
-
-    <div class="transformation-system reveal">
-      <div class="system-canvas" aria-hidden="true">
-        <div class="canvas-top">
-          <span>Camada operacional GSA</span>
-          <strong>Processos, sistemas e dados conectados</strong>
-        </div>
-        <div class="ops-board">
-          <div class="ops-module ops-module-main">
-            <span>01</span>
-            <strong>Operação</strong>
-            <p>Fluxos, responsáveis, prazos e histórico centralizados.</p>
-          </div>
-          <div class="ops-module">
-            <span>02</span>
-            <strong>Automação</strong>
-            <p>Rotinas, alertas e agentes conectados ao processo.</p>
-          </div>
-          <div class="ops-module">
-            <span>03</span>
-            <strong>Indicadores</strong>
-            <p>KPIs executivos para acompanhar a evolução.</p>
-          </div>
-          <div class="ops-pipeline">
-            <div><span>Entrada</span></div>
-            <div><span>Validação</span></div>
-            <div><span>Execução</span></div>
-            <div><span>Decisão</span></div>
-          </div>
-        </div>
-        <div class="canvas-metrics">
-          <div><span>+ clareza</span><strong>Processos</strong></div>
-          <div><span>+ controle</span><strong>Sistemas</strong></div>
-          <div><span>+ visão</span><strong>Dados</strong></div>
-        </div>
-      </div>
-
-      <div class="system-flows">
-        <a href="https://wa.me/5531995089977?text=Olá! Quero mapear os processos da minha empresa." target="_blank" class="flow-item">
-          <span class="flow-index">01</span>
-          <div>
-            <strong>Diagnóstico operacional</strong>
-            <p>Mapeamos fluxos, gargalos, riscos e oportunidades para priorizar melhorias com impacto real na operação.</p>
-          </div>
-          <em>BPM · SLA · Riscos</em>
-        </a>
-        <a href="https://wa.me/5531995089977?text=Olá! Quero um software personalizado para minha empresa." target="_blank" class="flow-item">
-          <span class="flow-index">02</span>
-          <div>
-            <strong>Sistemas sob medida</strong>
-            <p>Desenvolvemos plataformas para substituir planilhas, controlar permissões, registrar histórico e padronizar processos.</p>
-          </div>
-          <em>Web · Mobile · Auditoria</em>
-        </a>
-        <a href="https://wa.me/5531995089977?text=Olá! Quero automatizar tarefas com agentes de IA." target="_blank" class="flow-item">
-          <span class="flow-index">03</span>
-          <div>
-            <strong>Automação com IA</strong>
-            <p>Implantamos agentes para triagem, atendimento, consulta interna, geração de documentos e execução de rotinas.</p>
-          </div>
-          <em>IA · Base interna · Triagem</em>
-        </a>
-        <a href="https://wa.me/5531995089977?text=Olá! Quero integrar sistemas e reduzir retrabalho." target="_blank" class="flow-item">
-          <span class="flow-index">04</span>
-          <div>
-            <strong>Integração de sistemas</strong>
-            <p>Conectamos APIs, ERPs, bancos de dados, planilhas e BI para reduzir retrabalho e centralizar informações.</p>
-          </div>
-          <em>APIs · Power BI · SQL</em>
-        </a>
-        <a href="https://wa.me/5531995089977?text=Olá! Quero dashboards para acompanhar minha empresa." target="_blank" class="flow-item">
-          <span class="flow-index">05</span>
-          <div>
-            <strong>Dashboards executivos</strong>
-            <p>Criamos painéis com KPIs, metas, alertas e visão por área para apoiar decisões com dados confiáveis.</p>
-          </div>
-          <em>KPIs · Alertas · Real time</em>
-        </a>
-        <a href="https://wa.me/5531995089977?text=Olá! Quero suporte e evolução para os sistemas da minha empresa." target="_blank" class="flow-item">
-          <span class="flow-index">06</span>
-          <div>
-            <strong>Sustentação e evolução</strong>
-            <p>Acompanhamos melhorias, correções, segurança, backup e evolução contínua dos sistemas implantados.</p>
-          </div>
-          <em>Suporte · Backup · Segurança</em>
-        </a>
-      </div>
-    </div>
-
-    <div class="niche-cta reveal" style="margin-top:40px;">
-      <p style="font-size:14px;color:var(--ink3);">Tem um gargalo específico? A consultoria começa entendendo a realidade da sua empresa.</p>
-      <a href="https://wa.me/5531995089977?text=Olá! Quero conversar sobre os gargalos da minha empresa." target="_blank" class="btn-primary" style="display:inline-flex;margin-top:16px;">Fale conosco agora →</a>
-    </div>
-
-    <div class="result-cards reveal" style="margin-top:72px;">
-
-      <div class="result-card">
-        <div class="rc-niche">Financeiro & Orçamento</div>
-        <div style="margin-bottom:16px;">
-          <div style="font-family:var(--disp);font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;">Avaliação Orçamentária</div>
-        </div>
-        <p class="rc-desc">Sistema de controle de despesas previstas e orçamento com relatórios em Power BI conectados via Power Query, integração com Excel e dashboards em tempo real.</p>
-        <div class="rc-bottom" style="margin-top:16px;">
-          <div>
-            <div class="rc-city">Sistema financeiro · em produção</div>
-          </div>
-          <div style="font-size:11px;color:var(--blue);font-weight:700;background:var(--blue-lt);padding:3px 8px;border-radius:6px;">ativo</div>
-        </div>
-      </div>
-
-      <div class="result-card">
-        <div class="rc-niche">Seleção & RH</div>
-        <div style="margin-bottom:16px;">
-          <div style="font-family:var(--disp);font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;">Processo Seletivo com Ranking</div>
-        </div>
-        <p class="rc-desc">Sistema completo de inscrições para processos seletivos com ranking automático por cotas (PCD e racial), filtros por vaga e geração de resultado em tempo real.</p>
-        <div class="rc-bottom" style="margin-top:16px;">
-          <div>
-            <div class="rc-city">Sistema web · em produção</div>
-          </div>
-          <div style="font-size:11px;color:var(--blue);font-weight:700;background:var(--blue-lt);padding:3px 8px;border-radius:6px;">ativo</div>
-        </div>
-      </div>
-
-      <div class="result-card">
-        <div class="rc-niche">Presença em Tempo Real</div>
-        <div style="margin-bottom:16px;">
-          <div style="font-family:var(--disp);font-size:20px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.2;">Monitoramento de Usuários Online</div>
-        </div>
-        <p class="rc-desc">Painel de presença em tempo real para mostrar usuários online por módulo, com acesso seguro e visão centralizada para administradores.</p>
-        <div class="rc-bottom" style="margin-top:16px;">
-          <div>
-            <div class="rc-city">Módulo real-time · em produção</div>
-          </div>
-          <div style="font-size:11px;color:var(--blue);font-weight:700;background:var(--blue-lt);padding:3px 8px;border-radius:6px;">ativo</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── Serviços ──────────────────────────────────────────────────────── -->
-<section class="services" id="servicos">
-  <div class="container">
-    <div class="services-head reveal">
-      <div>
-        <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>O que fazemos</span></div>
-        <h2 class="sec-title">Consultoria, tecnologia e IA em um só parceiro</h2>
-      </div>
-      <div class="services-head-note">
-        <span>Operating stack</span>
-        <p>Entramos para entender o processo, desenhar a solução, desenvolver o software, automatizar rotinas e acompanhar a evolução depois da entrega.</p>
-      </div>
-    </div>
-    <div class="svc-grid reveal">
-      <div class="svc-card">
-        <div class="svc-ico svc-ico-dev" aria-hidden="true"></div>
-        <div class="svc-name">Desenvolvimento sob medida</div>
-        <div class="svc-desc">Sites, sistemas e plataformas digitais pensados para o jeito real que sua empresa vende, atende e opera.</div>
-        <ul class="svc-features">
-          <li class="svc-feat">Arquitetura do fluxo</li>
-          <li class="svc-feat">Interface responsiva</li>
-          <li class="svc-feat">Integração com operação</li>
-        </ul>
-      </div>
-      <div class="svc-card dark">
-        <div class="svc-ico svc-ico-ai" aria-hidden="true"></div>
-        <div class="svc-name">Agentes de IA</div>
-        <div class="svc-desc">Agentes para atendimento, análise, busca interna, documentos e execução de rotinas com supervisão.</div>
-        <ul class="svc-features">
-          <li class="svc-feat">IA conectada ao negócio</li>
-          <li class="svc-feat">Base de conhecimento</li>
-          <li class="svc-feat">Fluxos com aprovação</li>
-        </ul>
-      </div>
-      <div class="svc-card">
-        <div class="svc-ico svc-ico-system" aria-hidden="true"></div>
-        <div class="svc-name">Software Sob Medida</div>
-        <div class="svc-desc">Sistemas web personalizados para controlar operações que ferramentas prontas não resolvem bem.</div>
-        <ul class="svc-features">
-          <li class="svc-feat">Perfis e permissões</li>
-          <li class="svc-feat">Relatórios e auditoria</li>
-          <li class="svc-feat">Acesso pelo celular</li>
-        </ul>
-      </div>
-      <div class="svc-card">
-        <div class="svc-ico svc-ico-auto" aria-hidden="true"></div>
-        <div class="svc-name">Automação de projetos</div>
-        <div class="svc-desc">Conectamos ferramentas, APIs, planilhas, bancos de dados e canais de atendimento para reduzir trabalho manual.</div>
-        <ul class="svc-features">
-          <li class="svc-feat">APIs e webhooks</li>
-          <li class="svc-feat">Rotinas automáticas</li>
-          <li class="svc-feat">Menos digitação duplicada</li>
-        </ul>
-      </div>
-      <div class="svc-card">
-        <div class="svc-ico svc-ico-dashboard" aria-hidden="true"></div>
-        <div class="svc-name">Dashboards & Indicadores</div>
-        <div class="svc-desc">Dashboards conectados aos seus dados para acompanhar produtividade, custos, atendimento e resultados.</div>
-        <ul class="svc-features">
-          <li class="svc-feat">Gráficos interativos</li>
-          <li class="svc-feat">Integração Excel/BI</li>
-          <li class="svc-feat">Atualização automática</li>
-        </ul>
-      </div>
-      <div class="svc-card">
-        <div class="svc-ico svc-ico-mail" aria-hidden="true"></div>
-        <div class="svc-name">E-mails personalizados</div>
-        <div class="svc-desc">Criação e configuração de e-mails com domínio próprio para deixar sua comunicação mais profissional.</div>
-        <ul class="svc-features">
-          <li class="svc-feat">contato@suaempresa.com.br</li>
-          <li class="svc-feat">Configuração em celular e desktop</li>
-          <li class="svc-feat">Suporte para implantação</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Processo ──────────────────────────────────────────────────────── -->
-<section class="process">
-  <div class="container">
-    <div style="text-align:center;max-width:520px;margin:0 auto;" class="reveal">
-      <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>Como funciona</span></div>
-      <h2 class="sec-title" style="margin-top:14px;">Da dor operacional à solução funcionando</h2>
-    </div>
-    <div class="process-steps reveal">
-      <div class="ps-item">
-        <div class="ps-circle">01</div>
-        <div class="ps-title">Diagnóstico</div>
-        <div class="ps-desc">Entendemos a empresa, os gargalos, as ferramentas atuais e o impacto esperado.</div>
-      </div>
-      <div class="ps-item">
-        <div class="ps-circle">02</div>
-        <div class="ps-title">Plano de ação</div>
-        <div class="ps-desc">Definimos prioridades, escopo, prazo, investimento e indicadores de sucesso.</div>
-      </div>
-      <div class="ps-item">
-        <div class="ps-circle">03</div>
-        <div class="ps-title">Implantação</div>
-        <div class="ps-desc">Desenvolvemos, integramos, automatizamos e validamos com quem usa no dia a dia.</div>
-      </div>
-      <div class="ps-item">
-        <div class="ps-circle">04</div>
-        <div class="ps-title">Evolução</div>
-        <div class="ps-desc">Acompanhamos resultados, ajustamos processos e evoluímos a solução por ciclos.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Comparativo ────────────────────────────────────────────────────── -->
-<section class="compare">
-  <div class="container">
-    <div style="text-align:center;max-width:520px;margin:0 auto;" class="reveal">
-      <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>A diferença</span></div>
-      <h2 class="sec-title" style="margin-top:14px;">Com ou sem processos automatizados?</h2>
-    </div>
-    <div class="compare-inner reveal">
-      <div class="compare-col sem">
-        <div class="compare-label">Operação travada hoje</div>
-        <ul class="compare-list">
-          <li class="compare-item"><div class="ci-icon">✕</div>Planilhas paralelas e informação duplicada</li>
-          <li class="compare-item"><div class="ci-icon">✕</div>Equipe perdendo tempo com tarefas repetitivas</li>
-          <li class="compare-item"><div class="ci-icon">✕</div>Gestores sem visão confiável em tempo real</li>
-          <li class="compare-item"><div class="ci-icon">✕</div>Atendimento lento por falta de histórico e padrão</li>
-          <li class="compare-item"><div class="ci-icon">✕</div>Processos dependentes de uma pessoa específica</li>
-          <li class="compare-item"><div class="ci-icon">✕</div>Decisões tomadas no improviso</li>
-        </ul>
-      </div>
-      <div class="compare-col com">
-        <div class="compare-label">Com a GSA na operação</div>
-        <ul class="compare-list">
-          <li class="compare-item"><div class="ci-icon">✓</div>Processos mapeados e padronizados</li>
-          <li class="compare-item"><div class="ci-icon">✓</div>Software feito para o fluxo real da empresa</li>
-          <li class="compare-item"><div class="ci-icon">✓</div>Agentes de IA apoiando rotinas e atendimento</li>
-          <li class="compare-item"><div class="ci-icon">✓</div>Dashboards para acompanhar indicadores-chave</li>
-          <li class="compare-item"><div class="ci-icon">✓</div>Integrações que reduzem retrabalho</li>
-          <li class="compare-item"><div class="ci-icon">✓</div>Evolução contínua com suporte próximo</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Planos ────────────────────────────────────────────────────────── -->
-<section class="pricing" id="precos">
-  <div class="container">
-    <div style="text-align:center;max-width:540px;margin:0 auto;" class="reveal">
-      <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>Investimento</span></div>
-      <h2 class="sec-title" style="margin-top:14px;">Investimento alinhado ao tamanho do desafio</h2>
-      <p style="font-size:14px;color:var(--ink3);margin-top:10px;">Cada empresa tem um processo, uma urgência e um nível de maturidade. Por isso trabalhamos com propostas sob medida.</p>
-    </div>
-    <div class="pricing-grid reveal">
-
-      <div class="plan">
-        <div class="plan-name">Diagnóstico</div>
-        <div class="plan-price" style="font-size:26px;padding-top:12px;letter-spacing:-.02em;">Sob consulta</div>
-        <div class="plan-period">mapeamento e plano de ação</div>
-        <div class="plan-line"></div>
-        <ul class="plan-features">
-          <li class="plan-feat">Entrevistas com responsáveis</li>
-          <li class="plan-feat">Mapa dos processos atuais</li>
-          <li class="plan-feat">Lista de gargalos priorizados</li>
-          <li class="plan-feat">Sugestões de automação e sistema</li>
-          <li class="plan-feat">Roadmap de implantação</li>
-        </ul>
-        <a href="https://wa.me/5531995089977?text=Quero contratar um diagnóstico de processos." target="_blank" class="plan-btn plan-btn-outline">Solicitar diagnóstico</a>
-      </div>
-
-      <div class="plan pop">
-        <div class="pop-label">⚡ Mais completo</div>
-        <div class="plan-name">Implantação</div>
-        <div class="plan-price" style="font-size:26px;padding-top:12px;letter-spacing:-.02em;">Sob consulta</div>
-        <div class="plan-period">software, IA e integrações</div>
-        <div class="plan-line"></div>
-        <ul class="plan-features">
-          <li class="plan-feat">Sistema web personalizado</li>
-          <li class="plan-feat">Automação com agentes de IA</li>
-          <li class="plan-feat">Integração com ferramentas atuais</li>
-          <li class="plan-feat">Dashboards e relatórios</li>
-          <li class="plan-feat">Treinamento da equipe</li>
-          <li class="plan-feat">Implantação acompanhada</li>
-        </ul>
-        <a href="https://wa.me/5531995089977?text=Quero uma proposta de implantação com software e IA." target="_blank" class="plan-btn plan-btn-solid">Solicitar proposta</a>
-      </div>
-
-      <div class="plan">
-        <div class="plan-name">Sustentação</div>
-        <div class="plan-price" style="font-size:26px;padding-top:12px;letter-spacing:-.02em;">Sob consulta</div>
-        <div class="plan-period">suporte e evolução mensal</div>
-        <div class="plan-line"></div>
-        <ul class="plan-features">
-          <li class="plan-feat">Suporte técnico contínuo</li>
-          <li class="plan-feat">Melhorias por ciclo</li>
-          <li class="plan-feat">Monitoramento e backups</li>
-          <li class="plan-feat">Ajustes em agentes de IA</li>
-          <li class="plan-feat">Novos relatórios</li>
-          <li class="plan-feat">Contrato e nota fiscal</li>
-        </ul>
-        <a href="https://wa.me/5531995089977?text=Quero suporte e evolução mensal para minha empresa." target="_blank" class="plan-btn plan-btn-outline">Montar plano mensal</a>
-      </div>
-
-    </div>
-
-    <p style="text-align:center;font-size:12px;color:var(--ink3);margin-top:28px;">
-      💡 Emitimos nota fiscal, formalizamos escopo e trabalhamos com etapas claras de entrega.
-    </p>
-  </div>
-</section>
-
-<!-- ── Por que nos escolher ───────────────────────────────────────────── -->
-<section class="testimonials" id="diferenciais">
-  <div class="container">
-    <div style="text-align:center;max-width:560px;margin:0 auto;" class="reveal">
-      <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>Nossos diferenciais</span></div>
-      <h2 class="sec-title" style="margin-top:14px;">Por que escolher a GSA Soluções Web?</h2>
-      <p style="font-size:15px;color:var(--ink2);margin-top:14px;line-height:1.75;">Não vendemos tecnologia solta. Entendemos o processo, desenhamos a solução e implantamos com cuidado para que a equipe realmente use no dia a dia.</p>
-    </div>
-
-    <div class="test-grid reveal" style="margin-top:56px;">
-
-      <div class="test-card" style="background:var(--white);">
-        <div style="font-size:28px;margin-bottom:14px;">🧑‍💻</div>
-        <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em;">+4 anos com sistemas reais</div>
-        <p class="test-text" style="font-style:normal;">Já entregamos plataformas usadas diariamente, com autenticação, permissões, relatórios, integrações e operação crítica.</p>
-      </div>
-
-      <div class="test-card" style="background:var(--white);">
-        <div style="font-size:28px;margin-bottom:14px;">⚡</div>
-        <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em;">Stack moderna e pragmática</div>
-        <p class="test-text" style="font-style:normal;">Usamos tecnologias modernas, seguras e adequadas ao projeto. A escolha sempre considera performance, manutenção e valor para a operação.</p>
-      </div>
-
-      <div class="test-card" style="background:var(--white);">
-        <div style="font-size:28px;margin-bottom:14px;">🤝</div>
-        <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em;">Atendimento direto e consultivo</div>
-        <p class="test-text" style="font-style:normal;">Você conversa com quem entende de processo e também constrói a solução. Menos ruído, mais decisão objetiva.</p>
-      </div>
-
-      <div class="test-card" style="background:var(--white);">
-        <div style="font-size:28px;margin-bottom:14px;">📱</div>
-        <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em;">Foco em adoção pela equipe</div>
-        <p class="test-text" style="font-style:normal;">Interface simples, treinamento e ajustes com usuários reais para que o sistema não vire mais uma obrigação abandonada.</p>
-      </div>
-
-      <div class="test-card" style="background:var(--white);">
-        <div style="font-size:28px;margin-bottom:14px;">🔍</div>
-        <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em;">Indicadores desde o começo</div>
-        <p class="test-text" style="font-style:normal;">A solução nasce com relatórios e dados para medir ganho de tempo, volume, qualidade e gargalos que ainda precisam evoluir.</p>
-      </div>
-
-      <div class="test-card" style="background:var(--white);">
-        <div style="font-size:28px;margin-bottom:14px;">💬</div>
-        <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em;">Suporte humano pelo WhatsApp</div>
-        <p class="test-text" style="font-style:normal;">Depois da entrega, seguimos perto para corrigir, ajustar, evoluir automações e responder quando a operação precisar.</p>
-      </div>
-
-    </div>
-
-    <div class="reveal" style="text-align:center;margin-top:52px;">
-      <p style="font-size:14px;color:var(--ink3);margin-bottom:18px;">Quer entender se IA e software sob medida fazem sentido para sua empresa? <strong style="color:var(--ink);">Começamos por uma conversa de diagnóstico.</strong></p>
-      <a href="https://wa.me/5531995089977?text=Olá! Quero fazer um diagnóstico para entender onde posso usar IA e software na minha empresa." target="_blank" class="btn-primary" style="display:inline-flex;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero um diagnóstico
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ────────────────────────────────────────────────────────────── -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-layout">
-      <div class="faq-aside reveal">
-        <div class="section-eyebrow"><span class="pill"><span class="pill-dot"></span>Dúvidas</span></div>
-        <h2 class="sec-title" style="margin-top:14px;">Perguntas frequentes</h2>
-        <p>Ainda tem dúvida? Fale direto com a gente — respondemos em minutos.</p>
-        <a href="https://wa.me/5531995089977" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:8px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Falar agora
-        </a>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva um projeto?<em class="faq-icon">+</em></div>
-          <div class="faq-a">Depende do escopo. Um diagnóstico pode ser conduzido em poucos dias; uma implantação com sistema, IA e integrações recebe cronograma próprio na proposta.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Vocês fazem só consultoria ou também desenvolvem?<em class="faq-icon">+</em></div>
-          <div class="faq-a">Fazemos os dois. Podemos entregar apenas o diagnóstico e o plano de ação, ou assumir a implantação completa com software, automações, IA, dashboards e suporte.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Agentes de IA funcionam com meus dados?<em class="faq-icon">+</em></div>
-          <div class="faq-a">Sim, quando faz sentido e com cuidado. Podemos conectar documentos, bases internas e sistemas, definindo permissões, limites de atuação e pontos de aprovação humana.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Dá para integrar com sistemas que já usamos?<em class="faq-icon">+</em></div>
-          <div class="faq-a">Na maioria dos casos, sim. Avaliamos APIs, banco de dados, planilhas, exportações e ferramentas atuais para escolher a forma mais segura de integração.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Atendem qualquer cidade do Brasil?<em class="faq-icon">+</em></div>
-          <div class="faq-a">Sim. O trabalho pode ser conduzido online com reuniões, documentação, homologação e acompanhamento remoto. Para casos específicos, combinamos visitas presenciais.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q" onclick="toggleFaq(this)">Como é feita a proposta?<em class="faq-icon">+</em></div>
-          <div class="faq-a">Depois de entender o problema, enviamos uma proposta com escopo, etapas, prazos, investimento, responsabilidades e o que será considerado entrega concluída.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CTA ─────────────────────────────────────────────────────────────── -->
-<section class="cta-sec">
-  <div class="container reveal">
-    <div class="cta-box">
-      <div class="cta-left">
-        <span class="pill"><span class="pill-dot"></span>Pronto para começar?</span>
-        <h2 class="cta-title" style="margin-top:18px;">Vamos melhorar<br>sua operação?</h2>
-        <p class="cta-sub">Fale pelo WhatsApp, conte onde sua empresa perde tempo hoje e receba um caminho claro para processo, software e IA trabalharem juntos.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="https://wa.me/5531995089977?text=Olá! Quero melhorar processos, criar software sob medida e automatizar minha empresa com IA." target="_blank" class="btn-cta-main">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Chamar no WhatsApp
-        </a>
-        <a href="mailto:gabrielsouza.desenvolvedor@gmail.com.br" class="btn-cta-sec">ou enviar um e-mail</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Footer ─────────────────────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="ft-grid">
-      <div>
+    <!-- GSA Logo SVG inline definition for reuse -->
+    <style>
+      .gsa-logo-svg {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── Navbar ──────────────────────────────────────────────────────── -->
+    <nav id="nav">
+      <div class="container nav-wrap">
         <a href="#" class="logo">
-          <svg width="34" height="34" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="38" height="38" rx="10" fill="#1246F0"/>
-            <path d="M10 19C10 13.477 14.477 9 20 9C22.76 9 25.26 10.12 27.07 11.93L24.24 14.76C23.18 13.7 21.67 13 20 13C16.686 13 14 15.686 14 19C14 22.314 16.686 25 20 25C21.67 25 23.18 24.3 24.24 23.24V21H20V17H28V24.07C26.19 26.38 23.26 28 20 28C14.477 28 10 23.523 10 19Z" fill="white"/>
-            <circle cx="30" cy="10" r="3" fill="#4CF0A0"/>
+          <!-- GSA Logo SVG -->
+          <svg
+            width="38"
+            height="38"
+            viewBox="0 0 38 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="GSA Soluções Web logo"
+          >
+            <rect width="38" height="38" rx="10" fill="#1246F0" />
+            <!-- Letter G shape -->
+            <path
+              d="M10 19C10 13.477 14.477 9 20 9C22.76 9 25.26 10.12 27.07 11.93L24.24 14.76C23.18 13.7 21.67 13 20 13C16.686 13 14 15.686 14 19C14 22.314 16.686 25 20 25C21.67 25 23.18 24.3 24.24 23.24V21H20V17H28V24.07C26.19 26.38 23.26 28 20 28C14.477 28 10 23.523 10 19Z"
+              fill="white"
+            />
+            <!-- Accent dot -->
+            <circle cx="30" cy="10" r="3" fill="#4CF0A0" />
           </svg>
           <div>
-            <div class="logo-name ft-logo-name">GSA Soluções Web</div>
+            <div class="logo-name">GSA Soluções Web</div>
           </div>
         </a>
-        <p class="ft-about">Consultoria, sistemas sob medida, automações com IA e melhoria de processos para empresas em BH, Betim e todo o Brasil.</p>
+        <div class="nav-links">
+          <a href="#servicos">Soluções</a>
+          <a href="#resultados">Sistemas</a>
+          <a href="#clientes">Clientes</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="https://wa.me/5531995089977" target="_blank" class="btn-wpp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="burger" id="burger" onclick="toggleMob()">
+          <span></span><span></span><span></span>
+        </div>
       </div>
-      <div>
-        <div class="ft-title">Serviços</div>
-        <ul class="ft-links">
-          <li><a href="#servicos">Desenvolvimento sob medida</a></li>
-          <li><a href="#servicos">Automação de Projetos</a></li>
-          <li><a href="#servicos">Agentes de IA</a></li>
-          <li><a href="#servicos">Dashboards</a></li>
-          <li><a href="#servicos">E-mails Personalizados</a></li>
-        </ul>
+    </nav>
+
+    <div class="mob-menu" id="mob-menu">
+      <a href="#servicos" onclick="closeMob()">Soluções</a>
+      <a href="#resultados" onclick="closeMob()">Sistemas</a>
+      <a href="#clientes" onclick="closeMob()">Clientes</a>
+      <a href="#diferenciais" onclick="closeMob()">Diferenciais</a>
+      <a href="#faq" onclick="closeMob()">FAQ</a>
+      <a href="https://wa.me/5531995089977" target="_blank" onclick="closeMob()"
+        >💬 Falar no WhatsApp</a
+      >
+    </div>
+
+    <!-- ── Hero ────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-blob"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tag">
+              <span class="pill"
+                ><span class="pill-dot"></span>Sistemas, BI e automação para
+                empresas</span
+              >
+            </div>
+            <h1 class="hero-h1">
+              Sistemas sob medida<br />
+              para operações que<br />
+              precisam <i>escalar</i>
+            </h1>
+            <p class="hero-lead">
+              Criamos plataformas web, dashboards, integrações e automações para
+              centralizar dados, reduzir retrabalho e dar mais controle à
+              gestão.
+            </p>
+            <div class="hero-btns">
+              <a
+                href="https://wa.me/5531995089977?text=Olá! Quero uma consultoria para melhorar processos e automatizar minha empresa."
+                target="_blank"
+                class="btn-primary"
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                Solicitar diagnóstico
+              </a>
+              <a href="#resultados" class="btn-text"
+                >Ver sistemas entregues <span class="arr">→</span></a
+              >
+            </div>
+            <div class="hero-proof">
+              <div class="proof-avatars">
+                <div class="proof-av" style="background: #1246f0">R</div>
+                <div class="proof-av" style="background: #12a06a">A</div>
+                <div class="proof-av" style="background: #e08000">M</div>
+                <div class="proof-av" style="background: #8b5cf6">C</div>
+              </div>
+              <div class="proof-text">
+                <strong>+4 anos</strong> entregando sistemas reais<br />
+                <div class="proof-stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="browser-card">
+              <div class="br-top">
+                <div class="br-dots">
+                  <div class="br-dot"></div>
+                  <div class="br-dot"></div>
+                  <div class="br-dot"></div>
+                </div>
+                <div class="br-addr">
+                  <svg
+                    width="9"
+                    height="9"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0110 0v4" />
+                  </svg>
+                  operacao.gsasolucoes.com.br
+                </div>
+              </div>
+              <div class="br-body">
+                <div class="sim-nav">
+                  <div class="sim-logo">Painel de Operação</div>
+                  <div class="sim-links">
+                    <div class="sim-link"></div>
+                    <div class="sim-link"></div>
+                    <div class="sim-link"></div>
+                  </div>
+                  <div class="sim-cta"></div>
+                </div>
+                <div class="sim-hero">
+                  <div class="sim-htag"></div>
+                  <div class="sim-htitle"></div>
+                  <div class="sim-hsub"></div>
+                  <div class="sim-hbtn"></div>
+                </div>
+                <div class="sim-cards">
+                  <div class="sim-card hl">
+                    <div class="sim-card-icon"></div>
+                    <div class="sim-card-t"></div>
+                    <div class="sim-card-s"></div>
+                  </div>
+                  <div class="sim-card">
+                    <div class="sim-card-icon"></div>
+                    <div class="sim-card-t"></div>
+                    <div class="sim-card-s"></div>
+                  </div>
+                  <div class="sim-card">
+                    <div class="sim-card-icon"></div>
+                    <div class="sim-card-t"></div>
+                    <div class="sim-card-s"></div>
+                  </div>
+                </div>
+                <div class="sim-stats">
+                  <div class="sim-stat">
+                    <div class="sim-stat-n"></div>
+                    <div class="sim-stat-l"></div>
+                  </div>
+                  <div class="sim-stat">
+                    <div class="sim-stat-n"></div>
+                    <div class="sim-stat-l"></div>
+                  </div>
+                  <div class="sim-stat">
+                    <div class="sim-stat-n"></div>
+                    <div class="sim-stat-l"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="float-badge fb-1">
+              <span class="fb-icon">📈</span>
+              <div>
+                <div class="fb-val">-42%</div>
+                <div class="fb-lbl">retrabalho</div>
+              </div>
+            </div>
+            <div class="float-badge fb-2">
+              <div class="fb-2-inner">
+                <div class="fb-2-val">IA ativa</div>
+                <div class="fb-2-lbl">na operação</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <div class="ft-title">Empresa</div>
-        <ul class="ft-links">
-          <li><a href="#resultados">Cases</a></li>
-          <li><a href="#clientes">Clientes</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="ft-title">Contato</div>
-        <ul class="ft-links">
-          <li><a href="https://wa.me/5531995089977" target="_blank">WhatsApp: (31) 99508-9977</a></li>
-          <li><a href="mailto:gabrielsouza.desenvolvedor@gmail.com.br">E-mail</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
+    </section>
+
+    <!-- ── Logos ────────────────────────────────────────────────────────── -->
+    <div class="logos-strip">
+      <div class="container">
+        <div class="logos-inner">
+          <div class="logos-label">Stack de transformação</div>
+          <div class="logos-row">
+            <span class="logo-pill"
+              ><strong>+4 anos</strong> em sistemas reais</span
+            >
+            <span class="logo-pill"><strong>6 frentes</strong> de solução</span>
+            <span class="logo-pill"><strong>BI</strong> e dashboards</span>
+            <span class="logo-pill"
+              ><strong>IA</strong> aplicada a processos</span
+            >
+            <span class="logo-pill"><strong>APIs</strong> e integrações</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="ft-bottom">
-      <div class="ft-copy">© 2026 GSA Soluções Web</div>
+
+    <!-- ── Clientes ──────────────────────────────────────────────────────── -->
+    <section class="clients" id="clientes">
+      <div class="container">
+        <div class="clients-marquee-wrap reveal">
+          <div class="clients-title">
+            <span class="pill"><span class="pill-dot"></span>Clientes</span>
+          </div>
+          <div
+            class="client-logo-marquee"
+            aria-label="Logos de clientes da GSA"
+          >
+            <div class="client-logo-track">
+              <div class="client-logo-item logo-image">
+                <img src="assets/frsolucoes.png" alt="FR Soluções" />
+              </div>
+              <div class="client-logo-item logo-image">
+                <img src="assets/techfibra.png" alt="Tech Fibra" />
+              </div>
+              <div class="client-logo-item logo-image">
+                <img src="assets/tecnocarlogo.png" alt="Tecnocar" />
+              </div>
+              <div class="client-logo-item logo-image logo-fadson">
+                <img
+                  src="assets/fadson_transportes.png"
+                  alt="Fadson Transportes"
+                />
+              </div>
+              <div class="client-logo-item logo-image" aria-hidden="true">
+                <img src="assets/frsolucoes.png" alt="" />
+              </div>
+              <div class="client-logo-item logo-image" aria-hidden="true">
+                <img src="assets/techfibra.png" alt="" />
+              </div>
+              <div class="client-logo-item logo-image" aria-hidden="true">
+                <img src="assets/tecnocarlogo.png" alt="" />
+              </div>
+              <div
+                class="client-logo-item logo-image logo-fadson"
+                aria-hidden="true"
+              >
+                <img src="assets/fadson_transportes.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Portfólio ────────────────────────────────────────────────────── -->
+    <section class="results" id="resultados">
+      <div class="container">
+        <div class="results-head reveal">
+          <div>
+            <div class="section-eyebrow">
+              <span class="pill"
+                ><span class="pill-dot"></span>Cases e capacidade técnica</span
+              >
+            </div>
+            <h2 class="sec-title">Tecnologia aplicada a operações reais</h2>
+          </div>
+          <p class="sec-body">
+            Unimos visão de processo, desenvolvimento de sistemas e automação
+            inteligente para resolver gargalos concretos: controle,
+            rastreabilidade, atendimento, relatórios e tomada de decisão.
+          </p>
+        </div>
+        <div class="result-cards reveal">
+          <div class="result-card">
+            <div class="rc-niche">Operação Corporativa</div>
+            <div style="margin-bottom: 16px">
+              <div
+                style="
+                  font-family: var(--disp);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--ink);
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                "
+              >
+                Sistema de Atendimento e Controle Operacional
+              </div>
+            </div>
+            <p class="rc-desc">
+              Plataforma para registrar demandas internas, controlar
+              responsáveis, acompanhar status, padronizar fluxos de aprovação e
+              gerar indicadores de produtividade por área.
+            </p>
+            <div class="rc-bottom" style="margin-top: 16px">
+              <div>
+                <div class="rc-city">Sistema web · em produção</div>
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--blue);
+                  font-weight: 700;
+                  background: var(--blue-lt);
+                  padding: 3px 8px;
+                  border-radius: 6px;
+                "
+              >
+                ativo
+              </div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="rc-niche">Controle de Estoque</div>
+            <div style="margin-bottom: 16px">
+              <div
+                style="
+                  font-family: var(--disp);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--ink);
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                "
+              >
+                Módulo de Estoque com Movimentações
+              </div>
+            </div>
+            <p class="rc-desc">
+              Sistema de entradas e saídas de materiais com histórico de
+              movimentações, filtros por setor, validação de formulários e
+              controle de permissões por perfil de usuário.
+            </p>
+            <div class="rc-bottom" style="margin-top: 16px">
+              <div>
+                <div class="rc-city">Módulo web · em produção</div>
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--blue);
+                  font-weight: 700;
+                  background: var(--blue-lt);
+                  padding: 3px 8px;
+                  border-radius: 6px;
+                "
+              >
+                ativo
+              </div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="rc-niche">Gestão de Contratos</div>
+            <div style="margin-bottom: 16px">
+              <div
+                style="
+                  font-family: var(--disp);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--ink);
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                "
+              >
+                Sistema de Gestão de Contratos
+              </div>
+            </div>
+            <p class="rc-desc">
+              Sistema para cadastrar contratos, acompanhar vigências, controlar
+              aditivos, responsáveis, documentos, alertas de prazo e status de
+              execução em um painel centralizado.
+            </p>
+            <div class="rc-bottom" style="margin-top: 16px">
+              <div>
+                <div class="rc-city">Sistema web · em produção</div>
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--blue);
+                  font-weight: 700;
+                  background: var(--blue-lt);
+                  padding: 3px 8px;
+                  border-radius: 6px;
+                "
+              >
+                ativo
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Frentes de Transformação ── -->
+        <div class="niche-header reveal" style="margin-top: 72px">
+          <div class="section-eyebrow">
+            <span class="pill"
+              ><span class="pill-dot"></span>Frentes de transformação</span
+            >
+          </div>
+          <h3 class="sec-title" style="margin-top: 12px; margin-bottom: 8px">
+            Consultoria que sai do diagnóstico e vira operação
+          </h3>
+          <p class="sec-body" style="max-width: 620px">
+            Mapeamos como sua empresa trabalha hoje, priorizamos os gargalos que
+            mais custam tempo e implantamos tecnologia na medida certa:
+            processo, software, automação e indicadores.
+          </p>
+        </div>
+
+        <div class="transformation-system reveal">
+          <div class="system-canvas" aria-hidden="true">
+            <div class="canvas-top">
+              <span>Camada operacional GSA</span>
+              <strong>Processos, sistemas e dados conectados</strong>
+            </div>
+            <div class="ops-board">
+              <div class="ops-module ops-module-main">
+                <span>01</span>
+                <strong>Operação</strong>
+                <p>Fluxos, responsáveis, prazos e histórico centralizados.</p>
+              </div>
+              <div class="ops-module">
+                <span>02</span>
+                <strong>Automação</strong>
+                <p>Rotinas, alertas e agentes conectados ao processo.</p>
+              </div>
+              <div class="ops-module">
+                <span>03</span>
+                <strong>Indicadores</strong>
+                <p>KPIs executivos para acompanhar a evolução.</p>
+              </div>
+              <div class="ops-pipeline">
+                <div><span>Entrada</span></div>
+                <div><span>Validação</span></div>
+                <div><span>Execução</span></div>
+                <div><span>Decisão</span></div>
+              </div>
+            </div>
+            <div class="canvas-metrics">
+              <div><span>+ clareza</span><strong>Processos</strong></div>
+              <div><span>+ controle</span><strong>Sistemas</strong></div>
+              <div><span>+ visão</span><strong>Dados</strong></div>
+            </div>
+          </div>
+
+          <div class="system-flows">
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero mapear os processos da minha empresa."
+              target="_blank"
+              class="flow-item"
+            >
+              <span class="flow-index">01</span>
+              <div>
+                <strong>Diagnóstico operacional</strong>
+                <p>
+                  Mapeamos fluxos, gargalos, riscos e oportunidades para
+                  priorizar melhorias com impacto real na operação.
+                </p>
+              </div>
+              <em>BPM · SLA · Riscos</em>
+            </a>
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero um software personalizado para minha empresa."
+              target="_blank"
+              class="flow-item"
+            >
+              <span class="flow-index">02</span>
+              <div>
+                <strong>Sistemas sob medida</strong>
+                <p>
+                  Desenvolvemos plataformas para substituir planilhas, controlar
+                  permissões, registrar histórico e padronizar processos.
+                </p>
+              </div>
+              <em>Web · Mobile · Auditoria</em>
+            </a>
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero automatizar tarefas com agentes de IA."
+              target="_blank"
+              class="flow-item"
+            >
+              <span class="flow-index">03</span>
+              <div>
+                <strong>Automação com IA</strong>
+                <p>
+                  Implantamos agentes para triagem, atendimento, consulta
+                  interna, geração de documentos e execução de rotinas.
+                </p>
+              </div>
+              <em>IA · Base interna · Triagem</em>
+            </a>
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero integrar sistemas e reduzir retrabalho."
+              target="_blank"
+              class="flow-item"
+            >
+              <span class="flow-index">04</span>
+              <div>
+                <strong>Integração de sistemas</strong>
+                <p>
+                  Conectamos APIs, ERPs, bancos de dados, planilhas e BI para
+                  reduzir retrabalho e centralizar informações.
+                </p>
+              </div>
+              <em>APIs · Power BI · SQL</em>
+            </a>
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero dashboards para acompanhar minha empresa."
+              target="_blank"
+              class="flow-item"
+            >
+              <span class="flow-index">05</span>
+              <div>
+                <strong>Dashboards executivos</strong>
+                <p>
+                  Criamos painéis com KPIs, metas, alertas e visão por área para
+                  apoiar decisões com dados confiáveis.
+                </p>
+              </div>
+              <em>KPIs · Alertas · Real time</em>
+            </a>
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero suporte e evolução para os sistemas da minha empresa."
+              target="_blank"
+              class="flow-item"
+            >
+              <span class="flow-index">06</span>
+              <div>
+                <strong>Sustentação e evolução</strong>
+                <p>
+                  Acompanhamos melhorias, correções, segurança, backup e
+                  evolução contínua dos sistemas implantados.
+                </p>
+              </div>
+              <em>Suporte · Backup · Segurança</em>
+            </a>
+          </div>
+        </div>
+
+        <div class="niche-cta reveal" style="margin-top: 40px">
+          <p style="font-size: 14px; color: var(--ink3)">
+            Tem um gargalo específico? A consultoria começa entendendo a
+            realidade da sua empresa.
+          </p>
+          <a
+            href="https://wa.me/5531995089977?text=Olá! Quero conversar sobre os gargalos da minha empresa."
+            target="_blank"
+            class="btn-primary"
+            style="display: inline-flex; margin-top: 16px"
+            >Fale conosco agora →</a
+          >
+        </div>
+
+        <div class="result-cards reveal" style="margin-top: 72px">
+          <div class="result-card">
+            <div class="rc-niche">Financeiro & Orçamento</div>
+            <div style="margin-bottom: 16px">
+              <div
+                style="
+                  font-family: var(--disp);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--ink);
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                "
+              >
+                Avaliação Orçamentária
+              </div>
+            </div>
+            <p class="rc-desc">
+              Sistema de controle de despesas previstas e orçamento com
+              relatórios em Power BI conectados via Power Query, integração com
+              Excel e dashboards em tempo real.
+            </p>
+            <div class="rc-bottom" style="margin-top: 16px">
+              <div>
+                <div class="rc-city">Sistema financeiro · em produção</div>
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--blue);
+                  font-weight: 700;
+                  background: var(--blue-lt);
+                  padding: 3px 8px;
+                  border-radius: 6px;
+                "
+              >
+                ativo
+              </div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="rc-niche">Seleção & RH</div>
+            <div style="margin-bottom: 16px">
+              <div
+                style="
+                  font-family: var(--disp);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--ink);
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                "
+              >
+                Processo Seletivo com Ranking
+              </div>
+            </div>
+            <p class="rc-desc">
+              Sistema completo de inscrições para processos seletivos com
+              ranking automático por cotas (PCD e racial), filtros por vaga e
+              geração de resultado em tempo real.
+            </p>
+            <div class="rc-bottom" style="margin-top: 16px">
+              <div>
+                <div class="rc-city">Sistema web · em produção</div>
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--blue);
+                  font-weight: 700;
+                  background: var(--blue-lt);
+                  padding: 3px 8px;
+                  border-radius: 6px;
+                "
+              >
+                ativo
+              </div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="rc-niche">Presença em Tempo Real</div>
+            <div style="margin-bottom: 16px">
+              <div
+                style="
+                  font-family: var(--disp);
+                  font-size: 20px;
+                  font-weight: 800;
+                  color: var(--ink);
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                "
+              >
+                Monitoramento de Usuários Online
+              </div>
+            </div>
+            <p class="rc-desc">
+              Painel de presença em tempo real para mostrar usuários online por
+              módulo, com acesso seguro e visão centralizada para
+              administradores.
+            </p>
+            <div class="rc-bottom" style="margin-top: 16px">
+              <div>
+                <div class="rc-city">Módulo real-time · em produção</div>
+              </div>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--blue);
+                  font-weight: 700;
+                  background: var(--blue-lt);
+                  padding: 3px 8px;
+                  border-radius: 6px;
+                "
+              >
+                ativo
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Serviços ──────────────────────────────────────────────────────── -->
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="services-head reveal">
+          <div>
+            <div class="section-eyebrow">
+              <span class="pill"
+                ><span class="pill-dot"></span>O que fazemos</span
+              >
+            </div>
+            <h2 class="sec-title">
+              Consultoria, tecnologia e IA em um só parceiro
+            </h2>
+          </div>
+          <div class="services-head-note">
+            <span>Operating stack</span>
+            <p>
+              Entramos para entender o processo, desenhar a solução, desenvolver
+              o software, automatizar rotinas e acompanhar a evolução depois da
+              entrega.
+            </p>
+          </div>
+        </div>
+        <div class="svc-grid reveal">
+          <div class="svc-card">
+            <div class="svc-ico svc-ico-dev" aria-hidden="true"></div>
+            <div class="svc-name">Desenvolvimento sob medida</div>
+            <div class="svc-desc">
+              Sites, sistemas e plataformas digitais pensados para o jeito real
+              que sua empresa vende, atende e opera.
+            </div>
+            <ul class="svc-features">
+              <li class="svc-feat">Arquitetura do fluxo</li>
+              <li class="svc-feat">Interface responsiva</li>
+              <li class="svc-feat">Integração com operação</li>
+            </ul>
+          </div>
+          <div class="svc-card dark">
+            <div class="svc-ico svc-ico-ai" aria-hidden="true"></div>
+            <div class="svc-name">Agentes de IA</div>
+            <div class="svc-desc">
+              Agentes para atendimento, análise, busca interna, documentos e
+              execução de rotinas com supervisão.
+            </div>
+            <ul class="svc-features">
+              <li class="svc-feat">IA conectada ao negócio</li>
+              <li class="svc-feat">Base de conhecimento</li>
+              <li class="svc-feat">Fluxos com aprovação</li>
+            </ul>
+          </div>
+          <div class="svc-card">
+            <div class="svc-ico svc-ico-system" aria-hidden="true"></div>
+            <div class="svc-name">Software Sob Medida</div>
+            <div class="svc-desc">
+              Sistemas web personalizados para controlar operações que
+              ferramentas prontas não resolvem bem.
+            </div>
+            <ul class="svc-features">
+              <li class="svc-feat">Perfis e permissões</li>
+              <li class="svc-feat">Relatórios e auditoria</li>
+              <li class="svc-feat">Acesso pelo celular</li>
+            </ul>
+          </div>
+          <div class="svc-card">
+            <div class="svc-ico svc-ico-auto" aria-hidden="true"></div>
+            <div class="svc-name">Automação de projetos</div>
+            <div class="svc-desc">
+              Conectamos ferramentas, APIs, planilhas, bancos de dados e canais
+              de atendimento para reduzir trabalho manual.
+            </div>
+            <ul class="svc-features">
+              <li class="svc-feat">APIs e webhooks</li>
+              <li class="svc-feat">Rotinas automáticas</li>
+              <li class="svc-feat">Menos digitação duplicada</li>
+            </ul>
+          </div>
+          <div class="svc-card">
+            <div class="svc-ico svc-ico-dashboard" aria-hidden="true"></div>
+            <div class="svc-name">Dashboards & Indicadores</div>
+            <div class="svc-desc">
+              Dashboards conectados aos seus dados para acompanhar
+              produtividade, custos, atendimento e resultados.
+            </div>
+            <ul class="svc-features">
+              <li class="svc-feat">Gráficos interativos</li>
+              <li class="svc-feat">Integração Excel/BI</li>
+              <li class="svc-feat">Atualização automática</li>
+            </ul>
+          </div>
+          <div class="svc-card">
+            <div class="svc-ico svc-ico-mail" aria-hidden="true"></div>
+            <div class="svc-name">E-mails personalizados</div>
+            <div class="svc-desc">
+              Criação e configuração de e-mails com domínio próprio para deixar
+              sua comunicação mais profissional.
+            </div>
+            <ul class="svc-features">
+              <li class="svc-feat">contato@suaempresa.com.br</li>
+              <li class="svc-feat">Configuração em celular e desktop</li>
+              <li class="svc-feat">Suporte para implantação</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Processo ──────────────────────────────────────────────────────── -->
+    <section class="process">
+      <div class="container">
+        <div
+          style="text-align: center; max-width: 520px; margin: 0 auto"
+          class="reveal"
+        >
+          <div class="section-eyebrow">
+            <span class="pill"
+              ><span class="pill-dot"></span>Como funciona</span
+            >
+          </div>
+          <h2 class="sec-title" style="margin-top: 14px">
+            Da dor operacional à solução funcionando
+          </h2>
+        </div>
+        <div class="process-steps reveal">
+          <div class="ps-item">
+            <div class="ps-circle">01</div>
+            <div class="ps-title">Diagnóstico</div>
+            <div class="ps-desc">
+              Entendemos a empresa, os gargalos, as ferramentas atuais e o
+              impacto esperado.
+            </div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-circle">02</div>
+            <div class="ps-title">Plano de ação</div>
+            <div class="ps-desc">
+              Definimos prioridades, escopo, prazo, investimento e indicadores
+              de sucesso.
+            </div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-circle">03</div>
+            <div class="ps-title">Implantação</div>
+            <div class="ps-desc">
+              Desenvolvemos, integramos, automatizamos e validamos com quem usa
+              no dia a dia.
+            </div>
+          </div>
+          <div class="ps-item">
+            <div class="ps-circle">04</div>
+            <div class="ps-title">Evolução</div>
+            <div class="ps-desc">
+              Acompanhamos resultados, ajustamos processos e evoluímos a solução
+              por ciclos.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Comparativo ────────────────────────────────────────────────────── -->
+    <section class="compare">
+      <div class="container">
+        <div
+          style="text-align: center; max-width: 520px; margin: 0 auto"
+          class="reveal"
+        >
+          <div class="section-eyebrow">
+            <span class="pill"><span class="pill-dot"></span>A diferença</span>
+          </div>
+          <h2 class="sec-title" style="margin-top: 14px">
+            Com ou sem processos automatizados?
+          </h2>
+        </div>
+        <div class="compare-inner reveal">
+          <div class="compare-col sem">
+            <div class="compare-label">Operação travada hoje</div>
+            <ul class="compare-list">
+              <li class="compare-item">
+                <div class="ci-icon">✕</div>
+                Planilhas paralelas e informação duplicada
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✕</div>
+                Equipe perdendo tempo com tarefas repetitivas
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✕</div>
+                Gestores sem visão confiável em tempo real
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✕</div>
+                Atendimento lento por falta de histórico e padrão
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✕</div>
+                Processos dependentes de uma pessoa específica
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✕</div>
+                Decisões tomadas no improviso
+              </li>
+            </ul>
+          </div>
+          <div class="compare-col com">
+            <div class="compare-label">Com a GSA na operação</div>
+            <ul class="compare-list">
+              <li class="compare-item">
+                <div class="ci-icon">✓</div>
+                Processos mapeados e padronizados
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✓</div>
+                Software feito para o fluxo real da empresa
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✓</div>
+                Agentes de IA apoiando rotinas e atendimento
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✓</div>
+                Dashboards para acompanhar indicadores-chave
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✓</div>
+                Integrações que reduzem retrabalho
+              </li>
+              <li class="compare-item">
+                <div class="ci-icon">✓</div>
+                Evolução contínua com suporte próximo
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Planos ────────────────────────────────────────────────────────── -->
+    <section class="pricing" id="precos">
+      <div class="container">
+        <div
+          style="text-align: center; max-width: 540px; margin: 0 auto"
+          class="reveal"
+        >
+          <div class="section-eyebrow">
+            <span class="pill"><span class="pill-dot"></span>Investimento</span>
+          </div>
+          <h2 class="sec-title" style="margin-top: 14px">
+            Investimento alinhado ao tamanho do desafio
+          </h2>
+          <p style="font-size: 14px; color: var(--ink3); margin-top: 10px">
+            Cada empresa tem um processo, uma urgência e um nível de maturidade.
+            Por isso trabalhamos com propostas sob medida.
+          </p>
+        </div>
+        <div class="pricing-grid reveal">
+          <div class="plan">
+            <div class="plan-name">Diagnóstico</div>
+            <div
+              class="plan-price"
+              style="
+                font-size: 26px;
+                padding-top: 12px;
+                letter-spacing: -0.02em;
+              "
+            >
+              Sob consulta
+            </div>
+            <div class="plan-period">mapeamento e plano de ação</div>
+            <div class="plan-line"></div>
+            <ul class="plan-features">
+              <li class="plan-feat">Entrevistas com responsáveis</li>
+              <li class="plan-feat">Mapa dos processos atuais</li>
+              <li class="plan-feat">Lista de gargalos priorizados</li>
+              <li class="plan-feat">Sugestões de automação e sistema</li>
+              <li class="plan-feat">Roadmap de implantação</li>
+            </ul>
+            <a
+              href="https://wa.me/5531995089977?text=Quero contratar um diagnóstico de processos."
+              target="_blank"
+              class="plan-btn plan-btn-outline"
+              >Solicitar diagnóstico</a
+            >
+          </div>
+
+          <div class="plan pop">
+            <div class="pop-label">⚡ Mais completo</div>
+            <div class="plan-name">Implantação</div>
+            <div
+              class="plan-price"
+              style="
+                font-size: 26px;
+                padding-top: 12px;
+                letter-spacing: -0.02em;
+              "
+            >
+              Sob consulta
+            </div>
+            <div class="plan-period">software, IA e integrações</div>
+            <div class="plan-line"></div>
+            <ul class="plan-features">
+              <li class="plan-feat">Sistema web personalizado</li>
+              <li class="plan-feat">Automação com agentes de IA</li>
+              <li class="plan-feat">Integração com ferramentas atuais</li>
+              <li class="plan-feat">Dashboards e relatórios</li>
+              <li class="plan-feat">Treinamento da equipe</li>
+              <li class="plan-feat">Implantação acompanhada</li>
+            </ul>
+            <a
+              href="https://wa.me/5531995089977?text=Quero uma proposta de implantação com software e IA."
+              target="_blank"
+              class="plan-btn plan-btn-solid"
+              >Solicitar proposta</a
+            >
+          </div>
+
+          <div class="plan">
+            <div class="plan-name">Sustentação</div>
+            <div
+              class="plan-price"
+              style="
+                font-size: 26px;
+                padding-top: 12px;
+                letter-spacing: -0.02em;
+              "
+            >
+              Sob consulta
+            </div>
+            <div class="plan-period">suporte e evolução mensal</div>
+            <div class="plan-line"></div>
+            <ul class="plan-features">
+              <li class="plan-feat">Suporte técnico contínuo</li>
+              <li class="plan-feat">Melhorias por ciclo</li>
+              <li class="plan-feat">Monitoramento e backups</li>
+              <li class="plan-feat">Ajustes em agentes de IA</li>
+              <li class="plan-feat">Novos relatórios</li>
+              <li class="plan-feat">Contrato e nota fiscal</li>
+            </ul>
+            <a
+              href="https://wa.me/5531995089977?text=Quero suporte e evolução mensal para minha empresa."
+              target="_blank"
+              class="plan-btn plan-btn-outline"
+              >Montar plano mensal</a
+            >
+          </div>
+        </div>
+
+        <p
+          style="
+            text-align: center;
+            font-size: 12px;
+            color: var(--ink3);
+            margin-top: 28px;
+          "
+        >
+          💡 Emitimos nota fiscal, formalizamos escopo e trabalhamos com etapas
+          claras de entrega.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Por que nos escolher ───────────────────────────────────────────── -->
+    <section class="testimonials" id="diferenciais">
+      <div class="container">
+        <div
+          style="text-align: center; max-width: 560px; margin: 0 auto"
+          class="reveal"
+        >
+          <div class="section-eyebrow">
+            <span class="pill"
+              ><span class="pill-dot"></span>Nossos diferenciais</span
+            >
+          </div>
+          <h2 class="sec-title" style="margin-top: 14px">
+            Por que escolher a GSA Soluções Web?
+          </h2>
+          <p
+            style="
+              font-size: 15px;
+              color: var(--ink2);
+              margin-top: 14px;
+              line-height: 1.75;
+            "
+          >
+            Não vendemos tecnologia solta. Entendemos o processo, desenhamos a
+            solução e implantamos com cuidado para que a equipe realmente use no
+            dia a dia.
+          </p>
+        </div>
+
+        <div class="test-grid reveal" style="margin-top: 56px">
+          <div class="test-card" style="background: var(--white)">
+            <div style="font-size: 28px; margin-bottom: 14px">🧑‍💻</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--ink);
+                margin-bottom: 10px;
+                letter-spacing: -0.01em;
+              "
+            >
+              +4 anos com sistemas reais
+            </div>
+            <p class="test-text" style="font-style: normal">
+              Já entregamos plataformas usadas diariamente, com autenticação,
+              permissões, relatórios, integrações e operação crítica.
+            </p>
+          </div>
+
+          <div class="test-card" style="background: var(--white)">
+            <div style="font-size: 28px; margin-bottom: 14px">⚡</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--ink);
+                margin-bottom: 10px;
+                letter-spacing: -0.01em;
+              "
+            >
+              Stack moderna e pragmática
+            </div>
+            <p class="test-text" style="font-style: normal">
+              Usamos tecnologias modernas, seguras e adequadas ao projeto. A
+              escolha sempre considera performance, manutenção e valor para a
+              operação.
+            </p>
+          </div>
+
+          <div class="test-card" style="background: var(--white)">
+            <div style="font-size: 28px; margin-bottom: 14px">🤝</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--ink);
+                margin-bottom: 10px;
+                letter-spacing: -0.01em;
+              "
+            >
+              Atendimento direto e consultivo
+            </div>
+            <p class="test-text" style="font-style: normal">
+              Você conversa com quem entende de processo e também constrói a
+              solução. Menos ruído, mais decisão objetiva.
+            </p>
+          </div>
+
+          <div class="test-card" style="background: var(--white)">
+            <div style="font-size: 28px; margin-bottom: 14px">📱</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--ink);
+                margin-bottom: 10px;
+                letter-spacing: -0.01em;
+              "
+            >
+              Foco em adoção pela equipe
+            </div>
+            <p class="test-text" style="font-style: normal">
+              Interface simples, treinamento e ajustes com usuários reais para
+              que o sistema não vire mais uma obrigação abandonada.
+            </p>
+          </div>
+
+          <div class="test-card" style="background: var(--white)">
+            <div style="font-size: 28px; margin-bottom: 14px">🔍</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--ink);
+                margin-bottom: 10px;
+                letter-spacing: -0.01em;
+              "
+            >
+              Indicadores desde o começo
+            </div>
+            <p class="test-text" style="font-style: normal">
+              A solução nasce com relatórios e dados para medir ganho de tempo,
+              volume, qualidade e gargalos que ainda precisam evoluir.
+            </p>
+          </div>
+
+          <div class="test-card" style="background: var(--white)">
+            <div style="font-size: 28px; margin-bottom: 14px">💬</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--ink);
+                margin-bottom: 10px;
+                letter-spacing: -0.01em;
+              "
+            >
+              Suporte humano pelo WhatsApp
+            </div>
+            <p class="test-text" style="font-style: normal">
+              Depois da entrega, seguimos perto para corrigir, ajustar, evoluir
+              automações e responder quando a operação precisar.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal" style="text-align: center; margin-top: 52px">
+          <p style="font-size: 14px; color: var(--ink3); margin-bottom: 18px">
+            Quer entender se IA e software sob medida fazem sentido para sua
+            empresa?
+            <strong style="color: var(--ink)"
+              >Começamos por uma conversa de diagnóstico.</strong
+            >
+          </p>
+          <a
+            href="https://wa.me/5531995089977?text=Olá! Quero fazer um diagnóstico para entender onde posso usar IA e software na minha empresa."
+            target="_blank"
+            class="btn-primary"
+            style="display: inline-flex"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              />
+            </svg>
+            Quero um diagnóstico
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ────────────────────────────────────────────────────────────── -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-aside reveal">
+            <div class="section-eyebrow">
+              <span class="pill"><span class="pill-dot"></span>Dúvidas</span>
+            </div>
+            <h2 class="sec-title" style="margin-top: 14px">
+              Perguntas frequentes
+            </h2>
+            <p>
+              Ainda tem dúvida? Fale direto com a gente — respondemos em
+              minutos.
+            </p>
+            <a
+              href="https://wa.me/5531995089977"
+              target="_blank"
+              class="btn-primary"
+              style="display: inline-flex; margin-top: 8px"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Falar agora
+            </a>
+          </div>
+          <div class="faq-list reveal">
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Quanto tempo leva um projeto?<em class="faq-icon">+</em>
+              </div>
+              <div class="faq-a">
+                Depende do escopo. Um diagnóstico pode ser conduzido em poucos
+                dias; uma implantação com sistema, IA e integrações recebe
+                cronograma próprio na proposta.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Vocês fazem só consultoria ou também desenvolvem?<em
+                  class="faq-icon"
+                  >+</em
+                >
+              </div>
+              <div class="faq-a">
+                Fazemos os dois. Podemos entregar apenas o diagnóstico e o plano
+                de ação, ou assumir a implantação completa com software,
+                automações, IA, dashboards e suporte.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Agentes de IA funcionam com meus dados?<em class="faq-icon"
+                  >+</em
+                >
+              </div>
+              <div class="faq-a">
+                Sim, quando faz sentido e com cuidado. Podemos conectar
+                documentos, bases internas e sistemas, definindo permissões,
+                limites de atuação e pontos de aprovação humana.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Dá para integrar com sistemas que já usamos?<em class="faq-icon"
+                  >+</em
+                >
+              </div>
+              <div class="faq-a">
+                Na maioria dos casos, sim. Avaliamos APIs, banco de dados,
+                planilhas, exportações e ferramentas atuais para escolher a
+                forma mais segura de integração.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Atendem qualquer cidade do Brasil?<em class="faq-icon">+</em>
+              </div>
+              <div class="faq-a">
+                Sim. O trabalho pode ser conduzido online com reuniões,
+                documentação, homologação e acompanhamento remoto. Para casos
+                específicos, combinamos visitas presenciais.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                Como é feita a proposta?<em class="faq-icon">+</em>
+              </div>
+              <div class="faq-a">
+                Depois de entender o problema, enviamos uma proposta com escopo,
+                etapas, prazos, investimento, responsabilidades e o que será
+                considerado entrega concluída.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────────────────────── -->
+    <section class="cta-sec">
+      <div class="container reveal">
+        <div class="cta-box">
+          <div class="cta-left">
+            <span class="pill"
+              ><span class="pill-dot"></span>Pronto para começar?</span
+            >
+            <h2 class="cta-title" style="margin-top: 18px">
+              Vamos melhorar<br />sua operação?
+            </h2>
+            <p class="cta-sub">
+              Fale pelo WhatsApp, conte onde sua empresa perde tempo hoje e
+              receba um caminho claro para processo, software e IA trabalharem
+              juntos.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a
+              href="https://wa.me/5531995089977?text=Olá! Quero melhorar processos, criar software sob medida e automatizar minha empresa com IA."
+              target="_blank"
+              class="btn-cta-main"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Chamar no WhatsApp
+            </a>
+            <a
+              href="mailto:gabrielsouza.desenvolvedor@gmail.com.br"
+              class="btn-cta-sec"
+              >ou enviar um e-mail</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+    <footer>
+      <div class="container">
+        <div class="ft-grid">
+          <div>
+            <a href="#" class="logo">
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 38 38"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="38" height="38" rx="10" fill="#1246F0" />
+                <path
+                  d="M10 19C10 13.477 14.477 9 20 9C22.76 9 25.26 10.12 27.07 11.93L24.24 14.76C23.18 13.7 21.67 13 20 13C16.686 13 14 15.686 14 19C14 22.314 16.686 25 20 25C21.67 25 23.18 24.3 24.24 23.24V21H20V17H28V24.07C26.19 26.38 23.26 28 20 28C14.477 28 10 23.523 10 19Z"
+                  fill="white"
+                />
+                <circle cx="30" cy="10" r="3" fill="#4CF0A0" />
+              </svg>
+              <div>
+                <div class="logo-name ft-logo-name">GSA Soluções Web</div>
+              </div>
+            </a>
+            <p class="ft-about">
+              Consultoria, sistemas sob medida, automações com IA e melhoria de
+              processos para empresas em BH, Betim e todo o Brasil.
+            </p>
+          </div>
+          <div>
+            <div class="ft-title">Serviços</div>
+            <ul class="ft-links">
+              <li><a href="#servicos">Desenvolvimento sob medida</a></li>
+              <li><a href="#servicos">Automação de Projetos</a></li>
+              <li><a href="#servicos">Agentes de IA</a></li>
+              <li><a href="#servicos">Dashboards</a></li>
+              <li><a href="#servicos">E-mails Personalizados</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="ft-title">Empresa</div>
+            <ul class="ft-links">
+              <li><a href="#resultados">Cases</a></li>
+              <li><a href="#clientes">Clientes</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="ft-title">Contato</div>
+            <ul class="ft-links">
+              <li>
+                <a href="https://wa.me/5531995089977" target="_blank"
+                  >WhatsApp: (31) 99508-9977</a
+                >
+              </li>
+              <li>
+                <a href="mailto:gabrielsouza.desenvolvedor@gmail.com.br"
+                  >E-mail</a
+                >
+              </li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft-bottom">
+          <div class="ft-copy">© 2026 GSA Soluções Web</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ── Botão WhatsApp Flutuante ──────────────────────────────────────── -->
+    <a
+      href="https://wa.me/5531995089977?text=Olá! Vim pelo site e quero saber mais."
+      target="_blank"
+      class="wpp-float"
+      aria-label="Falar no WhatsApp"
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <!-- ── Aviso LGPD ──────────────────────────────────────────────────── -->
+    <div class="lgpd-bar" id="lgpd-bar">
+      <p>
+        Utilizamos cookies essenciais para o funcionamento do site. Ao continuar
+        navegando, você concorda com nossa
+        <a href="#">Política de Privacidade</a>.
+      </p>
+      <button
+        onclick="
+          document.getElementById('lgpd-bar').style.display = 'none';
+          localStorage.setItem('lgpd', '1');
+        "
+      >
+        Entendi
+      </button>
     </div>
-  </div>
-</footer>
 
-<!-- ── Botão WhatsApp Flutuante ──────────────────────────────────────── -->
-<a href="https://wa.me/5531995089977?text=Olá! Vim pelo site e quero saber mais." target="_blank" class="wpp-float" aria-label="Falar no WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+    <script>
+      if (localStorage.getItem("lgpd"))
+        document.getElementById("lgpd-bar").style.display = "none";
 
-<!-- ── Aviso LGPD ──────────────────────────────────────────────────── -->
-<div class="lgpd-bar" id="lgpd-bar">
-  <p>Utilizamos cookies essenciais para o funcionamento do site. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
-  <button onclick="document.getElementById('lgpd-bar').style.display='none';localStorage.setItem('lgpd','1')">Entendi</button>
-</div>
+      window.addEventListener("scroll", () => {
+        document
+          .getElementById("nav")
+          .classList.toggle("scrolled", scrollY > 20);
+      });
 
-<script>
-if (localStorage.getItem('lgpd')) document.getElementById('lgpd-bar').style.display = 'none';
+      function toggleMob() {
+        document.getElementById("mob-menu").classList.toggle("open");
+      }
+      function closeMob() {
+        document.getElementById("mob-menu").classList.remove("open");
+      }
 
-window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
-});
+      function toggleFaq(el) {
+        const item = el.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item.open")
+          .forEach((i) => i.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      }
 
-function toggleMob() { document.getElementById('mob-menu').classList.toggle('open'); }
-function closeMob()  { document.getElementById('mob-menu').classList.remove('open'); }
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 70);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
 
-function toggleFaq(el) {
-  const item = el.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 70);
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-</script>
-</body>
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) {
+            e.preventDefault();
+            t.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
