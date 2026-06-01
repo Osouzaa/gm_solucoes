@@ -1644,42 +1644,84 @@
         <a href="#">Política de Privacidade</a>.
       </p>
       <div class="lgpd-actions">
-        <button type="button" class="lgpd-secondary" id="lgpd-reject">
+        <button
+          type="button"
+          class="lgpd-secondary"
+          id="lgpd-reject"
+          onclick="window.setGsaCookieConsent ? window.setGsaCookieConsent('denied') : (document.getElementById('lgpd-bar').style.display = 'none'); return false;"
+        >
           Recusar
         </button>
-        <button type="button" id="lgpd-accept">Aceitar</button>
+        <button
+          type="button"
+          id="lgpd-accept"
+          onclick="window.setGsaCookieConsent ? window.setGsaCookieConsent('granted') : (document.getElementById('lgpd-bar').style.display = 'none'); return false;"
+        >
+          Aceitar
+        </button>
       </div>
     </div>
 
     <script>
       const lgpdBar = document.getElementById("lgpd-bar");
-      const savedAnalyticsConsent = localStorage.getItem("gsaAnalyticsConsent");
+
+      function getSavedAnalyticsConsent() {
+        try {
+          return localStorage.getItem("gsaAnalyticsConsent");
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function saveAnalyticsConsent(value) {
+        try {
+          localStorage.setItem("gsaAnalyticsConsent", value);
+        } catch (error) {
+          return;
+        }
+      }
+
+      function hideLgpdBar() {
+        lgpdBar.setAttribute("hidden", "");
+        lgpdBar.classList.add("is-hidden");
+        lgpdBar.style.display = "none";
+      }
 
       function updateAnalyticsConsent(value) {
         const isGranted = value === "granted";
 
-        gtag("consent", "update", {
-          analytics_storage: isGranted ? "granted" : "denied",
-          ad_storage: "denied",
-          ad_user_data: "denied",
-          ad_personalization: "denied",
-        });
+        if (typeof gtag === "function") {
+          gtag("consent", "update", {
+            analytics_storage: isGranted ? "granted" : "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+          });
+        }
 
-        localStorage.setItem("gsaAnalyticsConsent", value);
-        lgpdBar.hidden = true;
+        saveAnalyticsConsent(value);
+        hideLgpdBar();
       }
 
-      if (savedAnalyticsConsent) {
-        lgpdBar.hidden = true;
+      window.setGsaCookieConsent = updateAnalyticsConsent;
+
+      if (getSavedAnalyticsConsent()) {
+        hideLgpdBar();
       }
 
       document
         .getElementById("lgpd-accept")
-        .addEventListener("click", () => updateAnalyticsConsent("granted"));
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          updateAnalyticsConsent("granted");
+        });
 
       document
         .getElementById("lgpd-reject")
-        .addEventListener("click", () => updateAnalyticsConsent("denied"));
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          updateAnalyticsConsent("denied");
+        });
 
       window.addEventListener("scroll", () => {
         document
@@ -1718,7 +1760,10 @@
 
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", (e) => {
-          const t = document.querySelector(a.getAttribute("href"));
+          const targetSelector = a.getAttribute("href");
+          if (!targetSelector || targetSelector === "#") return;
+
+          const t = document.querySelector(targetSelector);
           if (t) {
             e.preventDefault();
             t.scrollIntoView({ behavior: "smooth" });

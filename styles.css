@@ -2714,6 +2714,12 @@ nav {
   font-size: 13px;
   padding: 14px 24px;
 }
+
+.lgpd-bar[hidden],
+.lgpd-bar.is-hidden {
+  display: none;
+}
+
 .lgpd-bar p { margin: 0; line-height: 1.5; }
 .lgpd-bar a { color: var(--blue-mid); text-decoration: underline; }
 .lgpd-actions {
@@ -3017,9 +3023,9 @@ nav {
 }
 
 .client-logo-track .logo-fadson img {
-  max-width: none;
+  max-width: 100%;
   max-height: none;
-  width: 150px;
+  width: 170px;
   height: auto;
   filter: saturate(1.08) contrast(1.18);
   opacity: 1;
@@ -3161,7 +3167,7 @@ nav {
   }
 
   .client-logo-track .client-logo-item {
-    width: 188px;
+    width: 240px;
     min-height: 104px;
   }
 
@@ -3172,6 +3178,11 @@ nav {
 
   .client-logo-track .logo-image img {
     max-height: 46px;
+  }
+
+  .client-logo-track .logo-fadson img {
+    width: 170px;
+    max-height: none;
   }
 }
 
@@ -3904,6 +3915,15 @@ svg {
   .client-logo-track .logo-image {
     width: 210px;
     padding: 22px 24px;
+  }
+
+  .client-logo-track .client-logo-item {
+    width: 210px;
+  }
+
+  .client-logo-track .logo-fadson img {
+    width: 162px;
+    max-height: none;
   }
 }
 
