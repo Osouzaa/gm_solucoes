@@ -2983,8 +2983,9 @@ nav {
 }
 
 .client-logo-track .client-logo-item {
-  width: 214px;
-  min-height: 116px;
+  width: 300px;
+  height: 128px;
+  min-height: 128px;
   border: 0;
   border-right: 1px solid var(--border);
   border-bottom: 0;
@@ -2993,6 +2994,7 @@ nav {
 
 .client-logo-track .logo-image {
   width: 300px;
+  height: 128px;
   min-height: 128px;
   align-items: center;
   justify-content: center;
@@ -3001,10 +3003,8 @@ nav {
 
 .client-logo-track .logo-image img {
   display: block;
-  max-width: 100%;
-  max-height: 58px;
-  width: auto;
-  height: auto;
+  width: 180px;
+  height: 58px;
   object-fit: contain;
   filter: saturate(0.92) contrast(1.04);
   opacity: 0.86;
@@ -3019,14 +3019,12 @@ nav {
 
 .client-logo-track .logo-fadson {
   overflow: hidden;
-  padding: 14px 18px;
+  padding: 28px 42px;
 }
 
 .client-logo-track .logo-fadson img {
-  max-width: 100%;
-  max-height: none;
-  width: 170px;
-  height: auto;
+  width: 180px;
+  height: 58px;
   filter: saturate(1.08) contrast(1.18);
   opacity: 1;
 }
@@ -3168,21 +3166,25 @@ nav {
 
   .client-logo-track .client-logo-item {
     width: 240px;
+    height: 104px;
     min-height: 104px;
   }
 
   .client-logo-track .logo-image {
     width: 240px;
+    height: 104px;
+    min-height: 104px;
     padding: 24px 30px;
   }
 
   .client-logo-track .logo-image img {
-    max-height: 46px;
+    width: 168px;
+    height: 46px;
   }
 
   .client-logo-track .logo-fadson img {
-    width: 170px;
-    max-height: none;
+    width: 168px;
+    height: 46px;
   }
 }
 
@@ -3914,16 +3916,21 @@ svg {
 
   .client-logo-track .logo-image {
     width: 210px;
+    height: 96px;
+    min-height: 96px;
     padding: 22px 24px;
   }
 
   .client-logo-track .client-logo-item {
     width: 210px;
+    height: 96px;
+    min-height: 96px;
   }
 
+  .client-logo-track .logo-image img,
   .client-logo-track .logo-fadson img {
     width: 162px;
-    max-height: none;
+    height: 44px;
   }
 }
 
